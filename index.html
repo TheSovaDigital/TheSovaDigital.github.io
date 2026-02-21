@@ -10,17 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
- 
+    :root{
+      --gold1:#ffe39a;
+      --gold2:#ffd15c;
+      --gold3:#ffb84a;
+    }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body{height:100%;}
     body{
       font-family:"Cormorant Garamond", serif;
       background:#000;
       overflow:hidden;
     }
 
-    /* HERO BACKGROUND */
     .hero{
       position:relative;
       width:100%;
@@ -40,17 +43,6 @@
       to{   background-position: 52% 52%; transform: scale(1.06); }
     }
 
-    /* SPARKS CANVAS */
-    #sparks{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      pointer-events:none;
-      z-index:2;
-    }
-
-    /* vignette */
     .vignette{
       position:absolute;
       inset:0;
@@ -59,7 +51,6 @@
       background: radial-gradient(1200px 800px at 50% 40%, rgba(0,0,0,0), rgba(0,0,0,.55));
     }
 
-    /* CONTENT */
     .content{
       position:absolute;
       inset:0;
@@ -68,10 +59,9 @@
       justify-content:center;
       text-align:center;
       padding:24px;
-      z-index:3;
+      z-index:2;
     }
 
-    /* ANIMATED FRAME (то, что ты просил вернуть) */
     .frame{
       position:relative;
       width:min(980px, 94vw);
@@ -84,7 +74,6 @@
       overflow:hidden;
     }
 
-    /* светящаяся анимированная рамка */
     .frame::before{
       content:"";
       position:absolute;
@@ -99,12 +88,10 @@
         rgba(255,210,120,.20)
       );
       animation: spin 6s linear infinite;
-      filter: blur(0px);
       opacity:.9;
       z-index:0;
     }
 
-    /* внутреннее стекло поверх рамки */
     .frame::after{
       content:"";
       position:absolute;
@@ -115,24 +102,20 @@
       z-index:1;
     }
 
-    @keyframes spin{
-      to{ transform: rotate(360deg); }
-    }
+    @keyframes spin{ to{ transform: rotate(360deg); } }
 
-    /* actual inner content must be above pseudo-elements */
     .inner{
       position:relative;
       z-index:2;
       padding: 0 6px;
     }
 
-    /* TITLE */
     h1{
       margin:0;
       font-weight:700;
       line-height:1.02;
       letter-spacing:.5px;
-      font-size: clamp(64px, 7.2vw, 124px); /* БОЛЬШЕ */
+      font-size: clamp(64px, 7.2vw, 124px);
       opacity:0;
       transform: translateY(16px);
       animation: inUp 1.1s ease forwards;
@@ -159,7 +142,6 @@
       100%{ background-position: 240% 50%; }
     }
 
-    /* блик по буквам */
     .gold::after{
       content:"";
       position:absolute;
@@ -197,7 +179,6 @@
       to{ opacity:1; transform: translateY(0); }
     }
 
-    /* BUTTONS (без звёздочек/иконок) */
     .buttons{
       margin-top: 26px;
       display:flex;
@@ -252,121 +233,22 @@
 <body>
   <div class="hero">
     <div class="vignette"></div>
-    <canvas id="sparks"></canvas>
 
     <div class="content">
       <div class="frame">
         <div class="inner">
           <h1><span class="gold">Хижина красоты</span></h1>
-          <div class="subtitle">ПРЕМИУМ САЛОН • ЗОЛОТО • ТРОПИКИ</div>
+          <div class="subtitle">СОЦСЕТИ • КОНТАКТЫ • ЗАПИСЬ</div>
 
           <div class="buttons">
-            <!-- ВСТАВЬ СВОИ ССЫЛКИ (твои реальные URL) -->
-            <a class="btn" href="PUT_YOUR_BOOKING_LINK_HERE" target="_blank" rel="noreferrer">Записаться</a>
-            <a class="btn" href="PUT_YOUR_INSTAGRAM_LINK_HERE" target="_blank" rel="noreferrer">Instagram</a>
-            <a class="btn" href="PUT_YOUR_TELEGRAM_LINK_HERE" target="_blank" rel="noreferrer">Telegram</a>
+            <a class="btn" href="https://t.me/thehizhina" target="_blank" rel="noreferrer">Telegram</a>
+            <a class="btn" href="https://www.instagram.com/anibeauty" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="btn" href="https://vk.ru/anicolorist" target="_blank" rel="noreferrer">VK</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <script>
-    // Падающие золотые искры (canvas) — без библиотек
-    const canvas = document.getElementById('sparks');
-    const ctx = canvas.getContext('2d', { alpha: true });
-
-    let w=0, h=0, dpr=1;
-    function resize(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = Math.floor(window.innerWidth);
-      h = Math.floor(window.innerHeight);
-      canvas.width = Math.floor(w * dpr);
-      canvas.height = Math.floor(h * dpr);
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-    }
-    window.addEventListener('resize', resize);
-    resize();
-
-    const sparks = [];
-    const MAX = 150;
-    const gravity = 0.028;
-    const windBase = 0.010;
-
-    function rand(min,max){ return Math.random()*(max-min)+min; }
-
-    function spawn(){
-      sparks.push({
-        x: rand(0,w),
-        y: rand(-80,-10),
-        vx: rand(-0.25,0.25),
-        vy: rand(0.55,1.95),
-        size: rand(1.0, 2.8),
-        life: rand(90, 190),
-        hue: rand(34, 48),
-        a: rand(0.50, 0.98),
-        tw: rand(0.018, 0.055),
-      });
-    }
-
-    for(let i=0;i<70;i++) spawn();
-
-    let t=0;
-    function tick(){
-      t++;
-
-      if(sparks.length < MAX){
-        const add = Math.random() < 0.62 ? 2 : 1;
-        for(let i=0;i<add;i++) spawn();
-      }
-
-      ctx.clearRect(0,0,w,h);
-      ctx.globalCompositeOperation = 'lighter';
-
-      const wind = windBase * Math.sin(t * 0.01);
-
-      for(let i=sparks.length-1;i>=0;i--){
-        const p = sparks[i];
-
-        p.vy += gravity;
-        p.vx += wind;
-        p.x += p.vx;
-        p.y += p.vy;
-
-        p.a += Math.sin(t*0.08 + i) * p.tw;
-        const a = Math.max(0, Math.min(1, p.a));
-        const glow = 10 + p.size * 10;
-
-        // хвост
-        ctx.strokeStyle = `rgba(255,210,120,${a*0.22})`;
-        ctx.lineWidth = p.size;
-        ctx.beginPath();
-        ctx.moveTo(p.x, p.y);
-        ctx.lineTo(p.x - p.vx*10, p.y - p.vy*10);
-        ctx.stroke();
-
-        // ядро
-        const g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,glow);
-        g.addColorStop(0, `hsla(${p.hue},100%,72%,${a})`);
-        g.addColorStop(0.35, `hsla(${p.hue},100%,62%,${a*0.55})`);
-        g.addColorStop(1, `hsla(${p.hue},100%,52%,0)`);
-        ctx.fillStyle = g;
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,glow,0,Math.PI*2);
-        ctx.fill();
-
-        p.life--;
-        if(p.y > h + 160 || p.x < -260 || p.x > w + 260 || p.life <= 0){
-          sparks.splice(i,1);
-        }
-      }
-
-      ctx.globalCompositeOperation = 'source-over';
-      requestAnimationFrame(tick);
-    }
-    tick();
-  </script>
 </body>
 </html>
