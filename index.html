@@ -1,130 +1,328 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Хижина Красоты</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Хижина красоты</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <style>
+    :root{
+      --gold-1:#ffe39a;
+      --gold-2:#ffd15c;
+      --gold-3:#ffb84a;
+    }
 
-body{
-  height:100vh;
-  background:url("cover.png") center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-family:'Cormorant Garamond', serif;
-  overflow:hidden;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
 
-.overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
-}
+    body{
+      margin:0;
+      font-family: "Cormorant Garamond", serif;
+      background:#000;
+      overflow:hidden;
+    }
 
-.container{
-  position:relative;
-  text-align:center;
-  z-index:2;
-}
+    .hero{
+      position:relative;
+      width:100%;
+      height:100vh;
+      background:
+        radial-gradient(1200px 700px at 50% 30%, rgba(255,210,120,.14), rgba(0,0,0,0) 60%),
+        linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.40)),
+        url("Cover.png");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      animation: slowMove 18s ease-in-out infinite alternate;
+    }
 
-h1{
-  font-size:72px;
-  color:#f5d27a;
-  letter-spacing:3px;
-  opacity:0;
-  transform:translateY(40px);
-  animation:fadeUp 1.8s ease forwards;
-  text-shadow:
-    0 0 10px rgba(255,215,150,0.8),
-    0 0 20px rgba(255,180,80,0.6),
-    0 0 40px rgba(255,150,50,0.4);
-}
+    @keyframes slowMove{
+      from{ background-position: 48% 48%; transform: scale(1.02); }
+      to{   background-position: 52% 52%; transform: scale(1.06); }
+    }
 
-.subtitle{
-  margin-top:10px;
-  font-size:28px;
-  color:#ffffffcc;
-  letter-spacing:6px;
-  opacity:0;
-  animation:fadeIn 2.5s ease forwards;
-  animation-delay:1s;
-}
+    canvas#sparks{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      pointer-events:none;
+      z-index:2;
+    }
 
-.links{
-  margin-top:40px;
-  opacity:0;
-  animation:fadeIn 2s ease forwards;
-  animation-delay:2s;
-}
+    .vignette{
+      position:absolute;
+      inset:0;
+      z-index:1;
+      pointer-events:none;
+      background: radial-gradient(1200px 800px at 50% 40%, rgba(0,0,0,0), rgba(0,0,0,.55));
+    }
 
-.links a{
-  display:inline-block;
-  margin:0 15px;
-  padding:14px 28px;
-  text-decoration:none;
-  color:white;
-  border:1px solid rgba(255,255,255,0.4);
-  backdrop-filter:blur(8px);
-  border-radius:40px;
-  transition:0.4s;
-}
+    .content{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:24px;
+      z-index:3;
+    }
 
-.links a:hover{
-  background:rgba(255,215,150,0.2);
-  box-shadow:0 0 20px rgba(255,200,120,0.7);
-  transform:translateY(-4px);
-}
+    .card{
+      max-width: 980px;
+      width: 100%;
+      padding: 34px 22px 22px;
+      border-radius: 28px;
+      background: linear-gradient(to bottom, rgba(0,0,0,.20), rgba(0,0,0,.08));
+      box-shadow:
+        0 20px 80px rgba(0,0,0,.55),
+        inset 0 0 0 1px rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+    }
 
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
+    h1{
+      margin:0;
+      font-weight:700;
+      line-height:1.02;
+      letter-spacing: .5px;
+      font-size: clamp(54px, 6.8vw, 112px); /* БОЛЬШЕ */
+      opacity:0;
+      transform: translateY(18px);
+      animation: titleIn 1.2s ease forwards;
+      text-shadow:
+        0 0 16px rgba(255,200,120,.25),
+        0 0 46px rgba(255,170,70,.22);
+    }
 
-@keyframes fadeIn{
-  to{
-    opacity:1;
-  }
-}
+    @keyframes titleIn{
+      to{ opacity:1; transform: translateY(0); }
+    }
 
-@media(max-width:768px){
-  h1{
-    font-size:42px;
-  }
-  .subtitle{
-    font-size:18px;
-    letter-spacing:3px;
-  }
-}
-</style>
+    .gold{
+      display:inline-block;
+      background: linear-gradient(90deg, var(--gold-1), var(--gold-2), var(--gold-3), var(--gold-1));
+      background-size: 240% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: goldFlow 5.2s linear infinite;
+      position: relative;
+    }
+
+    @keyframes goldFlow{
+      0%{ background-position: 0% 50%; }
+      100%{ background-position: 240% 50%; }
+    }
+
+    .gold::after{
+      content:"";
+      position:absolute;
+      top:-25%;
+      left:-40%;
+      width:35%;
+      height:160%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.70), transparent);
+      transform: skewX(-18deg);
+      filter: blur(2px);
+      opacity:0;
+      animation: shine 3.6s ease-in-out infinite 1.4s;
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+
+    @keyframes shine{
+      0%{ left:-40%; opacity:0; }
+      10%{ opacity:.85; }
+      35%{ left:120%; opacity:0; }
+      100%{ left:120%; opacity:0; }
+    }
+
+    .subtitle{
+      margin-top: 10px;
+      font-size: clamp(14px, 1.7vw, 22px);
+      letter-spacing: clamp(2px, 0.9vw, 8px);
+      color: rgba(255,255,255,.82);
+      opacity:0;
+      transform: translateY(10px);
+      animation: subIn 1.2s ease forwards .35s;
+    }
+
+    @keyframes subIn{
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    .buttons{
+      margin-top: 22px;
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      opacity:0;
+      transform: translateY(10px);
+      animation: btnIn 1.2s ease forwards .6s;
+    }
+
+    @keyframes btnIn{
+      to{ opacity:1; transform: translateY(0); }
+    }
+
+    a.btn{
+      text-decoration:none;
+      color:#fff;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.30),
+        inset 0 0 0 1px rgba(255,255,255,.06);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      font-size: 18px;
+    }
+
+    a.btn:hover{
+      transform: translateY(-4px);
+      border-color: rgba(255,210,120,.50);
+      background: rgba(255,210,120,.10);
+      box-shadow:
+        0 18px 38px rgba(0,0,0,.35),
+        0 0 26px rgba(255,210,120,.22);
+    }
+
+    @media (max-width: 520px){
+      .card{ padding: 26px 16px 18px; border-radius: 22px; }
+      a.btn{ font-size: 16px; padding: 12px 18px; }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="hero">
+    <div class="vignette"></div>
+    <canvas id="sparks"></canvas>
 
-<div class="overlay"></div>
-
-<div class="container">
-  <h1>Хижина</h1>
-  <div class="subtitle">КРАСОТЫ</div>
-
-  <div class="links">
-   <a href="https://t.me/thehizhina">Telegram</a>
-  <a href="https://www.instagram.com/thehizhina">Instagram</a>
-  <a href="https://www.vk.ru/thehizhina">VK</a>
+    <div class="content">
+      <div class="card">
+        <h1><span class="gold">Хижина красоты</span></h1>
+        <div class="subtitle">ПРЕМИУМ САЛОН • ЗОЛОТО • ТРОПИКИ</div>
+    
+        <div class="buttons">
+          
+          <a class="btn" href="+79111115528" target="_blank" rel="noreferrer">Записаться</a>
+          <a class="btn" href="instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          <a class="btn" href="https://t.me/thehizhina" target="_blank" rel="noreferrer">Telegram</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
+  <script>
+    // Золотые искры (canvas)
+    const canvas = document.getElementById('sparks');
+    const ctx = canvas.getContext('2d', { alpha: true });
+
+    let w = 0, h = 0, dpr = 1;
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = Math.floor(window.innerWidth);
+      h = Math.floor(window.innerHeight);
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    const sparks = [];
+    const MAX = 140;       // плотность искр
+    const gravity = 0.028; // "падение"
+    const windBase = 0.010;
+
+    function rand(min, max){ return Math.random() * (max - min) + min; }
+
+    function spawnSpark(){
+      const x = rand(0, w);
+      const y = rand(-60, -10);
+      const size = rand(1.1, 2.8);
+
+      sparks.push({
+        x, y,
+        vx: rand(-0.28, 0.28),
+        vy: rand(0.55, 1.85),
+        size,
+        life: rand(90, 180),
+        hue: rand(35, 48),   // золото
+        alpha: rand(0.50, 0.98),
+        tw: rand(0.018, 0.055)
+      });
+    }
+
+    for(let i=0;i<70;i++) spawnSpark();
+
+    let t = 0;
+    function tick(){
+      t++;
+
+      if (sparks.length < MAX){
+        const add = Math.random() < 0.60 ? 2 : 1;
+        for(let i=0;i<add;i++) spawnSpark();
+      }
+
+      ctx.clearRect(0,0,w,h);
+      ctx.globalCompositeOperation = 'lighter';
+
+      const wind = windBase * Math.sin(t * 0.01);
+
+      for(let i=sparks.length-1;i>=0;i--){
+        const p = sparks[i];
+
+        p.vy += gravity;
+        p.vx += wind;
+        p.x += p.vx;
+        p.y += p.vy;
+
+        p.alpha += Math.sin(t * 0.08 + i) * p.tw;
+        const a = Math.max(0, Math.min(1, p.alpha));
+        const glow = 10 + p.size * 10;
+
+        // хвост
+        ctx.strokeStyle = `rgba(255,210,120,${a*0.22})`;
+        ctx.lineWidth = p.size;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(p.x - p.vx*10, p.y - p.vy*10);
+        ctx.stroke();
+
+        // ядро
+        const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, glow);
+        grad.addColorStop(0, `hsla(${p.hue}, 100%, 70%, ${a})`);
+        grad.addColorStop(0.35, `hsla(${p.hue}, 100%, 60%, ${a*0.55})`);
+        grad.addColorStop(1, `hsla(${p.hue}, 100%, 50%, 0)`);
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, glow, 0, Math.PI*2);
+        ctx.fill();
+
+        p.life--;
+        if (p.y > h + 140 || p.x < -240 || p.x > w + 240 || p.life <= 0){
+          sparks.splice(i,1);
+        }
+      }
+
+      ctx.globalCompositeOperation = 'source-over';
+      requestAnimationFrame(tick);
+    }
+    tick();
+  </script>
 </body>
 </html>
 
-
+  
