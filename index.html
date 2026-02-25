@@ -26,14 +26,9 @@
       --bg2:#121014;
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.72);
-      --gold:#c8a85a;
-      --gold2:#e2c77a;
-      --panel:rgba(255,255,255,.06);
       --stroke:rgba(255,255,255,.10);
       --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --radius: 18px;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -86,42 +81,46 @@
     .wrap{
       max-width: 1100px;
       margin: 0 auto;
-      padding: 24px 18px 80px;
+      padding: 20px 18px 80px;
     }
 
+    /* Header */
     header{
       display:flex;
       justify-content:center;
-      padding-top: 10px;
+      padding-top: 8px;
+      padding-bottom: 6px;
     }
     .logo{
-      width:min(520px, 92vw);
+      width: min(680px, 92vw);
       height:auto;
       filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
     }
 
-    /* Hero */
+    /* Hero: fits the viewport so CTA is visible */
     .hero{
-      margin-top: 10px;
+      min-height: calc(100vh - 160px);
       display:flex;
       flex-direction:column;
       align-items:center;
+      justify-content:center;
       text-align:center;
-      gap: 14px;
-      padding: 18px 0 10px;
+      gap: 12px;
+      padding: 8px 0 18px;
     }
     .hut{
-      width: min(760px, 92vw);
+      width: min(640px, 92vw);
       height:auto;
       filter: drop-shadow(0 30px 90px rgba(0,0,0,.65));
       transform: translate3d(calc(var(--px,0px) * 0.9), calc(var(--py,0px) * 0.9), 0);
       transition: transform .12s ease-out;
       will-change: transform;
+      margin-top: 6px;
     }
 
     .headline{
       margin: 0;
-      font-size: clamp(22px, 3.2vw, 36px);
+      font-size: clamp(22px, 3.0vw, 34px);
       letter-spacing: .2px;
       line-height: 1.15;
     }
@@ -218,9 +217,7 @@
     .iconbtn svg{ width: 20px; height: 20px; fill: rgba(255,255,255,.88); }
 
     /* Sections */
-    section{
-      margin-top: 34px;
-    }
+    section{ margin-top: 34px; }
     .card{
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.10);
@@ -242,34 +239,18 @@
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.04);
     }
-    .service h3{
-      margin: 0 0 6px;
-      font-size: 16px;
-      letter-spacing:.2px;
-    }
-    .service p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-    }
+    .service h3{ margin: 0 0 6px; font-size: 16px; letter-spacing:.2px; }
+    .service p{ margin:0; color: var(--muted); font-size: 14px; line-height: 1.45; }
 
-    .h2{
-      margin: 0 0 12px;
-      font-size: 22px;
-      letter-spacing:.2px;
-    }
+    .h2{ margin: 0 0 12px; font-size: 22px; letter-spacing:.2px; }
+
     .seo p{
       margin: 0 0 12px;
       color: rgba(255,255,255,.82);
       line-height: 1.62;
       font-size: 15px;
     }
-    .seo ul{
-      margin: 10px 0 0 18px;
-      color: rgba(255,255,255,.80);
-      line-height: 1.6;
-    }
+    .seo ul{ margin: 10px 0 0 18px; color: rgba(255,255,255,.80); line-height: 1.6; }
 
     .contacts{
       display:grid;
@@ -295,14 +276,14 @@
       padding-bottom: 22px;
     }
 
-    /* Responsive */
     @media (max-width: 860px){
       .service{ grid-column: span 12; }
       .contacts .col{ grid-column: span 12; }
-      .hut{ width: min(740px, 96vw); }
+      .logo{ width: min(640px, 92vw); }
+      .hero{ min-height: calc(100vh - 140px); }
+      .hut{ width: min(640px, 96vw); }
     }
 
-    /* Reduce motion */
     @media (prefers-reduced-motion: reduce){
       .bg::before{ animation: none; }
       .hut{ transition: none; }
@@ -459,12 +440,6 @@
     // Parallax: mouse + scroll (very subtle)
     (() => {
       const root = document.documentElement;
-      const hut = document.getElementById('hut');
-
-      const setVars = (px, py) => {
-        root.style.setProperty('--px', px.toFixed(2) + 'px');
-        root.style.setProperty('--py', py.toFixed(2) + 'px');
-      };
 
       let mx = 40, my = 30;
       const setLight = () => {
@@ -472,10 +447,15 @@
         root.style.setProperty('--my', my.toFixed(1) + '%');
       };
 
+      const setVars = (px, py) => {
+        root.style.setProperty('--px', px.toFixed(2) + 'px');
+        root.style.setProperty('--py', py.toFixed(2) + 'px');
+      };
+
       const onMove = (e) => {
         const w = window.innerWidth, h = window.innerHeight;
-        const x = (e.clientX / w - 0.5) * 10;   // px
-        const y = (e.clientY / h - 0.5) * 10;   // px
+        const x = (e.clientX / w - 0.5) * 10;
+        const y = (e.clientY / h - 0.5) * 10;
         setVars(x, y);
 
         mx = 40 + (e.clientX / w - 0.5) * 18;
@@ -485,7 +465,6 @@
 
       const onScroll = () => {
         const s = window.scrollY || 0;
-        // tiny scroll parallax so it feels alive
         const y = Math.max(-10, Math.min(10, -s * 0.01));
         root.style.setProperty('--py', y.toFixed(2) + 'px');
       };
