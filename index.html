@@ -33,7 +33,7 @@
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="preload" as="image" href="hut_element_1600.webp" />
 
-  <link rel="stylesheet" href="styles.css?v=9" />
+  <link rel="stylesheet" href="styles.css?v=10" />
 </head>
 
 <body>
@@ -53,15 +53,9 @@
       </div>
 
       <nav class="social" aria-label="Социальные сети">
-        <a class="social__link" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          Instagram
-        </a>
-        <a class="social__link" href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-          Telegram
-        </a>
-        <a class="social__link" href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="VK">
-          VK
-        </a>
+        <a class="social__link" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="social__link" href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a class="social__link" href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer">VK</a>
       </nav>
     </div>
   </header>
@@ -70,30 +64,30 @@
     <div class="container hero">
       <div class="hero__center">
 
-        <div class="hut-wrap" id="parallaxTarget" aria-label="Хижина красоты">
+        <div class="hut-wrap" id="parallaxTarget">
           <img class="hut" src="hut_element_1600.webp" alt="Хижина" loading="eager" decoding="async" />
           <div class="hut__shine" aria-hidden="true"></div>
           <div class="hut__rim" aria-hidden="true"></div>
         </div>
 
         <div class="cta">
-          <div class="dropdown" data-dropdown>
-            <button class="btn btn--primary" type="button" aria-haspopup="menu" aria-expanded="false" data-dropdown-button>
-              Записаться
-              <span class="btn__chev" aria-hidden="true">▾</span>
-            </button>
 
-            <div class="menu" role="menu" aria-label="Способы записи" data-dropdown-menu>
+          <!-- DROPDOWN WITHOUT JS (details) -->
+          <details class="dropdown dropdown-details">
+            <summary class="btn btn--primary">
+              Записаться <span class="btn__chev" aria-hidden="true">▾</span>
+            </summary>
+
+            <div class="menu" role="menu" aria-label="Способы записи" data-open="true">
               <a role="menuitem" class="menu__item" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
               <a role="menuitem" class="menu__item" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
               <a role="menuitem" class="menu__item" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a>
             </div>
-          </div>
+          </details>
 
           <p class="hint">Новосаратовка · Стрижки · Окрашивание · Уход</p>
         </div>
 
-        <!-- SEO TEXT BLOCKS (видимые, но аккуратные) -->
         <section class="seo" aria-label="Описание салона">
           <h1 class="seo__h1">Салон красоты в Новосаратовке — «Хижина красоты»</h1>
 
@@ -112,7 +106,7 @@
             <div class="seo__card">
               <h2 class="seo__h2">Услуги</h2>
               <ul class="seo__list">
-                <li>Стрижки</li>
+                <li>Женские и мужские стрижки</li>
                 <li>Окрашивание: однотон, сложные техники, тонирование</li>
                 <li>Уходовые процедуры для волос</li>
                 <li>Консультация по подбору цвета и домашнего ухода</li>
@@ -130,7 +124,6 @@
             </div>
           </div>
         </section>
-        <!-- /SEO TEXT BLOCKS -->
 
       </div>
     </div>
@@ -147,7 +140,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=9" defer></script>
+  <script src="script.js?v=10" defer></script>
 
   <script type="application/ld+json">
   {
