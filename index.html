@@ -23,21 +23,22 @@
   <meta name="twitter:description" content="Салон красоты в Новосаратовке. Стрижка и окрашивание. Запись онлайн." />
   <meta name="twitter:image" content="https://hizhina.com/hut_element_1600.webp" />
 
-  <!-- PWA -->
+  <!-- PWA / Favicons -->
   <link rel="manifest" href="site.webmanifest" />
-  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="preload" as="image" href="hut_element_1600.webp" />
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-  <!-- Background -->
   <div class="bg" aria-hidden="true">
     <div class="bg__glow bg__glow--a"></div>
     <div class="bg__glow bg__glow--b"></div>
@@ -52,9 +53,15 @@
       </div>
 
       <nav class="social" aria-label="Социальные сети">
-        <a class="social__link" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="Instagram Хижина красоты">Instagram</a>
-        <a class="social__link" href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer" aria-label="Telegram Хижина красоты">Telegram</a>
-        <a class="social__link" href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте Хижина красоты">VK</a>
+        <a class="social__link" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          Instagram
+        </a>
+        <a class="social__link" href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          Telegram
+        </a>
+        <a class="social__link" href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="VK">
+          VK
+        </a>
       </nav>
     </div>
   </header>
@@ -63,14 +70,12 @@
     <div class="container hero">
       <div class="hero__center">
 
-        <!-- HUT (почти во весь экран) -->
-        <div class="hut-wrap" id="parallaxTarget">
+        <div class="hut-wrap" id="parallaxTarget" aria-label="Хижина красоты">
           <img class="hut" src="hut_element_1600.webp" alt="Хижина" loading="eager" decoding="async" />
           <div class="hut__shine" aria-hidden="true"></div>
           <div class="hut__rim" aria-hidden="true"></div>
         </div>
 
-        <!-- CTA -->
         <div class="cta">
           <div class="dropdown" data-dropdown>
             <button class="btn btn--primary" type="button" aria-haspopup="menu" aria-expanded="false" data-dropdown-button>
@@ -88,6 +93,45 @@
           <p class="hint">Новосаратовка · Стрижки · Окрашивание · Уход</p>
         </div>
 
+        <!-- SEO TEXT BLOCKS (видимые, но аккуратные) -->
+        <section class="seo" aria-label="Описание салона">
+          <h1 class="seo__h1">Салон красоты в Новосаратовке — «Хижина красоты»</h1>
+
+          <p class="seo__p">
+            «Хижина красоты» — уютная <strong>парикмахерская в Новосаратовке</strong>, где можно сделать
+            <strong>стрижку волос в Новосаратовке</strong>, подобрать форму и длину, а также выполнить
+            <strong>окрашивание волос в Новосаратовке</strong> с бережным подходом к качеству волос.
+          </p>
+
+          <p class="seo__p">
+            Запись открыта: выбирайте удобный способ — Telegram, Dikidi или звонок. Если вы ищете
+            <strong>салон красоты в Новосаратовке</strong> с аккуратным результатом и понятным сервисом — вы по адресу.
+          </p>
+
+          <div class="seo__grid">
+            <div class="seo__card">
+              <h2 class="seo__h2">Услуги</h2>
+              <ul class="seo__list">
+                <li>Стрижки</li>
+                <li>Окрашивание: однотон, сложные техники, тонирование</li>
+                <li>Уходовые процедуры для волос</li>
+                <li>Консультация по подбору цвета и домашнего ухода</li>
+              </ul>
+            </div>
+
+            <div class="seo__card">
+              <h2 class="seo__h2">Как записаться</h2>
+              <ul class="seo__list">
+                <li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li>
+                <li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li>
+                <li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li>
+              </ul>
+              <p class="seo__note">Ответим, подберём время и поможем выбрать услугу.</p>
+            </div>
+          </div>
+        </section>
+        <!-- /SEO TEXT BLOCKS -->
+
       </div>
     </div>
   </main>
@@ -103,46 +147,8 @@
     </div>
   </footer>
 
-  <script>
-  (() => {
-    // Year
-    const y = document.getElementById("year");
-    if (y) y.textContent = String(new Date().getFullYear());
+  <script src="script.js?v=9" defer></script>
 
-    // Dropdown
-    const btn = document.querySelector("[data-dropdown-button]");
-    const menu = document.querySelector("[data-dropdown-menu]");
-    const closeMenu = () => { if (!menu || !btn) return; menu.dataset.open="false"; btn.setAttribute("aria-expanded","false"); };
-    const openMenu  = () => { if (!menu || !btn) return; menu.dataset.open="true";  btn.setAttribute("aria-expanded","true");  };
-    const toggleMenu = () => { if (!menu) return; (menu.dataset.open==="true") ? closeMenu() : openMenu(); };
-
-    if (btn && menu){
-      closeMenu();
-      btn.addEventListener("click", (e)=>{ e.stopPropagation(); toggleMenu(); });
-      document.addEventListener("click", ()=> closeMenu());
-      document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeMenu(); });
-    }
-
-    // Parallax (subtle)
-    const target = document.getElementById("parallaxTarget");
-    if (!target) return;
-
-    let mx=0,my=0, tx=0,ty=0;
-    window.addEventListener("mousemove",(e)=>{
-      const w=window.innerWidth||1, h=window.innerHeight||1;
-      mx=(e.clientX/w)*2-1; my=(e.clientY/h)*2-1;
-    },{passive:true});
-
-    const animate=()=>{
-      tx += (mx-tx)*0.06; ty += (my-ty)*0.06;
-      target.style.transform = `translate3d(${tx*10}px, ${ty*8}px, 0)`;
-      requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
-  })();
-  </script>
-
-  <!-- LocalBusiness schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
