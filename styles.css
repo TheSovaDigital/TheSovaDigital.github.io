@@ -5,11 +5,10 @@
   --muted:#b9b9c3;
   --border: rgba(255,255,255,.12);
 
-  /* Dark metallic gold */
-  --metal-1:#f3e2b3;
-  --metal-2:#d6b06a;
-  --metal-3:#a77a2f;
-  --metal-4:#5a3f14;
+  /* gold outline */
+  --gold-a: rgba(246,230,182,.75);
+  --gold-b: rgba(202,164,90,.45);
+  --gold-c: rgba(138,106,47,.55);
 
   --shadow: 0 16px 60px rgba(0,0,0,.55);
 }
@@ -23,9 +22,6 @@ body{
   background: radial-gradient(1200px 800px at 50% -10%, #141423, var(--bg));
   overflow-x:hidden;
 }
-
-a{ color:inherit; text-decoration:none; }
-a:hover{ text-decoration: underline; }
 
 .container{
   width:min(1120px, calc(100% - 32px));
@@ -86,10 +82,8 @@ a:hover{ text-decoration: underline; }
 .header__inner{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:16px;
+  justify-content:center; /* чтобы логотип не “улетал” */
 }
-
 .brand__logo{
   height:54px; /* логотип оставляем */
   width:auto;
@@ -99,10 +93,10 @@ a:hover{ text-decoration: underline; }
 
 /* Main */
 .main{
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 110px);
   display:flex;
   align-items:center;
-  padding: 18px 0 22px;
+  padding: 12px 0 22px;
 }
 
 .hero{
@@ -120,11 +114,11 @@ a:hover{ text-decoration: underline; }
   text-align:center;
 }
 
-/* Hut fills page */
+/* Hut fills page (без “сломано”, просто крупнее и аккуратно) */
 .hut-wrap{
   position:relative;
   width: min(1200px, 96vw);
-  height: clamp(380px, 62vh, 820px);
+  height: clamp(420px, 68vh, 860px);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -146,8 +140,8 @@ a:hover{ text-decoration: underline; }
   position:absolute;
   inset: 6% 6% 10% 6%;
   background:
-    radial-gradient(800px 360px at 50% 40%, rgba(255, 220, 150, .16), transparent 65%),
-    radial-gradient(800px 360px at 50% 80%, rgba(120, 190, 255, .09), transparent 70%);
+    radial-gradient(820px 380px at 50% 40%, rgba(255, 220, 150, .14), transparent 65%),
+    radial-gradient(820px 380px at 50% 80%, rgba(120, 190, 255, .08), transparent 70%);
   filter: blur(18px);
   opacity:.9;
   pointer-events:none;
@@ -159,13 +153,14 @@ a:hover{ text-decoration: underline; }
   flex-direction:column;
   gap:10px;
   align-items:center;
-  margin-top:-6px;
+  margin-top:-8px;
 }
 
+/* Buttons — прежняя логика: тёмные, тонкий контур, лёгкая анимация */
 .btn{
   border:0;
   cursor:pointer;
-  font-weight:700;
+  font-weight:600;
   letter-spacing:.2px;
   border-radius: 999px;
   padding: 14px 18px;
@@ -173,66 +168,74 @@ a:hover{ text-decoration: underline; }
   align-items:center;
   justify-content:center;
   gap:10px;
-  box-shadow: var(--shadow);
   user-select:none;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
 }
 
-/* Dark metallic gold button */
 .btn--primary{
-  color:#1a1306;
   min-width: 240px;
-  position:relative;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 35%, rgba(0,0,0,.20) 75%, rgba(0,0,0,.35)),
-    linear-gradient(135deg, var(--metal-1), var(--metal-2) 28%, var(--metal-3) 55%, var(--metal-4));
-  border: 1px solid rgba(255,255,255,.16);
+  color: rgba(255,255,255,.92);
+  background: rgba(18,18,24,.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.12);
   box-shadow:
     0 18px 60px rgba(0,0,0,.55),
-    inset 0 1px 0 rgba(255,255,255,.35),
-    inset 0 -10px 18px rgba(0,0,0,.28);
+    inset 0 1px 0 rgba(255,255,255,.10);
+  position:relative;
 }
 
 .btn--primary::before{
+  /* тонкий золотой контур */
   content:"";
   position:absolute;
-  inset: 2px;
-  border-radius: 999px;
-  background:
-    radial-gradient(220px 60px at 30% 20%, rgba(255,255,255,.55), rgba(255,255,255,0) 60%),
-    radial-gradient(240px 80px at 70% 30%, rgba(255,255,255,.25), rgba(255,255,255,0) 65%);
-  opacity:.45;
+  inset:-1px;
+  border-radius:999px;
+  padding:1px;
+  background: linear-gradient(135deg, var(--gold-a), var(--gold-b), var(--gold-c));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
   pointer-events:none;
+  opacity:.9;
 }
 
 .btn--primary::after{
+  /* лёгкий блик */
   content:"";
   position:absolute;
-  inset:0;
+  inset:1px;
   border-radius:999px;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.35);
+  background: radial-gradient(240px 90px at 25% 25%, rgba(255,255,255,.18), rgba(255,255,255,0) 65%);
+  opacity:0;
+  transition: opacity .18s ease;
   pointer-events:none;
-  opacity:.65;
 }
 
 .btn--primary:hover{
   transform: translateY(-1px);
-  filter: saturate(1.05) contrast(1.02);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.62),
+    inset 0 1px 0 rgba(255,255,255,.12);
+  filter: saturate(1.05);
 }
+.btn--primary:hover::after{ opacity:.9; }
+
 .btn--primary:active{
   transform: translateY(0px);
-  filter: saturate(1.00) contrast(1.00);
+  filter: saturate(1.0);
 }
 
-.btn__chev{ font-size: 14px; opacity:.85; }
+.btn__chev{ font-size: 14px; opacity:.8; }
 
-/* Dropdown menu */
+/* Dropdown menu (glass, без золотой заливки) */
 .dropdown{ position:relative; }
+
 .menu{
   position:absolute;
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  width: min(360px, 90vw);
+  width: min(340px, 86vw);
   padding: 10px;
   border-radius: 18px;
   background: rgba(12,12,18,.72);
@@ -250,28 +253,23 @@ a:hover{ text-decoration: underline; }
   padding: 12px 12px;
   border-radius: 14px;
   font-size: 15px;
-  font-weight:650;
-  color:#1a1306;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,0) 40%, rgba(0,0,0,.18)),
-    linear-gradient(135deg, #e9d49a, #caa45a 40%, #8a6a2f 72%, #4a3210);
-  border: 1px solid rgba(255,255,255,.14);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.28),
-    inset 0 -10px 16px rgba(0,0,0,.22);
-  transition: transform .15s ease, filter .15s ease;
+  color: rgba(255,255,255,.92);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
 }
 .menu__item + .menu__item{ margin-top:8px; }
 .menu__item:hover{
   text-decoration:none;
+  background: rgba(255,255,255,.07);
+  border-color: rgba(246,230,182,.28);
   transform: translateY(-1px);
-  filter: saturate(1.05) contrast(1.02);
 }
 
 /* Mobile */
 @media (max-width: 640px){
   .brand__logo{ height:46px; }
-  .main{ padding: 14px 0 18px; }
-  .hut-wrap{ width:96vw; height: clamp(320px, 54vh, 560px); }
+  .main{ padding: 10px 0 18px; }
+  .hut-wrap{ width:96vw; height: clamp(340px, 58vh, 620px); }
   .btn--primary{ min-width: 220px; }
 }
