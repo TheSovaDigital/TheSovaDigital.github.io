@@ -395,3 +395,8 @@ a:hover{ text-decoration: underline; }
   .seo{ margin-top: 2px; }
   .seo__grid{ grid-template-columns: 1fr; }
 }
+
+/* details dropdown polish */
+.dropdown-details > summary { list-style: none; }
+.dropdown-details > summary::-webkit-details-marker { display: none; }
+.dropdown-details[open] .menu { display: block; }
