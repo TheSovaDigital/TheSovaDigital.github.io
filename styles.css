@@ -3,9 +3,7 @@
   --bg2:#0b0b10;
   --text:#f3f3f6;
   --muted:#b9b9c3;
-  --border: rgba(255,255,255,.12);
 
-  /* gold outline */
   --gold-a: rgba(246,230,182,.75);
   --gold-b: rgba(202,164,90,.45);
   --gold-c: rgba(138,106,47,.55);
@@ -82,10 +80,10 @@ body{
 .header__inner{
   display:flex;
   align-items:center;
-  justify-content:center; /* чтобы логотип не “улетал” */
+  justify-content:center;
 }
 .brand__logo{
-  height:54px; /* логотип оставляем */
+  height:54px;
   width:auto;
   display:block;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
@@ -96,7 +94,7 @@ body{
   min-height: calc(100vh - 110px);
   display:flex;
   align-items:center;
-  padding: 12px 0 22px;
+  padding: 6px 0 18px;
 }
 
 .hero{
@@ -114,11 +112,11 @@ body{
   text-align:center;
 }
 
-/* Hut fills page (без “сломано”, просто крупнее и аккуратно) */
+/* Hut almost full screen */
 .hut-wrap{
   position:relative;
-  width: min(1200px, 96vw);
-  height: clamp(420px, 68vh, 860px);
+  width: min(1400px, 98vw);
+  height: clamp(520px, 76vh, 920px);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -131,20 +129,39 @@ body{
   height:100%;
   object-fit: contain;
   display:block;
-  filter: drop-shadow(0 26px 90px rgba(0,0,0,.75));
+  filter: drop-shadow(0 30px 110px rgba(0,0,0,.78));
   user-select:none;
   -webkit-user-drag:none;
 }
 
+/* soft glow + animated light */
 .hut__shine{
   position:absolute;
-  inset: 6% 6% 10% 6%;
+  inset: 4% 4% 7% 4%;
   background:
-    radial-gradient(820px 380px at 50% 40%, rgba(255, 220, 150, .14), transparent 65%),
-    radial-gradient(820px 380px at 50% 80%, rgba(120, 190, 255, .08), transparent 70%);
+    radial-gradient(900px 420px at 50% 45%, rgba(255, 220, 150, .16), transparent 65%),
+    radial-gradient(900px 420px at 50% 85%, rgba(120, 190, 255, .08), transparent 70%);
   filter: blur(18px);
   opacity:.9;
   pointer-events:none;
+}
+
+.hut__rim{
+  position:absolute;
+  inset: 6% 6% 10% 6%;
+  border-radius: 28px;
+  background:
+    radial-gradient(260px 120px at 30% 20%, rgba(255,255,255,.10), rgba(255,255,255,0) 70%),
+    radial-gradient(300px 140px at 70% 35%, rgba(255,255,255,.06), rgba(255,255,255,0) 72%);
+  filter: blur(10px);
+  opacity:.35;
+  pointer-events:none;
+  animation: rim 6.5s ease-in-out infinite;
+}
+
+@keyframes rim{
+  0%,100%{ opacity:.28; transform: translate3d(0,0,0); }
+  50%{ opacity:.42; transform: translate3d(0,-4px,0); }
 }
 
 /* CTA */
@@ -153,10 +170,10 @@ body{
   flex-direction:column;
   gap:10px;
   align-items:center;
-  margin-top:-8px;
+  margin-top:-10px;
 }
 
-/* Buttons — прежняя логика: тёмные, тонкий контур, лёгкая анимация */
+/* Buttons: dark + thin gold outline + subtle highlight */
 .btn{
   border:0;
   cursor:pointer;
@@ -185,7 +202,6 @@ body{
 }
 
 .btn--primary::before{
-  /* тонкий золотой контур */
   content:"";
   position:absolute;
   inset:-1px;
@@ -200,7 +216,6 @@ body{
 }
 
 .btn--primary::after{
-  /* лёгкий блик */
   content:"";
   position:absolute;
   inset:1px;
@@ -227,7 +242,7 @@ body{
 
 .btn__chev{ font-size: 14px; opacity:.8; }
 
-/* Dropdown menu (glass, без золотой заливки) */
+/* Dropdown menu */
 .dropdown{ position:relative; }
 
 .menu{
@@ -269,7 +284,10 @@ body{
 /* Mobile */
 @media (max-width: 640px){
   .brand__logo{ height:46px; }
-  .main{ padding: 10px 0 18px; }
-  .hut-wrap{ width:96vw; height: clamp(340px, 58vh, 620px); }
+  .main{ padding: 6px 0 14px; }
+  .hut-wrap{
+    width: 98vw;
+    height: clamp(420px, 66vh, 680px);
+  }
   .btn--primary{ min-width: 220px; }
 }
