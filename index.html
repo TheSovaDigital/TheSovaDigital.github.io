@@ -15,11 +15,6 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Хижина красоты — салон красоты в Новосаратовке" />
-  <meta property="og:description" content="Стрижка волос и окрашивание в Новосаратовке. Запись в Telegram или онлайн (Dikidi)." />
-  <meta property="og:type" content="website" />
-
   <style>
     :root{
       --bg:#0b0f10;
@@ -28,7 +23,11 @@
       --muted:rgba(255,255,255,.72);
       --stroke:rgba(255,255,255,.10);
       --shadow: 0 18px 60px rgba(0,0,0,.55);
+
+      /* JS будет подставлять реальную высоту шапки */
+      --headerH: 160px;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -88,35 +87,45 @@
     header{
       display:flex;
       justify-content:center;
-      padding: 8px 0 6px;
+      padding: 10px 0 6px;
     }
-    /* КРУПНЕЕ, как в BUILD */
+
+    /* ВАЖНО: логотип не может занять весь экран */
     .logo{
-      width: min(760px, 92vw);
+      width: min(720px, 92vw);
       height:auto;
+      max-height: 22svh;      /* ключевой ограничитель */
+      max-height: 22dvh;
+      object-fit: contain;
       filter: drop-shadow(0 18px 40px rgba(0,0,0,.55));
     }
 
-    /* Hero: fits viewport so CTA is visible */
+    /* Hero: высота = экран - шапка, чтобы всё влезало */
     .hero{
-      min-height: calc(100vh - 160px);
+      min-height: calc(100svh - var(--headerH));
+      min-height: calc(100dvh - var(--headerH));
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
       text-align:center;
       gap: 10px;
-      padding: 8px 0 18px;
+      padding: 6px 0 16px;
     }
-    /* КРУПНЕЕ, как в BUILD */
+
+    /* Хижина тоже ограничена по высоте */
     .hut{
-      width: min(720px, 92vw);
+      width: min(760px, 92vw);
       height:auto;
+      max-height: 40svh;
+      max-height: 40dvh;
+      object-fit: contain;
+
       filter: drop-shadow(0 30px 90px rgba(0,0,0,.65));
       transform: translate3d(calc(var(--px,0px) * 0.9), calc(var(--py,0px) * 0.9), 0);
       transition: transform .12s ease-out;
       will-change: transform;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     .headline{
@@ -280,9 +289,9 @@
     @media (max-width: 860px){
       .service{ grid-column: span 12; }
       .contacts .col{ grid-column: span 12; }
-      .logo{ width: min(680px, 92vw); }
-      .hero{ min-height: calc(100vh - 150px); }
-      .hut{ width: min(720px, 96vw); }
+      .logo{ max-height: 20svh; max-height: 20dvh; }
+      .hut{ max-height: 42svh; max-height: 42dvh; }
+      .hero{ padding-top: 2px; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -297,7 +306,7 @@
   <div class="grain"></div>
 
   <div class="wrap">
-    <header>
+    <header id="siteHeader">
       <img class="logo" src="/logo_hizhina.webp" alt="Хижина красоты" width="2048" height="1365" loading="eager" />
     </header>
 
@@ -423,6 +432,19 @@
   </div>
 
   <script>
+    // Measure header height for perfect hero fit
+    (() => {
+      const root = document.documentElement;
+      const header = document.getElementById('siteHeader');
+      const setH = () => {
+        const h = header ? Math.ceil(header.getBoundingClientRect().height) : 160;
+        root.style.setProperty('--headerH', h + 'px');
+      };
+      window.addEventListener('resize', setH, {passive:true});
+      window.addEventListener('load', setH, {passive:true});
+      setH();
+    })();
+
     // Dropdown
     (() => {
       const dd = document.getElementById('signup');
