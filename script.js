@@ -15,7 +15,7 @@
   });
 })();
 
-// лёгкий 3D tilt для хижины
+// лёгкий 3D tilt для хижины (очень мягко)
 (() => {
   const target = document.getElementById("parallaxTarget");
   if (!target) return;
@@ -24,12 +24,10 @@
   if (prefersReduce) return;
 
   const isTouch = window.matchMedia && window.matchMedia("(hover: none)").matches;
-
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
-  // desktop: наклон по мыши
   if (!isTouch) {
-    const onMove = (e) => {
+    target.addEventListener("mousemove", (e) => {
       const r = target.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width;
       const py = (e.clientY - r.top) / r.height;
@@ -39,42 +37,11 @@
 
       target.style.setProperty("--rx", rx.toFixed(2) + "deg");
       target.style.setProperty("--ry", ry.toFixed(2) + "deg");
-    };
+    });
 
-    const onLeave = () => {
+    target.addEventListener("mouseleave", () => {
       target.style.setProperty("--rx", "0deg");
       target.style.setProperty("--ry", "0deg");
-    };
-
-    target.addEventListener("mousemove", onMove);
-    target.addEventListener("mouseleave", onLeave);
-    return;
+    });
   }
-
-  // mobile: очень мягкий tilt по deviceorientation (если браузер разрешит)
-  const enableDeviceTilt = async () => {
-    try {
-      if (typeof DeviceOrientationEvent !== "undefined" &&
-          typeof DeviceOrientationEvent.requestPermission === "function") {
-        // iOS: нужно разрешение по жесту — но мы не навязываем, просто пробуем тихо
-        // если будет ошибка — ничего страшного, останется анимация "дыхания"
-        return;
-      }
-
-      window.addEventListener("deviceorientation", (ev) => {
-        const beta = ev.beta ?? 0;  // наклон вперед/назад
-        const gamma = ev.gamma ?? 0; // наклон влево/вправо
-
-        const rx = clamp((beta - 10) / 25 * 6, -5, 5);
-        const ry = clamp(gamma / 25 * 6, -5, 5);
-
-        target.style.setProperty("--rx", rx.toFixed(2) + "deg");
-        target.style.setProperty("--ry", ry.toFixed(2) + "deg");
-      }, { passive: true });
-    } catch {
-      // ничего не делаем
-    }
-  };
-
-  enableDeviceTilt();
 })();
