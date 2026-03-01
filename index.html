@@ -33,7 +33,7 @@
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="preload" as="image" href="hizh.png" />
 
-  <link rel="stylesheet" href="styles.css?v=20260302a" />
+  <link rel="stylesheet" href="styles.css?v=20260302_fix1" />
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -62,7 +62,7 @@
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
 
-  <!-- Фон (без леса/камней — только мягкая текстура + блики) -->
+  <!-- Фон: мягкая текстура + блики -->
   <div class="bg" aria-hidden="true">
     <div class="bg__glow bg__glow--a"></div>
     <div class="bg__glow bg__glow--b"></div>
@@ -93,76 +93,78 @@
 
   <main id="main" class="main">
     <div class="container hero">
-      <div class="hero__center">
 
-        <!-- Хижина (без масок/ореолов/полос) -->
-        <div class="hut-wrap" aria-hidden="false">
-          <img class="hut" src="hizh.png" alt="Хижина" loading="eager" decoding="async" />
-        </div>
+      <!-- ВАЖНО: above-fold = первый экран. SEO ниже него, чтобы на мобиле не лез на главный экран -->
+      <section class="above-fold" aria-label="Главный экран">
+        <div class="hero__center">
 
-        <div class="cta">
-          <!-- dropdown: работает и без JS -->
-          <details class="dropdown" id="booking">
-            <summary class="btn btn--primary">
-              Записаться <span class="btn__chev" aria-hidden="true">▾</span>
-            </summary>
-
-            <div class="menu" role="menu" aria-label="Способы записи">
-              <a role="menuitem" class="menu__item" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
-              <a role="menuitem" class="menu__item" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
-              <a role="menuitem" class="menu__item" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a>
-            </div>
-          </details>
-
-          <!-- вместо “текста” — красивые пилюли -->
-          <div class="pills" aria-label="Теги">
-            <span class="pill">СПб / Лен. область</span>
-            <span class="pill">Новосаратовка</span>
-            <span class="pill">Стрижки</span>
-            <span class="pill">Окрашивание</span>
-            <span class="pill">Уход</span>
+          <div class="hut-wrap">
+            <img class="hut" src="hizh.png" alt="Хижина" loading="eager" decoding="async" />
           </div>
-        </div>
 
-        <!-- SEO-блок оставляем, но он НЕ ломает вид (узкий контейнер, без выезда вправо) -->
-        <section class="seo" aria-label="Описание салона">
-          <h1 class="seo__h1">Салон красоты в Новосаратовке — «Хижина красоты»</h1>
+          <div class="cta">
+            <details class="dropdown" id="booking">
+              <summary class="btn btn--primary">
+                Записаться <span class="btn__chev" aria-hidden="true">▾</span>
+              </summary>
 
-          <p class="seo__p">
-            «Хижина красоты» — уютная студия в Новосаратовке (Санкт-Петербург / Ленинградская область),
-            где можно сделать <strong>стрижку</strong>, подобрать форму и длину, а также выполнить
-            <strong>окрашивание</strong> с бережным подходом к качеству волос.
-          </p>
-
-          <p class="seo__p">
-            Запись открыта: выбирайте удобный способ — Telegram, Dikidi или звонок.
-            Если вы ищете <strong>салон красоты в Новосаратовке</strong> с аккуратным результатом и понятным сервисом — вы по адресу.
-          </p>
-
-          <div class="seo__grid">
-            <div class="seo__card">
-              <h2 class="seo__h2">Услуги</h2>
-              <ul class="seo__list">
-                <li>Стрижки</li>
-                <li>Окрашивание: однотон, сложные техники, тонирование</li>
-                <li>Уходовые процедуры для волос</li>
-                <li>Консультация по подбору цвета и домашнего ухода</li>
-              </ul>
-            </div>
-
-            <div class="seo__card">
-              <h2 class="seo__h2">Как записаться</h2>
-              <div class="seo__actions">
-                <a class="action action--tg" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
-                <a class="action action--dk" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
-                <a class="action action--ph" href="tel:+79111115528">Позвонить</a>
+              <div class="menu" role="menu" aria-label="Способы записи">
+                <a role="menuitem" class="menu__item" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a role="menuitem" class="menu__item" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
+                <a role="menuitem" class="menu__item" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a>
               </div>
-              <p class="seo__note">Ответим, подберём время и поможем выбрать услугу.</p>
+            </details>
+
+            <div class="pills" aria-label="Теги">
+              <span class="pill">СПб / Лен. область</span>
+              <span class="pill">Новосаратовка</span>
+              <span class="pill">Стрижки</span>
+              <span class="pill">Окрашивание</span>
+              <span class="pill">Уход</span>
             </div>
           </div>
-        </section>
 
-      </div>
+        </div>
+      </section>
+
+      <!-- SEO ниже первого экрана -->
+      <section class="seo" aria-label="Описание салона">
+        <h1 class="seo__h1">Салон красоты в Новосаратовке — «Хижина красоты»</h1>
+
+        <p class="seo__p">
+          «Хижина красоты» — уютная студия в Новосаратовке (Санкт-Петербург / Ленинградская область),
+          где можно сделать <strong>стрижку</strong>, подобрать форму и длину, а также выполнить
+          <strong>окрашивание</strong> с бережным подходом к качеству волос.
+        </p>
+
+        <p class="seo__p">
+          Запись открыта: выбирайте удобный способ — Telegram, Dikidi или звонок.
+          Если вы ищете <strong>салон красоты в Новосаратовке</strong> с аккуратным результатом и понятным сервисом — вы по адресу.
+        </p>
+
+        <div class="seo__grid">
+          <div class="seo__card">
+            <h2 class="seo__h2">Услуги</h2>
+            <ul class="seo__list">
+              <li>Стрижки</li>
+              <li>Окрашивание: однотон, сложные техники, тонирование</li>
+              <li>Уходовые процедуры для волос</li>
+              <li>Консультация по подбору цвета и домашнего ухода</li>
+            </ul>
+          </div>
+
+          <div class="seo__card">
+            <h2 class="seo__h2">Как записаться</h2>
+            <div class="seo__actions">
+              <a class="action action--tg" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a class="action action--dk" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
+              <a class="action action--ph" href="tel:+79111115528">Позвонить</a>
+            </div>
+            <p class="seo__note">Ответим, подберём время и поможем выбрать услугу.</p>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
@@ -179,7 +181,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=20260302a" defer></script>
+  <script src="script.js?v=20260302_fix1" defer></script>
 
   <script type="application/ld+json">
   {
