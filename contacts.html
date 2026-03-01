@@ -2,64 +2,288 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Контакты — Хижина красоты | Санкт-Петербург</title>
-  <meta name="description" content="Хижина красоты — частная студия в Санкт-Петербурге (Новосаратовка). Запись по предварительной договорённости." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0f" />
+
+  <title>Контакты — Хижина красоты</title>
+  <meta name="description" content="Контакты студии «Хижина красоты»: адрес Новосаратовка 212А (Всеволожский район, Ленинградская область). Время работы 10:00–22:00. Запись в Telegram или Dikidi." />
+  <meta name="keywords" content="Хижина красоты контакты, Новосаратовка 212А, Всеволожский район салон, салон красоты рядом Город Первых, Южная Нева, Город Звезд" />
+  <link rel="canonical" href="https://hizhina.com/contacts.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Контакты — Хижина красоты" />
+  <meta property="og:description" content="Адрес: Новосаратовка 212А. Время работы 10:00–22:00. Запись онлайн." />
+  <meta property="og:url" content="https://hizhina.com/contacts.html" />
+  <meta property="og:image" content="https://hizhina.com/hizh.png" />
+
+  <!-- Favicons / PWA -->
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- Yandex.Metrika -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107055715', 'ym');
+
+    ym(107055715, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/107055715" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FD5LJMFEWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FD5LJMFEWE');
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.72);
+      --stroke:rgba(255,255,255,.12);
+      --max:980px;
+      --goldA:rgba(246,230,182,.92);
+      --goldB:rgba(202,164,90,.62);
+      --goldC:rgba(138,106,47,.75);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      overflow-x:hidden;
+    }
+    .bg{
+      position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),
+        radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),
+        radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),
+        linear-gradient(#07070b, #050509);
+    }
+    .container{width:min(var(--max), 100% - 32px); margin:0 auto;}
+    header{
+      background:linear-gradient(to bottom, rgba(6,6,9,.60), rgba(6,6,9,.18), transparent);
+      backdrop-filter:saturate(1.05) blur(6px);
+    }
+    .header-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0;
+    }
+    .brand a{display:inline-flex; align-items:center; text-decoration:none;}
+    .brand img{
+      height:66px; width:auto; display:block;
+      filter: drop-shadow(0 0 14px rgba(255,210,120,.40));
+    }
+
+    .actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .pill{
+      color:rgba(255,255,255,.86);
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      padding:10px 14px;
+      border-radius:999px;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .pill:hover{
+      border-color:rgba(214,178,106,.45);
+      background:rgba(214,178,106,.05);
+      color:rgba(255,255,255,.92);
+    }
+
+    main{padding:26px 0 54px;}
+    .card{
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      padding:22px;
+    }
+    h1{margin:0 0 10px; font-size:28px; line-height:1.15;}
+    p{margin:10px 0; color:var(--muted); line-height:1.6;}
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .box{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+      padding:16px;
+    }
+    .box h2{margin:0 0 10px; font-size:18px;}
+    .list{margin:0; padding-left:18px; color:var(--muted); line-height:1.55;}
+
+    .btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 16px;
+      border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(214,178,106,.55);
+      background:rgba(0,0,0,.18);
+      position:relative;
+      color:rgba(255,255,255,.92);
+    }
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius:14px;
+      padding:1px;
+      background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .seo{
+      margin-top:14px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+    }
+    .seo h2{margin:0 0 8px; font-size:16px; color:rgba(255,255,255,.86);}
+    .seo p{margin:8px 0; font-size:14px;}
+
+    footer{padding:18px 0 30px; color:rgba(255,255,255,.55); font-size:13px;}
+    .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+    .footer-links{display:flex; gap:14px; flex-wrap:wrap;}
+    .footer-links a{color:rgba(255,255,255,.62); text-decoration:none;}
+    .footer-links a:hover{color:rgba(255,255,255,.88);}
+
+    @media (max-width:720px){
+      .brand img{height:58px;}
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:24px;}
+      .actions{justify-content:flex-start;}
+    }
+  </style>
 </head>
 
 <body>
-  <main class="container" style="padding:60px 0; max-width:900px;">
+  <div class="bg" aria-hidden="true"></div>
 
-    <h1>Контакты</h1>
+  <header>
+    <div class="container header-inner">
+      <div class="brand" aria-label="Хижина красоты">
+        <a href="index.html" aria-label="На главную страницу">
+          <img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
+        </a>
+      </div>
 
-    <p>
-      «Хижина красоты» — частная студия в Санкт-Петербурге.
-    </p>
+      <div class="actions" aria-label="Быстрые действия">
+        <a class="pill" href="index.html" aria-label="Вернуться на главную">На главную</a>
+      </div>
+    </div>
+  </header>
 
-    <p>
-      📍 Санкт-Петербург, Новосаратовка<br>
-      Точный адрес сообщается после записи.
-    </p>
+  <main class="container">
+    <section class="card" aria-label="Контакты">
+      <h1>Контакты</h1>
 
-    <p>
-      Студия работает по предварительной договорённости.
-    </p>
+      <p>
+        «Хижина красоты» — частная уютная студия в Новосаратовке.
+        Здесь можно спокойно записаться онлайн и заранее обсудить услугу.
+      </p>
 
-    <p>
-      📞 <a href="tel:+79111115528">+7 (911) 111-55-28</a>
-    </p>
+      <div class="grid">
+        <div class="box">
+          <h2>Запись</h2>
+          <ul class="list">
+            <li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li>
+            <li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li>
+            <li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li>
+          </ul>
+          <a class="btn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Открыть Dikidi</a>
+        </div>
 
-    <p>
-      Telegram: <a href="https://t.me/ImAnitka" target="_blank">написать</a><br>
-      Instagram: <a href="https://instagram.com/thehizhina" target="_blank">перейти</a><br>
-      VK: <a href="https://vk.com/thehizhina" target="_blank">перейти</a>
-    </p>
+        <div class="box">
+          <h2>Адрес и время</h2>
+          <ul class="list">
+            <li><strong>Время работы:</strong> ежедневно 10:00–22:00</li>
+            <li><strong>Адрес:</strong> Ленинградская область, Всеволожский район, деревня Новосаратовка, 212А</li>
+          </ul>
+          <a class="btn" href="index.html">Вернуться на главную</a>
+        </div>
+      </div>
 
-    <hr style="margin:40px 0; opacity:0.2;">
-
-    <p style="color:rgba(255,255,255,0.6); font-size:14px;">
-      Частная студия женских стрижек и окрашивания в Санкт-Петербурге.
-    </p>
-
+      <div class="seo" aria-label="SEO-блок">
+        <h2>Рядом и как найти</h2>
+        <p>
+          Студия удобно расположена рядом с крупными жилыми кварталами: <strong>ЖК «Город Первых»</strong>,
+          <strong>ЖК «Город Звёзд»</strong> и <strong>ЖК «Южная Нева»</strong>.
+          Если вы ищете <strong>салон красоты в Новосаратовке</strong> (СПБ/Ленинградская область) — можно добраться быстро.
+        </p>
+        <p>
+          Запись — через Telegram или онлайн в Dikidi: так мы заранее согласуем время и услугу, чтобы всё прошло спокойно и точно.
+        </p>
+      </div>
+    </section>
   </main>
 
-  <!-- Микроразметка для Яндекса и Google -->
+  <footer>
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Хижина красоты</small>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer">VK</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "name": "Хижина красоты",
-    "url": "https://hizhina.com",
+    "url": "https://hizhina.com/contacts.html",
     "telephone": "+79111115528",
-    "areaServed": "Санкт-Петербург",
+    "openingHours": "Mo-Su 10:00-22:00",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Санкт-Петербург",
-      "addressCountry": "RU"
-    }
+      "addressCountry": "RU",
+      "addressRegion": "Ленинградская область",
+      "addressLocality": "деревня Новосаратовка",
+      "streetAddress": "212А"
+    },
+    "areaServed": [
+      "Санкт-Петербург",
+      "Ленинградская область",
+      "Новосаратовка",
+      "Всеволожский район"
+    ],
+    "sameAs": [
+      "https://instagram.com/thehizhina",
+      "https://t.me/TheHizhina",
+      "https://vk.com/thehizhina"
+    ]
   }
   </script>
-
 </body>
 </html>
