@@ -1,114 +1,153 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#000000" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ВАЖНО: метка версии в title -->
-  <title>Хижина красоты — TEST v2026-03-01-AAA</title>
+<title>Хижина красоты — салон красоты в Новосаратовке</title>
 
-  <!-- Попытка сбить кэш (не всегда помогает, но лишним не будет) -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  background:#050509;
+  color:#fff;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  overflow-x:hidden;
+}
 
-  <style>
-    html,body{height:100%;margin:0}
-    body{
-      background:#050509;
-      color:#fff;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      overflow-x:hidden;
-    }
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 28px;
+}
+.logo{
+  height:64px;
+  filter:drop-shadow(0 0 25px rgba(255,210,120,.35));
+}
 
-    /* БОЛЬШАЯ МЕТКА, чтобы понять что реально обновилось */
-    .badge{
-      position:fixed; z-index:999999;
-      left:12px; top:12px;
-      padding:10px 12px;
-      border-radius:12px;
-      background:rgba(255,0,120,.18);
-      border:1px solid rgba(255,0,120,.55);
-      box-shadow:0 10px 30px rgba(0,0,0,.6);
-      font-weight:700;
-      letter-spacing:.2px;
-    }
+/* SOCIAL */
+.social{
+  display:flex;
+  gap:10px;
+}
+.social a{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.15);
+  text-decoration:none;
+}
 
-    .wrap{
-      min-height:100dvh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:18px;
-      padding:18px;
-      text-align:center;
-    }
+/* HERO */
+.hero{
+  min-height:calc(100vh - 92px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+}
 
-    .logo{
-      height:64px;
-      filter: drop-shadow(0 0 25px rgba(255,210,120,.35));
-    }
+/* HUT */
+.hut{
+  width:min(1100px, 95vw);
+  height:min(70vh, 700px);
+  object-fit:contain;
+  filter:drop-shadow(0 30px 120px rgba(0,0,0,.85));
+  animation:float 6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
 
-    .hut{
-      width:min(1100px, 96vw);
-      height:min(70vh, 680px);
-      object-fit:contain;
-      filter: drop-shadow(0 24px 110px rgba(0,0,0,.8));
-      animation: float 6s ease-in-out infinite;
-      pointer-events:none;
-    }
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
-    }
-
-    .btn{
-      border-radius:999px;
-      padding:14px 20px;
-      min-width:240px;
-      font-weight:700;
-      color:#fff;
-      background:rgba(18,18,24,.55);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 18px 60px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.10);
-      position:relative;
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
-    }
-    .btn:before{
-      content:"";
-      position:absolute; inset:-1px;
-      border-radius:999px;
-      padding:1px;
-      background:linear-gradient(135deg, rgba(246,230,182,.85), rgba(202,164,90,.55), rgba(138,106,47,.65));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events:none;
-    }
-  </style>
+/* BUTTON */
+.btn{
+  border-radius:999px;
+  padding:14px 24px;
+  min-width:260px;
+  font-weight:700;
+  color:#fff;
+  background:rgba(18,18,24,.55);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 18px 60px rgba(0,0,0,.6);
+  position:relative;
+  cursor:pointer;
+  font-size:16px;
+}
+.btn:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:999px;
+  padding:1px;
+  background:linear-gradient(135deg,
+    rgba(246,230,182,.85),
+    rgba(202,164,90,.55),
+    rgba(138,106,47,.65)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.btn:hover{
+  transform:translateY(-2px);
+}
+.menu{
+  margin-top:10px;
+  display:none;
+  flex-direction:column;
+  gap:8px;
+}
+.menu a{
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  text-align:center;
+}
+.menu.show{
+  display:flex;
+}
+</style>
 </head>
 
 <body>
-  <div class="badge">TEST v2026-03-01-AAA</div>
 
-  <div class="wrap">
-    <img class="logo" src="logo_hizhina.webp" alt="Хижина красоты" />
-    <img class="hut" src="hizh.png" alt="Хижина" />
-
-    <!-- КНОПКА-ТЕСТ: если не появляется alert — значит не твой index.html -->
-    <button class="btn" onclick="alert('OK: кнопка кликается. Значит файл обновился!')">
-      Записаться (TEST)
-    </button>
+<header class="header">
+  <img class="logo" src="logo_hizhina.webp" alt="Хижина красоты">
+  <div class="social">
+    <a href="https://instagram.com/thehizhina" target="_blank">IG</a>
+    <a href="https://t.me/TheHizhina" target="_blank">TG</a>
+    <a href="https://vk.com/thehizhina" target="_blank">VK</a>
   </div>
+</header>
 
-  <script>
-    // Если у тебя вдруг был Service Worker и он кэширует старое — снесём
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
-    }
-  </script>
+<section class="hero">
+  <img class="hut" src="hizh.png" alt="">
+  <button class="btn" onclick="toggleMenu()">Записаться ▾</button>
+
+  <div id="menu" class="menu">
+    <a href="https://t.me/ImAnitka" target="_blank">Telegram</a>
+    <a href="https://dikidi.ru/1913894" target="_blank">Dikidi</a>
+    <a href="tel:+79111115528">Позвонить</a>
+  </div>
+</section>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
