@@ -71,7 +71,7 @@
       overflow-x:hidden;
     }
 
-    /* Тонкая шапка */
+    /* ШАПКА (тонкая) */
     .header{
       display:flex;
       align-items:center;
@@ -80,13 +80,13 @@
       gap:12px;
     }
 
-    /* Логотип заметнее */
+    /* ЛОГО (заметнее, но без “плашек”) */
     .logo{
       height:64px;
       width:auto;
       filter:
-        drop-shadow(0 0 18px rgba(255,210,120,.45))
-        drop-shadow(0 10px 35px rgba(0,0,0,.65));
+        drop-shadow(0 0 14px rgba(255,210,120,.40))
+        drop-shadow(0 10px 30px rgba(0,0,0,.65));
     }
 
     /* Соцсети — люкс-пилюли */
@@ -105,12 +105,12 @@
       border-radius:999px;
       background:rgba(255,255,255,.05);
       border:1px solid var(--stroke);
-      box-shadow:0 14px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.08);
+      box-shadow:0 14px 40px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.08);
       transition:transform .15s ease, background .15s ease;
     }
     .social a:hover{ transform:translateY(-1px); background:rgba(255,255,255,.07); }
 
-    /* Центр */
+    /* ЦЕНТР */
     .hero{
       min-height:calc(100vh - 90px);
       display:flex;
@@ -121,42 +121,17 @@
       padding:12px 16px 22px;
     }
 
-    /* Обёртка под маску (если понадобится регулировка) */
-    .hut-wrap{
+    /* ХИЖИНА — БЕЗ МАСОК (чтобы не появлялись полосы) */
+    .hut{
       width:min(1120px, 96vw);
       height:min(70vh, 720px);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    /* Хижина: убираем круг маской */
-    .hut{
-      width:100%;
-      height:100%;
       object-fit:contain;
       display:block;
 
-      /* мягкая тень */
-      filter:drop-shadow(0 30px 120px rgba(0,0,0,.85));
-
-      /* плавное "парение" */
-      animation:float 6s ease-in-out infinite;
+      /* Важно: НЕ добавляем сильные контуры/подсветки по краю */
+      filter: drop-shadow(0 26px 90px rgba(0,0,0,.85));
+      animation: float 6s ease-in-out infinite;
       pointer-events:none;
-
-      /* ВОТ ЭТО УБИРАЕТ КРУГЛЫЙ ОРЕОЛ */
-      -webkit-mask-image: radial-gradient(circle at 50% 55%,
-        rgba(0,0,0,1) 58%,
-        rgba(0,0,0,0) 86%
-      );
-      mask-image: radial-gradient(circle at 50% 55%,
-        rgba(0,0,0,1) 58%,
-        rgba(0,0,0,0) 86%
-      );
-      -webkit-mask-repeat:no-repeat;
-      mask-repeat:no-repeat;
-      -webkit-mask-size:100% 100%;
-      mask-size:100% 100%;
     }
 
     @keyframes float{
@@ -164,6 +139,7 @@
       50%{transform:translateY(-10px)}
     }
 
+    /* КНОПКА */
     .btn{
       border-radius:999px;
       padding:14px 24px;
@@ -207,11 +183,11 @@
       border-radius:14px;
       background:rgba(255,255,255,.05);
       border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 14px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+      box-shadow:0 14px 40px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.06);
       text-align:center;
     }
 
-    /* Мобилка */
+    /* МОБИЛКА */
     @media (max-width: 520px){
       .header{ padding:10px 12px; }
       .logo{ height:52px; }
@@ -233,9 +209,7 @@
   </header>
 
   <main class="hero">
-    <div class="hut-wrap">
-      <img class="hut" src="hizh.png" alt="Хижина" />
-    </div>
+    <img class="hut" src="hizh.png" alt="Хижина" />
 
     <button class="btn" type="button" onclick="toggleMenu()">Записаться ▾</button>
 
