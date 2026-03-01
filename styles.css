@@ -2,7 +2,6 @@
   --bg:#07070a;
   --bg2:#0b0b10;
   --text:#f3f3f6;
-  --muted:#b9b9c3;
 
   --gold-a: rgba(246,230,182,.82);
   --gold-b: rgba(202,164,90,.52);
@@ -16,7 +15,7 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
   color:var(--text);
-  overflow-x:hidden; /* главное против "уехало вправо" */
+  overflow-x:hidden; /* лечит "уехало вправо" */
 }
 
 img, svg{ max-width:100%; height:auto; }
@@ -36,45 +35,50 @@ a:hover{ text-decoration: underline; }
   color:var(--text); z-index:9999;
 }
 
-/* BG */
+/* BG (без плашек/полос) */
 .bg{
   position:fixed; inset:0; z-index:-2; overflow:hidden;
   background:
-    radial-gradient(900px 700px at 25% 15%, rgba(255, 215, 140, .10), transparent 60%),
-    radial-gradient(900px 700px at 80% 30%, rgba(140, 190, 255, .10), transparent 60%),
+    radial-gradient(1200px 900px at 25% 10%, rgba(255, 210, 120, .10), transparent 60%),
+    radial-gradient(1200px 900px at 85% 25%, rgba(120, 185, 255, .10), transparent 60%),
     linear-gradient(180deg, var(--bg2), var(--bg));
 }
-.bg__glow{ position:absolute; width:900px; height:900px; border-radius:50%; filter: blur(70px); opacity:.55; animation: float 12s ease-in-out infinite; }
-.bg__glow--a{ left:-220px; top:-280px; background: rgba(255, 210, 120, .18); }
-.bg__glow--b{ right:-260px; top:-220px; background: rgba(120, 185, 255, .18); animation-duration: 16s; }
-@keyframes float{ 0%,100%{ transform: translate3d(0,0,0) scale(1);} 50%{ transform: translate3d(40px, 30px,0) scale(1.04);} }
-.bg__grain{ position:absolute; inset:0; opacity:.09; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
-.bg__vignette{ position:absolute; inset:-10%; background: radial-gradient(closest-side, transparent 55%, rgba(0,0,0,.65) 100%); pointer-events:none; }
+.bg__glow{
+  position:absolute;
+  width:900px; height:900px;
+  border-radius:50%;
+  filter: blur(80px);
+  opacity:.50;
+  animation: float 14s ease-in-out infinite;
+}
+.bg__glow--a{ left:-260px; top:-320px; background: rgba(255, 210, 120, .16); }
+.bg__glow--b{ right:-320px; top:-260px; background: rgba(120, 185, 255, .16); animation-duration:18s; }
 
-/* HEADER */
+@keyframes float{
+  0%,100%{ transform: translate3d(0,0,0) scale(1); }
+  50%{ transform: translate3d(36px, 26px,0) scale(1.03); }
+}
+
+/* HEADER (тонкий, без "кнопки" под логотипом) */
 .header{
-  position: relative;
-  z-index: 20;
-  background: rgba(8,8,12,.14);
-  border-bottom: 1px solid rgba(255,255,255,.05);
+  background: transparent;
 }
 .header__inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  min-height:56px;
-  padding:6px 0;
+  min-height:52px;
+  padding:10px 0;
 }
 
-/* brand */
 .brand{
   display:flex;
   align-items:center;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.22);
-  border: 1px solid rgba(255,255,255,.07);
+  padding:0;            /* убрали подложку */
+  background: none;     /* убрали подложку */
+  border: none;         /* убрали подложку */
+  border-radius:0;
 }
 .brand__logo{
   height: 56px;
@@ -82,11 +86,10 @@ a:hover{ text-decoration: underline; }
   display:block;
   filter:
     drop-shadow(0 10px 30px rgba(0,0,0,.72))
-    drop-shadow(0 0 26px rgba(255,220,150,.34))
-    drop-shadow(0 0 70px rgba(255,200,120,.16));
+    drop-shadow(0 0 26px rgba(255,220,150,.30));
 }
 
-/* social icons */
+/* SOCIAL */
 .social{
   display:flex;
   align-items:center;
@@ -100,7 +103,6 @@ a:hover{ text-decoration: underline; }
   border-radius:999px;
   display:grid;
   place-items:center;
-
   background: rgba(255,255,255,.03);
   border: 1px solid rgba(255,255,255,.10);
   box-shadow: 0 10px 30px rgba(0,0,0,.35);
@@ -109,7 +111,7 @@ a:hover{ text-decoration: underline; }
 .social__icon svg{
   width:18px;
   height:18px;
-  fill: rgba(255,255,255,.78);
+  fill: rgba(255,255,255,.80);
 }
 .social__icon:hover{
   transform: translateY(-1px);
@@ -117,17 +119,16 @@ a:hover{ text-decoration: underline; }
   border-color: rgba(246,230,182,.22);
 }
 
-/* MAIN */
+/* HERO */
 .main{ padding: 0 0 18px; }
 
-/* HERO */
 .hero{
-  min-height: calc(100dvh - 56px);
+  min-height: calc(100dvh - 52px);
   display:flex;
   align-items:center;
   justify-content:center;
-  padding: 10px 0 10px;
-  overflow:hidden;  /* против бокового вылезания */
+  padding: 8px 0 10px;
+  overflow:hidden;
 }
 .hero__inner{
   width:100%;
@@ -141,7 +142,7 @@ a:hover{ text-decoration: underline; }
   position:relative;
 }
 
-/* HUT (ВАЖНО: клики не перехватывает) */
+/* HUT — без полос/подложек, клики не перехватывает */
 .hut-wrap{
   width: 100%;
   max-width: 1200px;
@@ -149,8 +150,8 @@ a:hover{ text-decoration: underline; }
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  pointer-events:none; /* чтобы кнопка всегда нажималась */
+  overflow: visible;        /* важно: чтобы не рисовались "обрезы" */
+  pointer-events:none;      /* чтобы не ломать клики по кнопке */
   position:relative;
   z-index: 1;
 }
@@ -164,23 +165,31 @@ a:hover{ text-decoration: underline; }
   height:100%;
   object-fit: contain;
   display:block;
-  filter: drop-shadow(0 34px 120px rgba(0,0,0,.80));
+  background: transparent;
+  filter: drop-shadow(0 26px 110px rgba(0,0,0,.78));
   animation: hutFloat 5.8s ease-in-out infinite;
 }
 
 /* CTA */
 .cta{
   position:relative;
-  z-index: 10; /* поверх всего */
+  z-index: 10;
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:10px;
 }
 
+/* dropdown toggle (без JS) */
+.dd__toggle{
+  position:absolute;
+  width:1px; height:1px;
+  opacity:0;
+  pointer-events:none;
+}
+
 /* Button */
 .btn{
-  border:0;
   cursor:pointer;
   font-weight:600;
   letter-spacing:.2px;
@@ -236,7 +245,7 @@ a:hover{ text-decoration: underline; }
   display:none;
   z-index: 50;
 }
-.menu.is-open{ display:block; }
+.dd__toggle:checked ~ .menu{ display:block; }
 
 .menu__item{
   display:flex;
@@ -258,7 +267,7 @@ a:hover{ text-decoration: underline; }
   transform: translateY(-1px);
 }
 
-/* SEO (исправление "уехал вправо") */
+/* SEO */
 .seo{
   width:100%;
   max-width:100%;
@@ -269,7 +278,6 @@ a:hover{ text-decoration: underline; }
   margin: 0 0 10px;
   font-size: clamp(22px, 2.2vw, 30px);
   line-height: 1.2;
-  letter-spacing: .2px;
 }
 .seo__p{
   margin: 0 0 10px;
@@ -289,7 +297,7 @@ a:hover{ text-decoration: underline; }
   padding: 14px 14px;
   box-shadow: 0 18px 60px rgba(0,0,0,.35);
 }
-.seo__h2{ margin: 0 0 10px; font-size: 16px; letter-spacing: .2px; }
+.seo__h2{ margin: 0 0 10px; font-size: 16px; }
 .seo__list{ margin: 0; padding-left: 18px; color: rgba(255,255,255,.82); line-height: 1.6; }
 .seo__note{ margin: 10px 0 0; color: rgba(185,185,195,.92); font-size: 13px; }
 
@@ -297,7 +305,7 @@ a:hover{ text-decoration: underline; }
 .footer{
   padding:18px 0 22px;
   border-top: 1px solid rgba(255,255,255,.06);
-  background: linear-gradient(180deg, rgba(8,8,12,.10), rgba(8,8,12,.35));
+  background: linear-gradient(180deg, rgba(8,8,12,.08), rgba(8,8,12,.28));
 }
 .footer__inner{
   display:flex;
@@ -312,28 +320,15 @@ a:hover{ text-decoration: underline; }
 
 /* MOBILE */
 @media (max-width: 640px){
-  .bg__grain{ display:none; }
-  .bg__glow{ filter: blur(40px); opacity:.35; }
-
-  .header__inner{
-    min-height: 48px;
-    padding: 6px 0;
-  }
-  .brand{ padding: 3px 8px; }
-  .brand__logo{ height: 46px; }
+  .header__inner{ min-height:48px; padding: 8px 0; }
+  .brand__logo{ height: 50px; }
 
   .social__icon{ width:34px; height:34px; }
   .social__icon svg{ width:16px; height:16px; }
 
-  .hero{
-    min-height: calc(100dvh - 48px);
-    padding: 8px 0 8px;
-  }
-  .hut-wrap{
-    height: clamp(420px, 58vh, 720px);
-    max-width: 980px;
-  }
-  .btn--primary{ min-width: 220px; }
+  .hero{ min-height: calc(100dvh - 48px); padding: 8px 0 8px; }
+  .hut-wrap{ height: clamp(420px, 58vh, 720px); max-width: 980px; }
 
+  .btn--primary{ min-width: 220px; }
   .seo__grid{ grid-template-columns: 1fr; }
 }
