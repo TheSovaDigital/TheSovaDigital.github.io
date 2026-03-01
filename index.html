@@ -30,7 +30,7 @@
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="preload" as="image" href="hizh.png" />
 
-  <link rel="stylesheet" href="styles.css?v=20260301e">
+  <link rel="stylesheet" href="styles.css?v=20260301f">
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -61,15 +61,13 @@
   <div class="bg" aria-hidden="true">
     <div class="bg__glow bg__glow--a"></div>
     <div class="bg__glow bg__glow--b"></div>
-    <div class="bg__grain"></div>
-    <div class="bg__vignette"></div>
   </div>
 
   <header class="header">
     <div class="container header__inner">
-      <div class="brand" aria-label="Хижина красоты">
+      <a class="brand" href="/" aria-label="Хижина красоты (на главную)">
         <img class="brand__logo" src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
-      </div>
+      </a>
 
       <nav class="social" aria-label="Социальные сети">
         <a class="social__icon" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -102,12 +100,14 @@
           <img class="hut" src="hizh.png" alt="" loading="eager" decoding="async" />
         </div>
 
+        <!-- DROPDOWN БЕЗ JS (работает всегда) -->
         <div class="cta">
-          <button class="btn btn--primary" id="ctaBtn" type="button" aria-haspopup="true" aria-expanded="false">
+          <input class="dd__toggle" type="checkbox" id="ctaToggle" />
+          <label class="btn btn--primary" for="ctaToggle">
             Записаться <span class="btn__chev" aria-hidden="true">▾</span>
-          </button>
+          </label>
 
-          <div class="menu" id="ctaMenu" role="menu" aria-label="Способы записи">
+          <div class="menu" role="menu" aria-label="Способы записи">
             <a role="menuitem" class="menu__item" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
             <a role="menuitem" class="menu__item" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
             <a role="menuitem" class="menu__item" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a>
@@ -158,18 +158,13 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <small>© <span id="year"></span> Хижина красоты</small>
+      <small>© 2026 Хижина красоты</small>
       <div class="footer__links">
         <a href="contacts.html">Контакты</a>
         <a href="privacy.html">Политика конфиденциальности</a>
-        <a href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer">VK</a>
       </div>
     </div>
   </footer>
-
-  <script src="script.js?v=14" defer></script>
 
   <script type="application/ld+json">
   {
