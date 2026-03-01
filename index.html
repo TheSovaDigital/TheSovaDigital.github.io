@@ -6,21 +6,21 @@
   <meta name="theme-color" content="#0b0b0f" />
 
   <title>Хижина красоты — салон красоты в Новосаратовке</title>
-  <meta name="description" content="Хижина красоты — салон красоты в Новосаратовке. Стрижка волос и окрашивание волос в Новосаратовке. Запись в Telegram или Dikidi." />
+  <meta name="description" content="Хижина красоты — салон красоты в Новосаратовке (СПб / Ленинградская область). Стрижка и окрашивание. Запись в Telegram или Dikidi." />
   <meta name="keywords" content="Салон красоты в Новосаратовке, Парикмахерская в Новосаратовке, Стрижка волос в Новосаратовке, Окрашивание волос в Новосаратовке" />
   <link rel="canonical" href="https://hizhina.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Хижина красоты" />
-  <meta property="og:description" content="Салон красоты в Новосаратовке. Стрижка и окрашивание. Запись онлайн." />
+  <meta property="og:description" content="Салон красоты в Новосаратовке (СПб / Ленинградская область). Стрижка и окрашивание. Запись онлайн." />
   <meta property="og:url" content="https://hizhina.com/" />
   <meta property="og:image" content="https://hizhina.com/hizh.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Хижина красоты" />
-  <meta name="twitter:description" content="Салон красоты в Новосаратовке. Стрижка и окрашивание. Запись онлайн." />
+  <meta name="twitter:description" content="Салон красоты в Новосаратовке (СПб / Ленинградская область). Стрижка и окрашивание. Запись онлайн." />
   <meta name="twitter:image" content="https://hizhina.com/hizh.png" />
 
   <!-- PWA / Favicons -->
@@ -33,12 +33,14 @@
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="preload" as="image" href="hizh.png" />
 
+  <link rel="stylesheet" href="styles.css?v=20260302a" />
+
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
       m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
-      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
       k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107055715', 'ym');
 
@@ -55,383 +57,129 @@
     gtag('js', new Date());
     gtag('config', 'G-FD5LJMFEWE');
   </script>
-
-  <style>
-    :root{
-      --bg:#0b0b0f;
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.72);
-      --stroke:rgba(255,255,255,.12);
-      --max:1100px;
-      --goldA:rgba(246,230,182,.92);
-      --goldB:rgba(202,164,90,.62);
-      --goldC:rgba(138,106,47,.75);
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      overflow-x:hidden; /* убирает белую полосу справа */
-    }
-
-    /* Фон — без наложений на хижину (z-index -1) */
-    .bg{
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      pointer-events:none;
-      overflow:hidden;
-      background:
-        radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),
-        radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),
-        radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),
-        linear-gradient(#07070b, #050509);
-    }
-    .bg::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
-      opacity:.18;
-      pointer-events:none;
-      mix-blend-mode:overlay;
-    }
-
-    .container{width:min(var(--max), 100% - 32px); margin:0 auto;}
-
-    .skip-link{
-      position:absolute;
-      left:-999px;
-      top:10px;
-      background:#fff;
-      color:#000;
-      padding:10px 12px;
-      border-radius:10px;
-      z-index:9999;
-    }
-    .skip-link:focus{left:12px}
-
-    /* Шапка — тонкая, без “прилипания” и без плашек */
-    header{
-      position:relative;
-      z-index:20;
-      background:linear-gradient(to bottom, rgba(6,6,9,.55), rgba(6,6,9,.18), transparent);
-      backdrop-filter:saturate(1.05) blur(6px);
-    }
-    .header-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 0;
-    }
-
-    /* Логотип делаем заметнее: увеличили и добавили glow, но без “кнопки” под ним */
-    .brand img{
-      height:74px;
-      width:auto;
-      display:block;
-      filter: drop-shadow(0 0 14px rgba(255,210,120,.40));
-    }
-
-    /* Соц-иконки */
-    .social{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:nowrap;
-      white-space:nowrap;
-    }
-    .icon-btn{
-      width:42px;height:42px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      background:rgba(255,255,255,.04);
-      border:1px solid rgba(255,255,255,.12);
-      transition:transform .15s ease, border-color .15s ease, background .15s ease;
-      -webkit-tap-highlight-color:transparent;
-    }
-    .icon-btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(214,178,106,.45);
-      background:rgba(214,178,106,.05);
-    }
-    .icon-btn svg{width:19px;height:19px; fill:rgba(255,255,255,.86);}
-
-    /* HERO */
-    .hero{
-      min-height:calc(100vh - 94px);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:16px 0 10px;
-      gap:18px;
-      text-align:center;
-    }
-
-    /* ВАЖНО: никаких filter/mask/shadow на хижине -> НИКАКОГО “ореола” от CSS */
-    .hut{
-      width:min(1180px, 96vw);
-      height:min(70vh, 740px);
-      object-fit:contain;
-      display:block;
-      pointer-events:none;
-      filter:none !important;
-      box-shadow:none !important;
-      animation: float 6.5s ease-in-out infinite;
-      background:transparent !important;
-    }
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-10px)}
-    }
-
-    .cta{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:12px;
-      width:100%;
-      position:relative;
-      z-index:5; /* чтобы меню не пряталось */
-    }
-
-    .btn{
-      appearance:none;
-      border:1px solid rgba(214,178,106,.55);
-      background:rgba(0,0,0,.18);
-      color:var(--text);
-      font-weight:750;
-      letter-spacing:.2px;
-      padding:14px 26px;
-      border-radius:999px;
-      min-width:280px;
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
-      position:relative;
-    }
-    .btn::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      border-radius:999px;
-      padding:1px;
-      background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events:none;
-      opacity:.9;
-    }
-
-    .menu{
-      display:none;
-      flex-direction:column;
-      gap:10px;
-      width:min(420px, 92vw);
-    }
-    .menu.show{display:flex;}
-    .menu a{
-      text-decoration:none;
-      color:rgba(255,255,255,.92);
-      text-align:center;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.14);
-      background:rgba(255,255,255,.03);
-    }
-    .menu a:hover{
-      border-color:rgba(214,178,106,.55);
-      background:rgba(214,178,106,.05);
-    }
-
-    /* SEO блок — строго ниже первого экрана */
-    .seo{padding:52px 0 64px;}
-    .seo-card{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius:22px;
-      padding:22px;
-    }
-    .seo h1{margin:0 0 12px; font-size:28px; line-height:1.15;}
-    .seo p{margin:10px 0; color:var(--muted); line-height:1.6; font-size:16px;}
-    .seo strong{color:rgba(255,255,255,.92);}
-    .seo-grid{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
-    }
-    .seo-box{
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.16);
-      padding:16px;
-    }
-    .seo h2{margin:0 0 10px; font-size:18px;}
-    .seo ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.55;}
-    .seo a{color:rgba(255,255,255,.88);}
-
-    footer{padding:18px 0 30px; color:rgba(255,255,255,.55); font-size:13px;}
-    .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
-    .footer-links{display:flex; gap:14px; flex-wrap:wrap;}
-    .footer-links a{color:rgba(255,255,255,.62); text-decoration:none;}
-    .footer-links a:hover{color:rgba(255,255,255,.88);}
-
-    @media (max-width:720px){
-      .brand img{height:62px;}
-      .icon-btn{width:40px;height:40px;}
-      .seo-grid{grid-template-columns:1fr;}
-      .seo h1{font-size:24px;}
-    }
-    @media (max-width:420px){
-      .container{width:min(var(--max), 100% - 24px);}
-      .btn{min-width:240px;}
-    }
-  </style>
 </head>
 
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
-  <div class="bg" aria-hidden="true"></div>
 
-  <header>
-    <div class="container header-inner">
+  <!-- Фон (без леса/камней — только мягкая текстура + блики) -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__glow bg__glow--a"></div>
+    <div class="bg__glow bg__glow--b"></div>
+    <div class="bg__sparkles"></div>
+    <div class="bg__grain"></div>
+    <div class="bg__vignette"></div>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
       <div class="brand" aria-label="Хижина красоты">
-        <img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
+        <img class="brand__logo" src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
       </div>
 
-      <nav class="social" aria-label="Социальные сети">
+      <nav class="social social--icons" aria-label="Социальные сети">
         <a class="icon-btn" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.6 6.7a.9.9 0 1 1-.9-.9.9.9 0 0 1 .9.9z"/></svg>
+          <span class="icon">◎</span>
         </a>
-
         <a class="icon-btn" href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 4.6 2.9 11.9c-1 .4-1 1.8.1 2.1l4.7 1.5 1.8 5.7c.3 1 1.7 1.1 2.2.2l2.7-4.1 4.9 3.6c.8.6 1.9.1 2.1-.9l3-15.3c.2-1.1-.9-2-1.9-1.6zM9.5 14.8l8.9-8.3c.2-.2.5.1.3.3l-7.4 9.5-.3 3.1c0 .3-.4.4-.6.1l-1.2-2.4-2.5-.8c-.3-.1-.3-.5 0-.6l3.8-1z"/></svg>
+          <span class="icon">➤</span>
         </a>
-
         <a class="icon-btn" href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="VK">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.2h3.3c.2 0 .4.1.5.3.4.8 1.6 3.2 2.7 4.7.4.6.7.8 1 .8.2 0 .3-.2.3-.8V7.7c0-.3.2-.5.5-.5H15c.3 0 .5.2.5.5v2.9c0 .3.1.4.3.4.2 0 .5-.2.9-.6 1.2-1.3 2.1-3.2 2.5-3.9.1-.2.3-.3.5-.3h3.2c.4 0 .6.4.4.7-.5 1.2-1.9 3.5-3.1 4.9-.5.6-.7.8-.7 1.1 0 .3.1.5.5.9 1.2 1.2 2.7 2.8 3.5 4.2.2.4 0 .8-.4.8h-3.6c-.2 0-.4-.1-.5-.3-.6-.8-1.4-1.9-2.5-3-.5-.5-.7-.6-.9-.6-.2 0-.3.2-.3.6v2.8c0 .3-.2.5-.5.5h-1.4c-3.2 0-5.7-1.9-7.2-4.1-1.6-2.3-2.6-5.3-2.8-6.1 0-.3.2-.6.5-.6z"/></svg>
+          <span class="icon">VK</span>
         </a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <section class="hero container" aria-label="Главный экран">
-      <img class="hut" src="hizh.png" alt="Хижина" loading="eager" decoding="async" />
+  <main id="main" class="main">
+    <div class="container hero">
+      <div class="hero__center">
 
-      <div class="cta" aria-label="Запись">
-        <button class="btn" id="ctaBtn" type="button" aria-expanded="false" aria-controls="menu">
-          Записаться ▾
-        </button>
-
-        <div id="menu" class="menu" aria-label="Способы записи">
-          <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
-          <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
-          <a href="tel:+79111115528">Позвонить</a>
+        <!-- Хижина (без масок/ореолов/полос) -->
+        <div class="hut-wrap" aria-hidden="false">
+          <img class="hut" src="hizh.png" alt="Хижина" loading="eager" decoding="async" />
         </div>
-      </div>
-    </section>
 
-    <section class="seo">
-      <div class="container">
-        <div class="seo-card" aria-label="Описание салона">
-          <h1>Салон красоты в Новосаратовке — «Хижина красоты»</h1>
+        <div class="cta">
+          <!-- dropdown: работает и без JS -->
+          <details class="dropdown" id="booking">
+            <summary class="btn btn--primary">
+              Записаться <span class="btn__chev" aria-hidden="true">▾</span>
+            </summary>
 
-          <p>
-            «Хижина красоты» — уютное пространство, где можно сделать <strong>стрижку волос в Новосаратовке</strong>,
-            подобрать форму и длину, а также выполнить <strong>окрашивание волос в Новосаратовке</strong>
-            с бережным отношением к качеству волос.
+            <div class="menu" role="menu" aria-label="Способы записи">
+              <a role="menuitem" class="menu__item" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a role="menuitem" class="menu__item" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
+              <a role="menuitem" class="menu__item" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a>
+            </div>
+          </details>
+
+          <!-- вместо “текста” — красивые пилюли -->
+          <div class="pills" aria-label="Теги">
+            <span class="pill">СПб / Лен. область</span>
+            <span class="pill">Новосаратовка</span>
+            <span class="pill">Стрижки</span>
+            <span class="pill">Окрашивание</span>
+            <span class="pill">Уход</span>
+          </div>
+        </div>
+
+        <!-- SEO-блок оставляем, но он НЕ ломает вид (узкий контейнер, без выезда вправо) -->
+        <section class="seo" aria-label="Описание салона">
+          <h1 class="seo__h1">Салон красоты в Новосаратовке — «Хижина красоты»</h1>
+
+          <p class="seo__p">
+            «Хижина красоты» — уютная студия в Новосаратовке (Санкт-Петербург / Ленинградская область),
+            где можно сделать <strong>стрижку</strong>, подобрать форму и длину, а также выполнить
+            <strong>окрашивание</strong> с бережным подходом к качеству волос.
           </p>
 
-          <p>
-            Если вы ищете <strong>салон красоты в Новосаратовке</strong> с аккуратным результатом и понятным сервисом —
-            вы по адресу. Запись доступна онлайн: Telegram или Dikidi.
+          <p class="seo__p">
+            Запись открыта: выбирайте удобный способ — Telegram, Dikidi или звонок.
+            Если вы ищете <strong>салон красоты в Новосаратовке</strong> с аккуратным результатом и понятным сервисом — вы по адресу.
           </p>
 
-          <div class="seo-grid">
-            <div class="seo-box">
-              <h2>Услуги</h2>
-              <ul>
+          <div class="seo__grid">
+            <div class="seo__card">
+              <h2 class="seo__h2">Услуги</h2>
+              <ul class="seo__list">
                 <li>Стрижки</li>
                 <li>Окрашивание: однотон, сложные техники, тонирование</li>
                 <li>Уходовые процедуры для волос</li>
-                <li>Подбор оттенка и рекомендации по домашнему уходу</li>
+                <li>Консультация по подбору цвета и домашнего ухода</li>
               </ul>
             </div>
 
-            <div class="seo-box">
-              <h2>Как записаться</h2>
-              <ul>
-                <li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li>
-                <li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li>
-                <li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li>
-              </ul>
-              <p style="margin-top:10px; color:rgba(255,255,255,.62);">
-                Ответим, подберём время и поможем выбрать услугу.
-              </p>
+            <div class="seo__card">
+              <h2 class="seo__h2">Как записаться</h2>
+              <div class="seo__actions">
+                <a class="action action--tg" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a class="action action--dk" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
+                <a class="action action--ph" href="tel:+79111115528">Позвонить</a>
+              </div>
+              <p class="seo__note">Ответим, подберём время и поможем выбрать услугу.</p>
             </div>
           </div>
+        </section>
 
-        </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
+  <footer class="footer">
+    <div class="container footer__inner">
       <small>© <span id="year"></span> Хижина красоты</small>
-      <div class="footer-links">
+      <div class="footer__links">
         <a href="contacts.html">Контакты</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
         <a href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer">Telegram</a>
         <a href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer">VK</a>
-        <a href="privacy.html">Политика конфиденциальности</a>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Меню записи: работает на ПК и на мобильном
-    (function(){
-      const btn = document.getElementById('ctaBtn');
-      const menu = document.getElementById('menu');
-
-      function closeMenu(){
-        menu.classList.remove('show');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-      function toggleMenu(){
-        const open = menu.classList.toggle('show');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      }
-
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-      }, {passive:false});
-
-      document.addEventListener('click', function(e){
-        if (!menu.contains(e.target) && e.target !== btn) closeMenu();
-      });
-
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape') closeMenu();
-      });
-    })();
-  </script>
+  <script src="script.js?v=20260302a" defer></script>
 
   <script type="application/ld+json">
   {
@@ -444,7 +192,7 @@
       "https://t.me/TheHizhina",
       "https://vk.com/thehizhina"
     ],
-    "areaServed": "Санкт-Петербург, Ленинградская область, Новосаратовка",
+    "areaServed": "Новосаратовка, Санкт-Петербург / Ленинградская область",
     "telephone": "+79111115528"
   }
   </script>
