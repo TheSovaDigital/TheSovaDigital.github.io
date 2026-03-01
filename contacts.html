@@ -6,372 +6,105 @@
   <meta name="theme-color" content="#0b0b0f" />
 
   <title>Контакты — Хижина красоты</title>
-  <meta name="description" content="Контакты «Хижина красоты»: запись через Telegram и Dikidi, телефон, адрес и время работы. Ленинградская область, Новосаратовка 212А." />
+  <meta name="description" content="Контакты студии «Хижина красоты»: запись в Telegram или Dikidi, телефон, адрес и время работы. Новосаратовка, СПб / Ленинградская область." />
   <link rel="canonical" href="https://hizhina.com/contacts.html" />
 
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css?v=20260302a" />
 
-  <link rel="preload" as="image" href="logo_hizhina.webp" />
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107055715', 'ym');
 
-  <!-- если у тебя есть общий styles.css — оставляем -->
-  <link rel="stylesheet" href="styles.css?v=20260302a">
+    ym(107055715, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/107055715" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-  <style>
-    :root{
-      --bg:#07080b;
-      --card: rgba(255,255,255,.04);
-      --card2: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.10);
-      --stroke2: rgba(255,255,255,.16);
-      --text: rgba(255,255,255,.90);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.55);
-      --gold1:#f3d48a;
-      --gold2:#b8892d;
-      --gold3:#6b4a12;
-      --shadow: 0 20px 70px rgba(0,0,0,.55);
-      --radius: 22px;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
-      overflow-x:hidden;
-    }
-
-    /* фон как на главной: мягкий luxury */
-    .bg{position:fixed; inset:0; z-index:-1; pointer-events:none;}
-    .bg::before{
-      content:"";
-      position:absolute; inset:-20%;
-      background:
-        radial-gradient(700px 600px at 20% 15%, rgba(186,140,40,.30), transparent 60%),
-        radial-gradient(900px 700px at 85% 25%, rgba(40,110,170,.25), transparent 60%),
-        radial-gradient(1200px 900px at 50% 80%, rgba(0,0,0,.65), transparent 60%);
-      filter: blur(14px);
-      opacity: .95;
-    }
-    .bg::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1000px 800px at 50% 60%, rgba(0,0,0,.15), rgba(0,0,0,.65)),
-        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.65));
-      opacity:.95;
-    }
-
-    .container{
-      width:min(1100px, calc(100% - 36px));
-      margin:0 auto;
-    }
-
-    /* шапка аккуратная и не жирная */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 0 10px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 180px;
-    }
-    .brand img{
-      height:34px;
-      width:auto;
-      filter: drop-shadow(0 0 10px rgba(210,160,60,.25));
-      opacity:.95;
-    }
-
-    .nav-actions{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      appearance:none;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.88);
-      padding: 10px 14px;
-      font-weight: 600;
-      letter-spacing: .2px;
-      text-decoration:none;
-      transition: transform .15s ease, border-color .2s ease, background .2s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06); }
-    .btn:active{ transform: translateY(0); }
-
-    /* карточка страницы */
-    .panel{
-      margin: 10px auto 26px;
-      padding: 28px;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(34px, 4vw, 48px);
-      letter-spacing: .2px;
-    }
-    .lead{
-      margin:0 0 18px;
-      color: var(--muted);
-      line-height:1.55;
-      font-size: 16px;
-      max-width: 900px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .card{
-      border-radius: 18px;
-      background: rgba(0,0,0,.22);
-      border: 1px solid rgba(255,255,255,.10);
-      padding: 18px;
-      min-height: 170px;
-    }
-    .card h2{
-      margin:0 0 12px;
-      font-size: 18px;
-      color: rgba(255,255,255,.92);
-      letter-spacing:.2px;
-    }
-    .list{
-      margin:0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height:1.6;
-    }
-    .list b{ color: rgba(255,255,255,.92); }
-
-    /* ЛЮКС-КНОПКИ КОНТАКТОВ */
-    .actionList{ display:grid; gap: 12px; margin-top: 8px; }
-
-    .actionBtn{
-      display:flex;
-      align-items:center;
-      gap: 14px;
-      width:100%;
-      padding: 14px 16px;
-      border-radius: 16px;
-      text-decoration:none;
-      color: rgba(255,255,255,.92);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.12);
-      position: relative;
-      overflow:hidden;
-      transition: transform .16s ease, border-color .22s ease, background .22s ease;
-    }
-    .actionBtn::before{
-      content:"";
-      position:absolute; inset:-1px;
-      background: radial-gradient(320px 140px at 15% 20%, rgba(243,212,138,.22), transparent 60%);
-      opacity:.85;
-      pointer-events:none;
-    }
-    .actionBtn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(243,212,138,.35);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
-    }
-    .actionBtn:active{ transform: translateY(0); }
-
-    .iconWrap{
-      width:40px; height:40px;
-      display:grid; place-items:center;
-      border-radius: 12px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(243,212,138,.28);
-      flex: 0 0 auto;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.25);
-    }
-    .iconWrap svg{ width:22px; height:22px; fill: rgba(243,212,138,.95); }
-
-    .actionText{ display:flex; flex-direction:column; gap: 2px; min-width: 0; }
-    .actionTitle{ font-weight: 750; letter-spacing:.2px; }
-    .actionSub{
-      color: rgba(255,255,255,.62);
-      font-size: 13px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-    }
-    .chev{
-      margin-left:auto;
-      color: rgba(243,212,138,.9);
-      font-size: 18px;
-      flex: 0 0 auto;
-    }
-
-    .wide{
-      grid-column: 1 / -1;
-    }
-
-    .note{
-      margin-top:10px;
-      color: var(--muted2);
-      font-size: 13px;
-      line-height:1.5;
-    }
-
-    footer{
-      padding: 18px 0 34px;
-      color: rgba(255,255,255,.50);
-      font-size: 12px;
-    }
-    .footRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
-    }
-    .footLinks{ display:flex; gap: 14px; flex-wrap:wrap; }
-    .footLinks a{
-      color: rgba(255,255,255,.60);
-      text-decoration:none;
-      border-bottom: 1px solid transparent;
-    }
-    .footLinks a:hover{ color: rgba(255,255,255,.86); border-bottom-color: rgba(243,212,138,.35); }
-
-    /* адаптив */
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-      .brand{ min-width: 0; }
-      .topbar{ gap: 10px; }
-      .nav-actions{ justify-content:flex-end; }
-      .panel{ padding: 20px; }
-      .brand img{ height: 32px; }
-    }
-    @media (max-width: 420px){
-      .btn{ padding: 9px 12px; font-size: 13px; }
-      .actionBtn{ padding: 13px 14px; }
-      .iconWrap{ width: 38px; height: 38px; }
-    }
-  </style>
-
-  <!-- Метрика/аналитика НЕ трогаю здесь. Если нужно — скажи, добавлю как на главной -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FD5LJMFEWE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FD5LJMFEWE');
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
   <div class="bg" aria-hidden="true">
-  <div class="bg__grain"></div>
-  <div class="bg__vignette"></div>
-</div>
-  
-  
+    <div class="bg__glow bg__glow--a"></div>
+    <div class="bg__glow bg__glow--b"></div>
+    <div class="bg__sparkles"></div>
+    <div class="bg__grain"></div>
+    <div class="bg__vignette"></div>
+  </div>
 
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand" aria-label="Хижина красоты">
+        <img class="brand__logo" src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
+      </div>
 
-  <header class="container topbar">
-    <div class="brand" aria-label="Хижина красоты">
-      <a href="index.html" aria-label="На главную" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
-        <img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
+      <a class="btn btn--ghost" href="index.html" style="min-width:auto;padding:12px 16px;border-color:rgba(255,255,255,.14)">
+        На главную
       </a>
-    </div>
-
-    <div class="nav-actions">
-      <a class="btn" href="index.html">На главную</a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="panel" aria-label="Контакты">
-      <h1>Контакты</h1>
-      <p class="lead">
-        «Хижина красоты» — уютная частная студия в Новосаратовке. Здесь можно спокойно записаться онлайн и заранее обсудить услугу.
-      </p>
+  <main id="main" class="main">
+    <div class="container" style="padding: 14px 0 30px;">
+      <section class="seo" aria-label="Контакты">
+        <h1 class="seo__h1">Контакты</h1>
+        <p class="seo__p">
+          «Хижина красоты» — уютная частная студия в Новосаратовке. Здесь можно спокойно записаться онлайн и заранее обсудить услугу.
+        </p>
 
-      <div class="grid">
-        <div class="card">
-          <h2>Запись</h2>
+        <div class="seo__grid" style="margin-top:12px">
+          <div class="seo__card">
+            <h2 class="seo__h2">Запись</h2>
 
-          <div class="actionList">
-            <a class="actionBtn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
-              <span class="iconWrap" aria-hidden="true">
-                <!-- Telegram -->
-                <svg viewBox="0 0 24 24"><path d="M9.6 15.5 9.3 19c.4 0 .6-.2.8-.4l1.9-1.8 4 3c.7.4 1.2.2 1.4-.7l2.6-12c.3-1.1-.4-1.6-1.2-1.3L3.4 9.9c-1 .4-1 1.1-.2 1.4l4 1.3 9.2-5.8c.4-.3.9-.1.5.2"/></svg>
-              </span>
-              <span class="actionText">
-                <span class="actionTitle">Telegram</span>
-                <span class="actionSub">@ImAnitka</span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
+            <div class="seo__actions" style="margin-top:10px">
+              <a class="action" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram · @ImAnitka</a>
+              <a class="action" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi · онлайн-запись</a>
+              <a class="action" href="tel:+79111115528">Телефон · +7 (911) 111-55-28</a>
+            </div>
 
-            <a class="actionBtn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer" aria-label="Открыть онлайн-запись Dikidi">
-              <span class="iconWrap" aria-hidden="true">
-                <!-- Calendar/check -->
-                <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 8H6v10h14V10zM6 8h14V6H6v2zm4.3 9.3 4.9-4.9 1.4 1.4-6.3 6.3-3.2-3.2 1.4-1.4 1.8 1.8z"/></svg>
-              </span>
-              <span class="actionText">
-                <span class="actionTitle">Dikidi</span>
-                <span class="actionSub">Онлайн-запись</span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
-
-            <a class="actionBtn" href="tel:+79111115528" aria-label="Позвонить +7 (911) 111-55-28">
-              <span class="iconWrap" aria-hidden="true">
-                <!-- Phone -->
-                <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.8 21 3 12.2 3 1c0-.6.4-1 1-1h3.1c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
-              </span>
-              <span class="actionText">
-                <span class="actionTitle">Телефон</span>
-                <span class="actionSub">+7 (911) 111-55-28</span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
+            <p class="seo__note">Ответим, подберём время и поможем выбрать услугу.</p>
           </div>
 
-          <p class="note">Ответим, подберём время и поможем выбрать услугу.</p>
+          <div class="seo__card">
+            <h2 class="seo__h2">Адрес и время</h2>
+            <ul class="seo__list">
+              <li><strong>Время работы:</strong> ежедневно 10:00–22:00</li>
+              <li><strong>Адрес:</strong> Ленинградская область, Всеволожский район, деревня Новосаратовка, 212А</li>
+            </ul>
+            <p class="seo__note" style="margin-top:10px">
+              Ориентиры рядом: ЖК «Город Первых», «Город Звёзд», «Южная Нева».
+            </p>
+          </div>
         </div>
 
-        <div class="card">
-          <h2>Адрес и время</h2>
-          <ul class="list">
-            <li><b>Время работы:</b> ежедневно 10:00–22:00</li>
-            <li><b>Адрес:</b> Ленинградская область, Всеволожский район, деревня Новосаратовка, 212А</li>
-          </ul>
-          <p class="note">Ориентир: рядом с ЖК «Город Первых», «Город Звёзд» и «Южная Нева» — удобно добираться.</p>
-        </div>
-
-        <div class="card wide">
-          <h2>Рядом и как найти</h2>
-          <p class="lead" style="margin:0;color:rgba(255,255,255,.72)">
-            Студия удобно расположена рядом с крупными жилыми кварталами: ЖК «Город Первых», ЖК «Город Звёзд» и ЖК «Южная Нева».
-            Если вы ищете салон красоты в Новосаратовке (СПб/Ленинградская область) — добраться можно быстро.
-          </p>
-          <p class="note" style="margin-top:12px">
-            Запись — через Telegram или онлайн в Dikidi: так мы заранее согласуем время и услугу, чтобы всё прошло спокойно и точно.
+        <div class="seo__card" style="margin-top:12px">
+          <h2 class="seo__h2">Рядом и как найти</h2>
+          <p class="seo__p" style="margin:0">
+            Студия удобно расположена рядом с крупными жилыми кварталами. Если вы ищете салон красоты в Новосаратовке
+            (СПб/Ленинградская область) — добраться можно быстро.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
-  <footer class="container">
-    <div class="footRow">
+  <footer class="footer">
+    <div class="container footer__inner">
       <small>© <span id="year"></span> Хижина красоты</small>
-      <div class="footLinks">
+      <div class="footer__links">
         <a href="index.html">Главная</a>
         <a href="privacy.html">Политика конфиденциальности</a>
         <a href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -381,26 +114,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "Хижина красоты",
-    "url": "https://hizhina.com/contacts.html",
-    "telephone": "+79111115528",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "Ленинградская область",
-      "addressLocality": "Новосаратовка",
-      "streetAddress": "деревня Новосаратовка, 212А",
-      "addressCountry": "RU"
-    },
-    "openingHours": "Mo-Su 10:00-22:00"
-  }
-  </script>
+  <script src="script.js?v=20260302a" defer></script>
 </body>
 </html>
