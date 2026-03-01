@@ -1,18 +1,28 @@
-@@ -6,10 +6,9 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0b0b0f" />
 
   <title>Контакты — Хижина красоты</title>
-  <meta name="description" content="Контакты «Хижины красоты»: запись в Telegram или Dikidi, телефон, адрес и время работы. Ленинградская область, Новосаратовка." />
-  <meta name="description" content="Контакты «Хижина красоты»: запись через Telegram и Dikidi, телефон, адрес и время работы. Ленинградская область, Новосаратовка 212А." />
+  <meta name="description" content="Контакты студии «Хижина красоты»: адрес Новосаратовка 212А (Всеволожский район, Ленинградская область). Время работы 10:00–22:00. Запись в Telegram или Dikidi." />
+  <meta name="keywords" content="Хижина красоты контакты, Новосаратовка 212А, Всеволожский район салон, салон красоты рядом Город Первых, Южная Нева, Город Звезд" />
   <link rel="canonical" href="https://hizhina.com/contacts.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Контакты — Хижина красоты" />
+  <meta property="og:description" content="Адрес: Новосаратовка 212А. Время работы 10:00–22:00. Запись онлайн." />
+  <meta property="og:url" content="https://hizhina.com/contacts.html" />
+  <meta property="og:image" content="https://hizhina.com/hizh.png" />
 
   <!-- Favicons / PWA -->
   <link rel="manifest" href="site.webmanifest" />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-@@ -18,341 +17,355 @@
-
-  <link rel="preload" as="image" href="logo_hizhina.webp" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <!-- Yandex.Metrika -->
   <script type="text/javascript">
@@ -35,8 +45,6 @@
     gtag('js', new Date());
     gtag('config', 'G-FD5LJMFEWE');
   </script>
-  <!-- если у тебя есть общий styles.css — оставляем -->
-  <link rel="stylesheet" href="styles.css?v=20260301a">
 
   <style>
     :root{
@@ -44,26 +52,11 @@
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.72);
       --stroke:rgba(255,255,255,.12);
-
-      --goldA:rgba(246,230,182,.95);
-      --goldB:rgba(202,164,90,.68);
-      --goldC:rgba(138,106,47,.78);
-      --max:1060px;
-      --bg:#07080b;
-      --card: rgba(255,255,255,.04);
-      --card2: rgba(255,255,255,.06);
-      --stroke: rgba(255,255,255,.10);
-      --stroke2: rgba(255,255,255,.16);
-      --text: rgba(255,255,255,.90);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.55);
-      --gold1:#f3d48a;
-      --gold2:#b8892d;
-      --gold3:#6b4a12;
-      --shadow: 0 20px 70px rgba(0,0,0,.55);
-      --radius: 22px;
+      --max:980px;
+      --goldA:rgba(246,230,182,.92);
+      --goldB:rgba(202,164,90,.62);
+      --goldC:rgba(138,106,47,.75);
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
@@ -71,219 +64,83 @@
       background:var(--bg);
       color:var(--text);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
       overflow-x:hidden;
     }
-
-    /* Background (luxury dark) */
     .bg{
       position:fixed; inset:0; z-index:-1; pointer-events:none;
-    /* фон как на главной: мягкий luxury */
-    .bg{position:fixed; inset:0; z-index:-1; pointer-events:none;}
-    .bg::before{
-      content:"";
-      position:absolute; inset:-20%;
       background:
-        radial-gradient(700px 600px at 20% 15%, rgba(186,140,40,.30), transparent 60%),
-        radial-gradient(900px 700px at 85% 25%, rgba(40,110,170,.25), transparent 60%),
-        radial-gradient(1200px 900px at 50% 80%, rgba(0,0,0,.65), transparent 60%);
-      filter: blur(14px);
-      opacity: .95;
-    }
-    .bg::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1200px 700px at 20% 18%, rgba(171,120,44,.22), transparent 60%),
-        radial-gradient(900px 600px at 82% 28%, rgba(28,79,132,.18), transparent 62%),
-        radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.60), transparent 60%),
+        radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),
+        radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),
+        radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),
         linear-gradient(#07070b, #050509);
-        radial-gradient(1000px 800px at 50% 60%, rgba(0,0,0,.15), rgba(0,0,0,.65)),
-        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.65));
-      opacity:.95;
     }
-
     .container{width:min(var(--max), 100% - 32px); margin:0 auto;}
-    .container{
-      width:min(1100px, calc(100% - 36px));
-      margin:0 auto;
-    }
-
     header{
-      background:linear-gradient(to bottom, rgba(6,6,9,.64), rgba(6,6,9,.18), transparent);
+      background:linear-gradient(to bottom, rgba(6,6,9,.60), rgba(6,6,9,.18), transparent);
       backdrop-filter:saturate(1.05) blur(6px);
-    /* шапка аккуратная и не жирная */
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:18px 0 10px;
     }
     .header-inner{
       display:flex; align-items:center; justify-content:space-between;
       gap:12px; padding:10px 0;
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 180px;
     }
     .brand a{display:inline-flex; align-items:center; text-decoration:none;}
     .brand img{
       height:66px; width:auto; display:block;
       filter: drop-shadow(0 0 14px rgba(255,210,120,.40));
-      height:34px;
-      width:auto;
-      filter: drop-shadow(0 0 10px rgba(210,160,60,.25));
-      opacity:.95;
     }
 
-    .top-actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
     .pill{
       color:rgba(255,255,255,.86);
-    .nav-actions{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      appearance:none;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.88);
-      padding: 10px 14px;
-      font-weight: 600;
-      letter-spacing: .2px;
       text-decoration:none;
       border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);
       padding:10px 14px;
       border-radius:999px;
       display:inline-flex; align-items:center; gap:8px;
-      transition: transform .15s ease, border-color .2s ease, background .2s ease;
-      white-space:nowrap;
     }
     .pill:hover{
       border-color:rgba(214,178,106,.45);
       background:rgba(214,178,106,.05);
       color:rgba(255,255,255,.92);
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06); }
-    .btn:active{ transform: translateY(0); }
-
-    /* карточка страницы */
-    .panel{
-      margin: 10px auto 26px;
-      padding: 28px;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
     }
 
     main{padding:26px 0 54px;}
-
-    .wrap{
+    .card{
       border-radius:22px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.03);
       padding:22px;
-    h1{
-      margin:0 0 10px;
-      font-size: clamp(34px, 4vw, 48px);
-      letter-spacing: .2px;
     }
-    .lead{
-      margin:0 0 18px;
-      color: var(--muted);
-      line-height:1.55;
-      font-size: 16px;
-      max-width: 900px;
-    }
-
-    h1{margin:0 0 10px; font-size:30px; line-height:1.15;}
-    p{color:var(--muted); line-height:1.65; font-size:15px; margin:0 0 14px;}
-    .lead{margin-bottom:18px;}
-
+    h1{margin:0 0 10px; font-size:28px; line-height:1.15;}
+    p{margin:10px 0; color:var(--muted); line-height:1.6;}
     .grid{
+      margin-top:14px;
       display:grid;
-      grid-template-columns:1.1fr 1fr;
-      gap:16px;
-      align-items:stretch;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 16px;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
     }
-
-    .card{
+    .box{
       border-radius:18px;
       border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
+      background:rgba(0,0,0,.16);
       padding:16px;
-      border-radius: 18px;
-      background: rgba(0,0,0,.22);
-      border: 1px solid rgba(255,255,255,.10);
-      padding: 18px;
-      min-height: 170px;
     }
-    .card h2{margin:0 0 10px; font-size:18px;}
-    .meta-list{margin:0; padding-left:18px; color:var(--muted);}
-    .meta-list li{margin:6px 0; line-height:1.55;}
-
-    /* --- NEW: красивый блок кнопок вместо текстовых ссылок --- */
-    .btn-grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:10px;
-      margin-top:12px;
-    .card h2{
-      margin:0 0 12px;
-      font-size: 18px;
-      color: rgba(255,255,255,.92);
-      letter-spacing:.2px;
-    }
-    .list{
-      margin:0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height:1.6;
-    }
-    .list b{ color: rgba(255,255,255,.92); }
+    .box h2{margin:0 0 10px; font-size:18px;}
+    .list{margin:0; padding-left:18px; color:var(--muted); line-height:1.55;}
 
     .btn{
-      position:relative;
-    /* ЛЮКС-КНОПКИ КОНТАКТОВ */
-    .actionList{ display:grid; gap: 12px; margin-top: 8px; }
-
-    .actionBtn{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      gap: 14px;
-      width:100%;
-      padding:12px 14px;
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 16px;
       border-radius:14px;
-      padding: 14px 16px;
-      border-radius: 16px;
       text-decoration:none;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(214,178,106,.55);
       background:rgba(0,0,0,.18);
+      position:relative;
       color:rgba(255,255,255,.92);
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      will-change: transform;
-      color: rgba(255,255,255,.92);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.12);
-      position: relative;
-      overflow:hidden;
-      transition: transform .16s ease, border-color .22s ease, background .22s ease;
     }
-
-    /* золотой контур как у Dikidi */
     .btn::before{
-    .actionBtn::before{
       content:"";
       position:absolute;
       inset:-1px;
@@ -293,144 +150,33 @@
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
-      position:absolute; inset:-1px;
-      background: radial-gradient(320px 140px at 15% 20%, rgba(243,212,138,.22), transparent 60%);
-      opacity:.85;
       pointer-events:none;
-      opacity:.92;
+      opacity:.9;
     }
 
-    .btn:hover{
-    .actionBtn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(214,178,106,.45);
-      background: rgba(214,178,106,.05);
+    .seo{
+      margin-top:14px;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
     }
-
-    .btn .left{
-      display:flex; align-items:center; gap:10px; min-width:0;
-      border-color: rgba(243,212,138,.35);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
-    }
-    .actionBtn:active{ transform: translateY(0); }
-
-    .ico{
-      width:34px; height:34px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-    .iconWrap{
-      width:40px; height:40px;
-      display:grid; place-items:center;
-      flex:0 0 auto;
-      border-radius: 12px;
-      background: rgba(0,0,0,.35);
-      border: 1px solid rgba(243,212,138,.28);
-      flex: 0 0 auto;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.25);
-    }
-    .iconWrap svg{ width:22px; height:22px; fill: rgba(243,212,138,.95); }
-
-    .title{
-      font-weight:600;
-      letter-spacing:.2px;
-      white-space:nowrap;
-    .actionText{ display:flex; flex-direction:column; gap: 2px; min-width: 0; }
-    .actionTitle{ font-weight: 750; letter-spacing:.2px; }
-    .actionSub{
-      color: rgba(255,255,255,.62);
-      font-size: 13px;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .sub{
-      display:block;
-      margin-top:2px;
-      font-size:12.5px;
-      color:rgba(255,255,255,.62);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    .chev{
-      color:rgba(255,255,255,.60);
-      font-size:16px;
-      flex:0 0 auto;
-    }
-
-    .hint{
-      margin-top:10px;
-      font-size:13px;
-      color:rgba(255,255,255,.56);
-      margin-left:auto;
-      color: rgba(243,212,138,.9);
-      font-size: 18px;
-      flex: 0 0 auto;
-    }
-
-    .wide{
-      margin-top:16px;
-      grid-column: 1 / -1;
-    }
+    .seo h2{margin:0 0 8px; font-size:16px; color:rgba(255,255,255,.86);}
+    .seo p{margin:8px 0; font-size:14px;}
 
     footer{padding:18px 0 30px; color:rgba(255,255,255,.55); font-size:13px;}
     .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;}
     .footer-links{display:flex; gap:14px; flex-wrap:wrap;}
     .footer-links a{color:rgba(255,255,255,.62); text-decoration:none;}
     .footer-links a:hover{color:rgba(255,255,255,.88);}
-    .note{
-      margin-top:10px;
-      color: var(--muted2);
-      font-size: 13px;
-      line-height:1.5;
-    }
 
-    @media (max-width:900px){
-      .grid{grid-template-columns:1fr;}
-    footer{
-      padding: 18px 0 34px;
-      color: rgba(255,255,255,.50);
-      font-size: 12px;
-    }
-    .footRow{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-      flex-wrap:wrap;
-    }
-    .footLinks{ display:flex; gap: 14px; flex-wrap:wrap; }
-    .footLinks a{
-      color: rgba(255,255,255,.60);
-      text-decoration:none;
-      border-bottom: 1px solid transparent;
-    }
-    .footLinks a:hover{ color: rgba(255,255,255,.86); border-bottom-color: rgba(243,212,138,.35); }
-
-    /* адаптив */
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-      .brand{ min-width: 0; }
-      .topbar{ gap: 10px; }
-      .nav-actions{ justify-content:flex-end; }
-      .panel{ padding: 20px; }
-      .brand img{ height: 32px; }
-    }
     @media (max-width:720px){
       .brand img{height:58px;}
-      h1{font-size:26px;}
-      .top-actions{justify-content:flex-start;}
-      .container{width:min(var(--max), 100% - 24px);}
-    @media (max-width: 420px){
-      .btn{ padding: 9px 12px; font-size: 13px; }
-      .actionBtn{ padding: 13px 14px; }
-      .iconWrap{ width: 38px; height: 38px; }
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:24px;}
+      .actions{justify-content:flex-start;}
     }
   </style>
-
-  <!-- Метрика/аналитика НЕ трогаю здесь. Если нужно — скажи, добавлю как на главной -->
 </head>
 
 <body>
@@ -443,162 +189,70 @@
           <img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
         </a>
       </div>
-  <header class="container topbar">
-    <div class="brand" aria-label="Хижина красоты">
-      <a href="index.html" aria-label="На главную" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;">
-        <img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
-      </a>
-    </div>
 
-      <div class="top-actions">
-        <a class="pill" href="index.html">На главную</a>
+      <div class="actions" aria-label="Быстрые действия">
+        <a class="pill" href="index.html" aria-label="Вернуться на главную">На главную</a>
       </div>
-    <div class="nav-actions">
-      <a class="btn" href="index.html">На главную</a>
     </div>
   </header>
 
   <main class="container">
-    <section class="wrap" aria-label="Контакты">
-    <section class="panel" aria-label="Контакты">
+    <section class="card" aria-label="Контакты">
       <h1>Контакты</h1>
-      <p class="lead">
-        «Хижина красоты» — уютная частная студия в Новосаратовке. Здесь можно спокойно записаться онлайн и заранее обсудить услугу.
+
+      <p>
+        «Хижина красоты» — частная уютная студия в Новосаратовке.
+        Здесь можно спокойно записаться онлайн и заранее обсудить услугу.
       </p>
 
       <div class="grid">
-        <div class="card" aria-label="Запись">
-        <div class="card">
+        <div class="box">
           <h2>Запись</h2>
-
-          <!-- КНОПКИ вместо текстовых ссылок -->
-          <div class="btn-grid">
-            <a class="btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
-              <span class="left">
-                <span class="ico" aria-hidden="true">✈️</span>
-                <span>
-                  <span class="title">Telegram</span>
-                  <span class="sub">@ImAnitka</span>
-                </span>
-          <div class="actionList">
-            <a class="actionBtn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
-              <span class="iconWrap" aria-hidden="true">
-                <!-- Telegram -->
-                <svg viewBox="0 0 24 24"><path d="M9.6 15.5 9.3 19c.4 0 .6-.2.8-.4l1.9-1.8 4 3c.7.4 1.2.2 1.4-.7l2.6-12c.3-1.1-.4-1.6-1.2-1.3L3.4 9.9c-1 .4-1 1.1-.2 1.4l4 1.3 9.2-5.8c.4-.3.9-.1.5.2"/></svg>
-              </span>
-              <span class="actionText">
-                <span class="actionTitle">Telegram</span>
-                <span class="actionSub">@ImAnitka</span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
-
-            <a class="btn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer" aria-label="Открыть онлайн-запись Dikidi">
-              <span class="left">
-                <span class="ico" aria-hidden="true">📅</span>
-                <span>
-                  <span class="title">Dikidi</span>
-                  <span class="sub">Онлайн-запись</span>
-                </span>
-            <a class="actionBtn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer" aria-label="Открыть онлайн-запись Dikidi">
-              <span class="iconWrap" aria-hidden="true">
-                <!-- Calendar/check -->
-                <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 8H6v10h14V10zM6 8h14V6H6v2zm4.3 9.3 4.9-4.9 1.4 1.4-6.3 6.3-3.2-3.2 1.4-1.4 1.8 1.8z"/></svg>
-              </span>
-              <span class="actionText">
-                <span class="actionTitle">Dikidi</span>
-                <span class="actionSub">Онлайн-запись</span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
-
-            <a class="btn" href="tel:+79111115528" aria-label="Позвонить по телефону +7 911 111-55-28">
-              <span class="left">
-                <span class="ico" aria-hidden="true">📞</span>
-                <span>
-                  <span class="title">Телефон</span>
-                  <span class="sub">+7 (911) 111-55-28</span>
-                </span>
-            <a class="actionBtn" href="tel:+79111115528" aria-label="Позвонить +7 (911) 111-55-28">
-              <span class="iconWrap" aria-hidden="true">
-                <!-- Phone -->
-                <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.8 21 3 12.2 3 1c0-.6.4-1 1-1h3.1c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
-              </span>
-              <span class="actionText">
-                <span class="actionTitle">Телефон</span>
-                <span class="actionSub">+7 (911) 111-55-28</span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
-          </div>
-
-          <div class="hint">
-            Обычно быстрее всего — написать в Telegram: так удобно согласовать время и услугу.
-          </div>
-          <p class="note">Ответим, подберём время и поможем выбрать услугу.</p>
+          <ul class="list">
+            <li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li>
+            <li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li>
+            <li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li>
+          </ul>
+          <a class="btn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Открыть Dikidi</a>
         </div>
 
-        <div class="card" aria-label="Адрес и время">
-        <div class="card">
+        <div class="box">
           <h2>Адрес и время</h2>
-          <ul class="meta-list">
+          <ul class="list">
             <li><strong>Время работы:</strong> ежедневно 10:00–22:00</li>
             <li><strong>Адрес:</strong> Ленинградская область, Всеволожский район, деревня Новосаратовка, 212А</li>
-          <ul class="list">
-            <li><b>Время работы:</b> ежедневно 10:00–22:00</li>
-            <li><b>Адрес:</b> Ленинградская область, Всеволожский район, деревня Новосаратовка, 212А</li>
           </ul>
-
-          <div class="btn-grid" style="margin-top:12px;">
-            <a class="btn" href="index.html" aria-label="Вернуться на главную страницу">
-              <span class="left">
-                <span class="ico" aria-hidden="true">🏠</span>
-                <span>
-                  <span class="title">Вернуться на главную</span>
-                  <span class="sub">hizhina.com</span>
-                </span>
-              </span>
-              <span class="chev" aria-hidden="true">›</span>
-            </a>
-          </div>
-          <p class="note">Ориентир: рядом с ЖК «Город Первых», «Город Звёзд» и «Южная Нева» — удобно добираться.</p>
+          <a class="btn" href="index.html">Вернуться на главную</a>
         </div>
       </div>
 
-      <div class="card wide" aria-label="Рядом и как найти">
+      <div class="seo" aria-label="SEO-блок">
         <h2>Рядом и как найти</h2>
         <p>
-          Студия удобно расположена рядом с крупными жилыми кварталами: ЖК «Город Первых», ЖК «Город Звёзд» и ЖК «Южная Нева».
-          Если вы ищете салон красоты в Новосаратовке (СПБ/Ленинградская область) — добраться можно быстро.
+          Студия удобно расположена рядом с крупными жилыми кварталами: <strong>ЖК «Город Первых»</strong>,
+          <strong>ЖК «Город Звёзд»</strong> и <strong>ЖК «Южная Нева»</strong>.
+          Если вы ищете <strong>салон красоты в Новосаратовке</strong> (СПБ/Ленинградская область) — можно добраться быстро.
         </p>
-        <p style="margin-bottom:0;">
+        <p>
           Запись — через Telegram или онлайн в Dikidi: так мы заранее согласуем время и услугу, чтобы всё прошло спокойно и точно.
         </p>
-        <div class="card wide">
-          <h2>Рядом и как найти</h2>
-          <p class="lead" style="margin:0;color:rgba(255,255,255,.72)">
-            Студия удобно расположена рядом с крупными жилыми кварталами: ЖК «Город Первых», ЖК «Город Звёзд» и ЖК «Южная Нева».
-            Если вы ищете салон красоты в Новосаратовке (СПб/Ленинградская область) — добраться можно быстро.
-          </p>
-          <p class="note" style="margin-top:12px">
-            Запись — через Telegram или онлайн в Dikidi: так мы заранее согласуем время и услугу, чтобы всё прошло спокойно и точно.
-          </p>
-        </div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container footer-inner">
-  <footer class="container">
-    <div class="footRow">
       <small>© <span id="year"></span> Хижина красоты</small>
       <div class="footer-links">
-      <div class="footLinks">
         <a href="index.html">Главная</a>
         <a href="privacy.html">Политика конфиденциальности</a>
         <a href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
-@@ -365,5 +378,23 @@ <h2>Рядом и как найти</h2>
+        <a href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer">VK</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
@@ -610,14 +264,25 @@
     "name": "Хижина красоты",
     "url": "https://hizhina.com/contacts.html",
     "telephone": "+79111115528",
+    "openingHours": "Mo-Su 10:00-22:00",
     "address": {
       "@type": "PostalAddress",
+      "addressCountry": "RU",
       "addressRegion": "Ленинградская область",
-      "addressLocality": "Новосаратовка",
-      "streetAddress": "деревня Новосаратовка, 212А",
-      "addressCountry": "RU"
+      "addressLocality": "деревня Новосаратовка",
+      "streetAddress": "212А"
     },
-    "openingHours": "Mo-Su 10:00-22:00"
+    "areaServed": [
+      "Санкт-Петербург",
+      "Ленинградская область",
+      "Новосаратовка",
+      "Всеволожский район"
+    ],
+    "sameAs": [
+      "https://instagram.com/thehizhina",
+      "https://t.me/TheHizhina",
+      "https://vk.com/thehizhina"
+    ]
   }
   </script>
 </body>
