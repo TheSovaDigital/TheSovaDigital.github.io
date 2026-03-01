@@ -4,9 +4,9 @@
   --text:#f3f3f6;
   --muted:#b9b9c3;
 
-  --gold-a: rgba(246,230,182,.75);
-  --gold-b: rgba(202,164,90,.45);
-  --gold-c: rgba(138,106,47,.55);
+  --gold-a: rgba(246,230,182,.82);
+  --gold-b: rgba(202,164,90,.52);
+  --gold-c: rgba(138,106,47,.62);
 }
 
 *{ box-sizing:border-box; }
@@ -55,14 +55,14 @@ a:hover{ text-decoration: underline; }
 .bg__vignette{ position:absolute; inset:-10%; background: radial-gradient(closest-side, transparent 55%, rgba(0,0,0,.65) 100%); pointer-events:none; }
 
 /* ================= HEADER ================= */
-/* ✅ сделали тоньше + аккуратнее */
+/* ✅ компактнее на ПК */
 .header{
   position:sticky;
   top:0;
   z-index:10;
-  padding:10px 0; /* было 16 */
+  padding:8px 0;                 /* было жирно */
   backdrop-filter: blur(10px);
-  background: linear-gradient(180deg, rgba(8,8,12,.62), rgba(8,8,12,.14));
+  background: linear-gradient(180deg, rgba(8,8,12,.58), rgba(8,8,12,.10));
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
 
@@ -70,36 +70,33 @@ a:hover{ text-decoration: underline; }
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
+  gap:12px;
 }
 
-/* ✅ логотип чуть меньше, но заметнее за счёт свечения */
+/* ✅ логотип заметнее, но шапку не раздувает */
 .brand__logo{
-  height:96px;  /* было 110 */
+  height:84px;
   width:auto;
   display:block;
   transition: transform .25s ease, filter .25s ease;
   filter:
-    drop-shadow(0 16px 48px rgba(0,0,0,.70))
-    drop-shadow(0 0 24px rgba(255,220,150,.24))
-    drop-shadow(0 0 56px rgba(255,200,120,.14));
+    drop-shadow(0 18px 55px rgba(0,0,0,.72))
+    drop-shadow(0 0 26px rgba(255,220,150,.28))
+    drop-shadow(0 0 70px rgba(255,200,120,.16));
 }
-.brand__logo:hover{
-  transform: translateY(-1px) scale(1.02);
-}
+.brand__logo:hover{ transform: translateY(-1px) scale(1.02); }
 
 /* Social */
 .social{
   display:flex;
-  gap:10px; /* было 12 */
+  gap:10px;
   align-items:center;
   justify-content:flex-end;
 }
-
 .social__link{
-  font-size:13px;         /* было 14 */
+  font-size:13px;
   color: rgba(255,255,255,.74);
-  padding:7px 10px;       /* было 8 12 */
+  padding:7px 10px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.03);
@@ -114,9 +111,8 @@ a:hover{ text-decoration: underline; }
 }
 
 /* ================= MAIN / HERO ================= */
-
 .main{
-  min-height: calc(100dvh - 130px); /* под тонкую шапку */
+  min-height: calc(100dvh - 120px);
   display:flex;
   align-items:center;
   padding: 10px 0 18px;
@@ -132,41 +128,97 @@ a:hover{ text-decoration: underline; }
   text-align:center;
 }
 
-/* Hut */
+/* ================= HUT: "живость" ================= */
 .hut-wrap{
+  /* параметры для лёгкого 3D наклона (JS их меняет) */
+  --rx: 0deg;
+  --ry: 0deg;
+
   position:relative;
   width: min(1500px, 98vw);
   height: clamp(560px, 78vh, 980px);
   display:flex;
   align-items:center;
   justify-content:center;
-  transform: translate3d(0,0,0);
+
+  transform-style: preserve-3d;
+  perspective: 1100px;
   will-change: transform;
 }
 
+/* мягкая “плавающая” жизнь */
+@keyframes hutFloat{
+  0%,100%{ transform: translate3d(0,0,0) rotateX(var(--rx)) rotateY(var(--ry)); }
+  50%{ transform: translate3d(0,-8px,0) rotateX(calc(var(--rx) * .85)) rotateY(calc(var(--ry) * .85)); }
+}
+
+/* сама хижина */
 .hut{
   width:100%;
   height:100%;
   object-fit: contain;
   display:block;
-  transform: scale(1.12);
-  filter: drop-shadow(0 30px 110px rgba(0,0,0,.78));
+
+  transform: translateZ(22px) scale(1.12);
+  filter: drop-shadow(0 34px 120px rgba(0,0,0,.80));
   user-select:none;
   -webkit-user-drag:none;
+
+  animation: hutFloat 5.2s ease-in-out infinite;
 }
 
+/* более яркое, но “дорогое” свечение */
 .hut__shine{
   position:absolute;
-  inset: 4% 4% 7% 4%;
+  inset: 3% 3% 6% 3%;
   background:
-    radial-gradient(900px 420px at 50% 45%, rgba(255, 220, 150, .16), transparent 65%),
-    radial-gradient(900px 420px at 50% 85%, rgba(120, 190, 255, .08), transparent 70%);
-  filter: blur(18px);
-  opacity:.9;
+    radial-gradient(980px 480px at 50% 55%, rgba(255, 220, 150, .24), transparent 62%),
+    radial-gradient(860px 420px at 50% 90%, rgba(120, 190, 255, .10), transparent 70%);
+  filter: blur(20px);
+  opacity: .95;
   pointer-events:none;
+  transform: translateZ(-18px);
+  animation: shinePulse 3.8s ease-in-out infinite;
+}
+@keyframes shinePulse{
+  0%,100%{ opacity:.78; filter: blur(20px); }
+  50%{ opacity:1; filter: blur(26px); }
 }
 
-/* CTA button */
+/* лёгкая “обводка/объём” + мерцание */
+.hut__rim{
+  position:absolute;
+  inset: 6% 6% 10% 6%;
+  border-radius: 28px;
+  background:
+    radial-gradient(320px 140px at 30% 20%, rgba(255,255,255,.12), rgba(255,255,255,0) 70%),
+    radial-gradient(360px 160px at 70% 35%, rgba(255,255,255,.07), rgba(255,255,255,0) 72%);
+  filter: blur(10px);
+  opacity:.40;
+  pointer-events:none;
+  transform: translateZ(6px);
+  animation: rim 6.4s ease-in-out infinite;
+}
+@keyframes rim{
+  0%,100%{ opacity:.30; transform: translateZ(6px) translate3d(0,0,0); }
+  50%{ opacity:.48; transform: translateZ(6px) translate3d(0,-5px,0); }
+}
+
+/* CTA */
+.cta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+.hint{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+  opacity:.92;
+}
+
+/* ================= BUTTON ================= */
 .btn{
   border:0;
   cursor:pointer;
@@ -191,7 +243,6 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 18px 60px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.10);
   position:relative;
 }
-
 .btn--primary::before{
   content:"";
   position:absolute;
@@ -203,33 +254,17 @@ a:hover{ text-decoration: underline; }
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events:none;
-  opacity:.9;
+  opacity:.95;
 }
-
-.btn--primary::after{
-  content:"";
-  position:absolute;
-  inset:1px;
-  border-radius:999px;
-  background: radial-gradient(240px 90px at 25% 25%, rgba(255,255,255,.18), rgba(255,255,255,0) 65%);
-  opacity:0;
-  transition: opacity .18s ease;
-  pointer-events:none;
-}
-
 .btn--primary:hover{
   transform: translateY(-1px);
   box-shadow: 0 24px 70px rgba(0,0,0,.62), inset 0 1px 0 rgba(255,255,255,.12);
-  filter: saturate(1.05);
+  filter: saturate(1.06);
 }
-.btn--primary:hover::after{ opacity:.9; }
-
 .btn__chev{ font-size:14px; opacity:.8; }
 
-/* Dropdown */
+/* ================= DROPDOWN ================= */
 .dropdown{ position:relative; }
-
-/* DETAILS dropdown helpers */
 .dropdown-details > summary { list-style: none; }
 .dropdown-details > summary::-webkit-details-marker { display: none; }
 .dropdown-details[open] .menu { display:block; }
@@ -248,7 +283,6 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 22px 70px rgba(0,0,0,.55);
   display:none;
 }
-
 .menu__item{
   display:flex;
   align-items:center;
@@ -269,7 +303,7 @@ a:hover{ text-decoration: underline; }
   transform: translateY(-1px);
 }
 
-/* SEO */
+/* ================= SEO ================= */
 .seo{ width:min(980px, 100%); margin: 8px auto 18px; text-align:left; }
 .seo__h1{ margin: 10px 0 10px; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; letter-spacing: .2px; }
 .seo__p{ margin: 0 0 10px; color: rgba(255,255,255,.82); line-height: 1.55; }
@@ -283,7 +317,7 @@ a:hover{ text-decoration: underline; }
 .seo__list{ margin: 0; padding-left: 18px; color: rgba(255,255,255,.82); line-height: 1.6; }
 .seo__note{ margin: 10px 0 0; color: rgba(185,185,195,.92); font-size: 13px; }
 
-/* Footer */
+/* ================= FOOTER ================= */
 .footer{
   padding:18px 0 22px;
   border-top: 1px solid rgba(255,255,255,.06);
@@ -300,32 +334,37 @@ a:hover{ text-decoration: underline; }
 .footer__links{ display:flex; gap:12px; flex-wrap:wrap; }
 .footer__links a{ color: rgba(255,255,255,.72); font-size:14px; }
 
-/* ================= MOBILE ================= */
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .hut, .hut__shine, .hut__rim, .bg__glow{ animation:none !important; }
+}
 
+/* ================= MOBILE ================= */
 @media (max-width: 640px){
   .bg__grain{ display:none; }
   .bg__glow{ filter: blur(40px); opacity:.35; }
 
   .header{
-    padding:12px 0;
+    padding:10px 0;
     backdrop-filter: none;
   }
 
   .header__inner{
     flex-direction:column;
     align-items:center;
-    gap:10px;
+    gap:8px; /* меньше пустоты */
   }
 
+  /* логотип на мобиле выглядит нормально */
   .brand__logo{
-    height:62px;
+    height:60px;
     filter:
-      drop-shadow(0 14px 40px rgba(0,0,0,.60))
-      drop-shadow(0 0 18px rgba(255,220,150,.20))
-      drop-shadow(0 0 38px rgba(255,200,120,.10));
+      drop-shadow(0 14px 38px rgba(0,0,0,.60))
+      drop-shadow(0 0 18px rgba(255,220,150,.22))
+      drop-shadow(0 0 40px rgba(255,200,120,.12));
   }
 
-  /* соцсети в одну строку */
+  /* соцсети в одну строку, без 2 строк и без растягивания */
   .social{
     width:100%;
     justify-content:center;
@@ -337,22 +376,18 @@ a:hover{ text-decoration: underline; }
   }
   .social::-webkit-scrollbar{ height:0; }
 
-  .social__link{
-    font-size:13px;
-    padding:7px 10px;
-  }
-
   .main{
-    min-height: calc(100dvh - 190px);
+    min-height: calc(100dvh - 185px);
     padding: 8px 0 14px;
   }
 
   .hut-wrap{
     height: clamp(420px, 64vh, 720px);
+    perspective: 850px;
   }
 
   .hut{
-    transform: scale(1.04);
+    transform: translateZ(18px) scale(1.04);
     filter: drop-shadow(0 18px 60px rgba(0,0,0,.65));
   }
 
