@@ -154,7 +154,7 @@ body{
 
   .hero .cta{
     position: relative !important;
-    top: -22px !important;   /* РЕГУЛЯТОР: -30 выше, -10 ниже */
+    top: -30px !important;   /* РЕГУЛЯТОР: -30 выше, -10 ниже */
     z-index: 50 !important;
   }
 }
