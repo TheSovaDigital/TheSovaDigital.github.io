@@ -104,3 +104,25 @@ body{
     transform: translateY(-10px); /* ← ВТОРАЯ РУЧКА */
   }
 }
+
+  @media (max-width: 720px){
+  .hero{
+    min-height: calc(100vh - 94px);
+    padding: 8px 0 6px;
+    gap: 10px;
+  }
+
+  .hut{
+    height: 42vh;      /* ← ГЛАВНАЯ РУЧКА (уменьшай/увеличивай) */
+    max-height: 340px; /* ← ПОТОЛОК */
+  }
+
+  .cta{
+    transform: translateY(-16px); /* ← поднимает кнопку */
+  }
+
+  .btn{
+    padding: 12px 22px; /* чуть ниже кнопка по высоте, чтобы влезало */
+    min-width: 240px;
+  }
+}
