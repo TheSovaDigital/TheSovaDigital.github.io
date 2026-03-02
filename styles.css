@@ -146,3 +146,15 @@ body{
     padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
   }
 }
+
+
+  /* ===== MOBILE FIX: поднять кнопку "Записаться" выше нижней панели браузера ===== */
+@media (max-width: 720px){
+  .hero{ padding-bottom: 40px !important; } /* чтобы меню не резалось снизу */
+
+  .hero .cta{
+    position: relative !important;
+    top: -22px !important;   /* РЕГУЛЯТОР: -30 выше, -10 ниже */
+    z-index: 50 !important;
+  }
+}
