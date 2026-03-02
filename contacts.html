@@ -272,6 +272,41 @@
       .actionBtn{ padding: 13px 14px; }
       .iconWrap{ width: 38px; height: 38px; }
     }
+/* ===== FORCE OVERRIDE (contacts) ===== */
+
+/* 1) убираем ВТОРОЙ фон-блок (тот, где grain/vignette) */
+.bg + .bg{ display:none !important; }
+
+/* 2) если grain/vignette где-то всё-таки есть — глушим */
+.bg__grain, .bg__vignette{ display:none !important; }
+
+/* 3) убираем любые затемняющие оверлеи, которые могли прийти из styles.css */
+.bg::after{
+  content:"" !important;
+  background:none !important;
+  opacity:0 !important;
+  filter:none !important;
+}
+
+/* 4) оставляем чистый мягкий фон (без “ореолов/виньеток”) */
+.bg::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:-20% !important;
+  background:
+    radial-gradient(900px 700px at 22% 18%, rgba(186,140,40,.20), transparent 62%),
+    radial-gradient(1000px 760px at 82% 26%, rgba(40,110,170,.16), transparent 64%),
+    linear-gradient(180deg, #06070a 0%, #07080b 55%, #05060a 100%) !important;
+  filter: blur(12px) saturate(110%) !important;
+  opacity:1 !important;
+}
+
+/* 5) логотип X2 (чтобы не перебивался media-правками) */
+.topbar .brand img{
+  height:68px !important; /* было 34 */
+  width:auto !important;
+}
+    
   </style>
 </head>
 
