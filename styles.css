@@ -84,3 +84,23 @@ body{
 @media (prefers-reduced-motion: reduce){
   .bg::after{ animation:none; }
 }
+
+/* MOBILE: hut + button fit in one screen */
+@media (max-width: 720px){
+  /* делаем первый экран реальным по высоте на iOS */
+  .hero{
+    min-height: calc(100svh - 94px); /* 94px = твоя шапка */
+    padding: 10px 0 8px;
+    gap: 12px; /* было 18px — экономим место */
+  }
+
+  /* уменьшаем хижину на мобиле */
+  .hut{
+    height: min(46svh, 360px);  /* ← ГЛАВНАЯ РУЧКА */
+  }
+
+  /* чуть поднимаем блок с кнопкой (вместе с меню) */
+  .cta{
+    transform: translateY(-10px); /* ← ВТОРАЯ РУЧКА */
+  }
+}
