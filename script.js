@@ -1,38 +1,31 @@
-})();
+document.addEventListener("DOMContentLoaded", () => {
 
-(() => {
-  document.addEventListener("click", (e) => {
-    const dd = document.querySelector(".dropdown-details");
-    if (!dd) return;
-    if (!dd.contains(e.target)) dd.removeAttribute("open");
   const btn = document.getElementById("ctaBtn");
-  const menu = document.getElementById("ctaMenu");
+  const menu = document.getElementById("menu");
+
   if (!btn || !menu) return;
 
   const close = () => {
-    menu.classList.remove("is-open");
+    menu.classList.remove("show");
     btn.setAttribute("aria-expanded", "false");
   };
 
-  const open = () => {
-    menu.classList.add("is-open");
-    btn.setAttribute("aria-expanded", "true");
+  const toggle = (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.toggle("show");
+    btn.setAttribute("aria-expanded", isOpen);
   };
 
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (menu.classList.contains("is-open")) close();
-    else open();
+  btn.addEventListener("click", toggle);
+
+  document.addEventListener("click", (e) => {
+    if (!menu.contains(e.target) && e.target !== btn) {
+      close();
+    }
   });
 
-  // закрытие по клику вне
-  document.addEventListener("click", () => close());
-
-  // закрытие по Esc
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") close();
   });
 
-  // не закрывать при клике внутри меню
-  menu.addEventListener("click", (e) => e.stopPropagation());
-})();
+});
