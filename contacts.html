@@ -49,24 +49,16 @@
 
     /* фон как на главной: мягкий luxury */
     .bg{position:fixed; inset:0; z-index:-1; pointer-events:none;}
-    .bg::before{
-      content:"";
-      position:absolute; inset:-20%;
-      background:
-        radial-gradient(700px 600px at 20% 15%, rgba(186,140,40,.30), transparent 60%),
-        radial-gradient(900px 700px at 85% 25%, rgba(40,110,170,.25), transparent 60%),
-        radial-gradient(1200px 900px at 50% 80%, rgba(0,0,0,.65), transparent 60%);
-      filter: blur(14px);
-      opacity: .95;
-    }
-    .bg::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(1000px 800px at 50% 60%, rgba(0,0,0,.15), rgba(0,0,0,.65)),
-        linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.65));
-      opacity:.95;
-    }
+   .bg::before{
+  content:"";
+  position:absolute; inset:-20%;
+  background:
+    radial-gradient(700px 600px at 20% 15%, rgba(186,140,40,.28), transparent 60%),
+    radial-gradient(900px 700px at 85% 25%, rgba(40,110,170,.22), transparent 60%);
+  filter: blur(12px);
+  opacity:.85;
+}
+   
 
     .container{
       width:min(1100px, calc(100% - 36px));
@@ -84,12 +76,8 @@
       display:flex; align-items:center; gap:12px;
       min-width: 180px;
     }
-    .brand img{
-      height:34px;
-      width:auto;
-      filter: drop-shadow(0 0 10px rgba(210,160,60,.25));
-      opacity:.95;
-    }
+   .brand img{
+  height:51px;
 
     .nav-actions{
       display:flex; gap:10px; align-items:center; justify-content:flex-end;
