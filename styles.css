@@ -87,13 +87,25 @@ body{
 
 /* MOBILE: hut + button fit in one screen */
 @media (max-width: 720px){
-  /* делаем первый экран реальным по высоте на iOS */
-  .hero{
-    min-height: calc(100svh - 94px); /* 94px = твоя шапка */
-    padding: 10px 0 8px;
-    gap: 12px; /* было 18px — экономим место */
-  }
+/* iPhone Chrome/Safari: корректная высота видимой области */
+.hero{
+  min-height: calc(100vh - 94px);
+  padding-bottom: 18px; /* небольшой запас снизу */
+}
 
+/* если браузер поддерживает dvh — используем его */
+@supports (height: 100dvh){
+  .hero{
+    min-height: calc(100dvh - 94px);
+  }
+}
+
+/* safe-area на айфонах (чтобы точно не перекрывалось) */
+@supports (padding: env(safe-area-inset-bottom)){
+  .hero{
+    padding-bottom: calc(env(safe-area-inset-bottom) + 14px);
+  }
+}
   /* уменьшаем хижину на мобиле */
   .hut{
     height: min(46svh, 360px);  /* ← ГЛАВНАЯ РУЧКА */
