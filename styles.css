@@ -126,3 +126,11 @@ body{
 
 
 .hero { outline: 5px solid red !important; }
+
+
+  /* iPhone (Safari/Chrome): чтобы нижняя панель браузера не перекрывала кнопку */
+@supports (-webkit-touch-callout: none) {
+  .cta{
+    padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
+  }
+}
