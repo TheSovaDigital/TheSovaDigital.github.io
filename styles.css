@@ -107,11 +107,16 @@ body{
 
   @media (max-width: 720px){
   .hero{
-    min-height: calc(100vh - 94px);
-    padding: 8px 0 6px;
-    gap: 10px;
-  }
-
+  min-height:calc(100vh - 94px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  padding:12px 0 10px;
+  gap:12px;
+  text-align:center;
+}
+    
   .hut{
     height: 42vh;      /* ← ГЛАВНАЯ РУЧКА (уменьшай/увеличивай) */
     max-height: 340px; /* ← ПОТОЛОК */
