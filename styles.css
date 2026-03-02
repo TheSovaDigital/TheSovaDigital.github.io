@@ -106,16 +106,8 @@ body{
 }
 
   @media (max-width: 720px){
-  .hero{
-  min-height:calc(100vh - 94px);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:flex-start;
-  padding:12px 0 10px;
-  gap:12px;
-  text-align:center;
-}
+  .hero.hero{
+  min-height:auto;
     
   .hut{
     height: 42vh;      /* ← ГЛАВНАЯ РУЧКА (уменьшай/увеличивай) */
