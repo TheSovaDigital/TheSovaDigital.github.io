@@ -49,21 +49,7 @@
 
     /* ===== ФОН: убрали тёмные ореолы/виньетку, оставили чистый luxury ===== */
     .bg{position:fixed; inset:0; z-index:-1; pointer-events:none;}
-    .bg::before{
-      content:"";
-      position:absolute;
-      inset:-20%;
-      background:
-        radial-gradient(900px 700px at 22% 18%, rgba(186,140,40,.22), transparent 62%),
-        radial-gradient(1000px 760px at 82% 26%, rgba(40,110,170,.18), transparent 64%),
-        radial-gradient(1200px 900px at 50% 72%, rgba(255,255,255,.03), transparent 68%);
-      filter: blur(14px);
-      opacity: .95;
-    }
-    /* было затемнение/ореол — отключаем полностью */
-    .bg::after{
-      content: none;
-    }
+    
 
     /* если в HTML есть bg__grain/bg__vignette — глушим их, чтобы не было тёмных теней */
     .bg__grain, .bg__vignette{
@@ -89,7 +75,7 @@
 
     /* ===== ЛОГОТИП: x2 ===== */
     .brand img{
-      height:68px; /* было 34px */
+      height:150px; /* было 34px */
       width:auto;
       filter: drop-shadow(0 0 10px rgba(210,160,60,.25));
       opacity:.95;
