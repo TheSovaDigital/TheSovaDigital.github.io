@@ -100,6 +100,37 @@
     @media (max-width:900px){.seo-links{grid-template-columns:1fr 1fr}}
     @media (max-width:720px){.brand img{height:62px}.icon-btn,.menu-toggle{width:40px;height:40px}.seo-grid{grid-template-columns:1fr}.seo-links{grid-template-columns:1fr}.seo h1{font-size:24px}.social{display:none}}
     @media (max-width:420px){.container{width:min(var(--max), 100% - 24px)}.btn{min-width:240px}}
+
+    .footer-social{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.footer-social-btn{
+  width:42px;
+  height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  text-decoration:none;
+  color:rgba(255,255,255,.88);
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.3px;
+  transition:transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.footer-social-btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(214,178,106,.45);
+  background:rgba(214,178,106,.08);
+  color:#fff;
+}
   </style>
 </head>
 <body>
