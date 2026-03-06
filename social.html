@@ -1,25 +1,21 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<meta name="theme-color" content="#0b0b0f"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0b0f" />
 
 <title>Мы в соцсетях — Хижина красоты</title>
-<meta name="description" content="Социальные сети Хижины красоты: Telegram, Instagram, TikTok, YouTube, VK и X. Контент о волосах, окрашиваниях и работе студии."/>
-<link rel="canonical" href="https://hizhina.com/social.html"/>
+<meta name="description" content="Социальные сети Хижины красоты: Telegram, Instagram, TikTok, YouTube, VK и X." />
+<link rel="canonical" href="https://hizhina.com/social.html" />
 
-<meta property="og:type" content="website"/>
-<meta property="og:title" content="Мы в соцсетях — Хижина красоты"/>
-<meta property="og:description" content="Telegram, Instagram, TikTok, YouTube, VK и X — все социальные сети Хижины красоты."/>
-<meta property="og:url" content="https://hizhina.com/social.html"/>
-<meta property="og:image" content="https://hizhina.com/hizh.png"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Мы в соцсетях — Хижина красоты" />
+<meta property="og:description" content="Все социальные сети Хижины красоты." />
+<meta property="og:url" content="https://hizhina.com/social.html" />
+<meta property="og:image" content="https://hizhina.com/hizh.png" />
 
-<link rel="manifest" href="site.webmanifest"/>
-<link rel="icon" href="favicon.ico" sizes="any"/>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
-<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<link rel="preload" as="image" href="logo_hizhina.webp" />
 
 <style>
 
@@ -32,100 +28,150 @@
 
 *{box-sizing:border-box}
 
+html,body{height:100%}
+
 body{
 margin:0;
 background:var(--bg);
 color:var(--text);
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+overflow-x:hidden;
 }
+
+/* ФОН */
+
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+pointer-events:none;
+overflow:hidden;
+background:
+radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),
+radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),
+radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),
+linear-gradient(#07070b,#050509);
+}
+
+.bg::after{
+content:"";
+position:absolute;
+inset:0;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+opacity:.18;
+mix-blend-mode:overlay;
+}
+
+/* КОНТЕЙНЕР */
 
 .container{
 width:min(var(--max),100% - 32px);
 margin:auto;
 }
 
+/* HEADER */
+
 header{
-padding:16px 0;
-border-bottom:1px solid rgba(255,255,255,.08);
+background:linear-gradient(to bottom, rgba(6,6,9,.55), rgba(6,6,9,.18), transparent);
+backdrop-filter:saturate(1.05) blur(6px);
+}
+
+.header-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 0;
 }
 
 .brand img{
-height:70px;
+height:74px;
+filter:drop-shadow(0 0 14px rgba(255,210,120,.40));
 }
+
+/* HERO */
 
 .hero{
 padding:60px 0 40px;
 }
 
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.10);
+border-radius:22px;
+padding:28px;
+}
+
 h1{
-font-size:34px;
 margin:0 0 10px;
+font-size:34px;
 }
 
 p{
 color:var(--muted);
 line-height:1.6;
-max-width:650px;
+max-width:700px;
 }
 
+/* GRID */
+
 .grid{
-margin-top:40px;
+margin-top:28px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:18px;
 }
 
-.social-card{
-text-decoration:none;
-color:white;
-padding:22px;
-border-radius:16px;
-border:1px solid rgba(255,255,255,.12);
-background:rgba(255,255,255,.03);
-transition:.2s;
+.social{
 display:flex;
 flex-direction:column;
 gap:6px;
+padding:22px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.12);
+background:rgba(255,255,255,.03);
+text-decoration:none;
+color:white;
+transition:.2s;
 }
 
-.social-card:hover{
+.social:hover{
 transform:translateY(-3px);
 border-color:rgba(214,178,106,.5);
 background:rgba(214,178,106,.06);
 }
 
-.social-card b{
+.social b{
 font-size:18px;
 }
 
-.social-card span{
+.social span{
 font-size:14px;
-color:rgba(255,255,255,.65);
+color:rgba(255,255,255,.6);
 }
 
+/* FOOTER */
+
 footer{
-margin-top:80px;
-padding:20px 0;
-border-top:1px solid rgba(255,255,255,.08);
+margin-top:40px;
+padding:20px 0 30px;
+color:rgba(255,255,255,.55);
 font-size:13px;
-color:rgba(255,255,255,.6);
 }
 
 .footer-inner{
 display:flex;
 justify-content:space-between;
 flex-wrap:wrap;
-gap:10px;
+gap:12px;
 }
 
 .footer-links{
 display:flex;
 gap:14px;
-flex-wrap:wrap;
 }
 
 .footer-links a{
-color:rgba(255,255,255,.7);
+color:rgba(255,255,255,.6);
 text-decoration:none;
 }
 
@@ -133,9 +179,11 @@ text-decoration:none;
 color:white;
 }
 
-@media(max-width:700px){
+@media(max-width:720px){
 
-h1{font-size:28px}
+.brand img{height:62px;}
+
+h1{font-size:28px;}
 
 }
 
@@ -144,60 +192,67 @@ h1{font-size:28px}
 
 <body>
 
+<div class="bg"></div>
+
 <header>
-<div class="container">
+<div class="container header-inner">
+
 <div class="brand">
 <a href="index.html">
-<img src="logo_hizhina.webp" alt="Хижина красоты"/>
+<img src="logo_hizhina.webp" alt="Хижина красоты">
 </a>
 </div>
+
 </div>
 </header>
 
 <main class="hero">
 <div class="container">
 
+<div class="card">
+
 <h1>Мы в соцсетях</h1>
 
 <p>
 В социальных сетях «Хижины красоты» публикуется контент о волосах, окрашиваниях, работе студии и живых результатах.
-Здесь можно увидеть процессы работы, реальные трансформации и атмосферу студии.
+Здесь можно увидеть процессы, реальные преображения и атмосферу студии на разных площадках.
 </p>
 
 <div class="grid">
 
-<a class="social-card" href="https://t.me/TheHizhina" target="_blank">
+<a class="social" href="https://t.me/TheHizhina" target="_blank">
 <b>Telegram</b>
 <span>t.me/TheHizhina</span>
 </a>
 
-<a class="social-card" href="https://instagram.com/thehizhina" target="_blank">
+<a class="social" href="https://instagram.com/thehizhina" target="_blank">
 <b>Instagram</b>
 <span>instagram.com/thehizhina</span>
 </a>
 
-<a class="social-card" href="https://tiktok.com/@thehizhina" target="_blank">
+<a class="social" href="https://tiktok.com/@thehizhina" target="_blank">
 <b>TikTok</b>
 <span>tiktok.com/@thehizhina</span>
 </a>
 
-<a class="social-card" href="https://youtube.com/@thehizhina" target="_blank">
+<a class="social" href="https://youtube.com/@thehizhina" target="_blank">
 <b>YouTube</b>
 <span>youtube.com/@thehizhina</span>
 </a>
 
-<a class="social-card" href="https://vk.com/thehizhina" target="_blank">
+<a class="social" href="https://vk.com/thehizhina" target="_blank">
 <b>VK</b>
 <span>vk.com/thehizhina</span>
 </a>
 
-<a class="social-card" href="https://x.com/thehizhina" target="_blank">
+<a class="social" href="https://x.com/thehizhina" target="_blank">
 <b>X</b>
 <span>x.com/thehizhina</span>
 </a>
 
 </div>
 
+</div>
 </div>
 </main>
 
@@ -207,8 +262,8 @@ h1{font-size:28px}
 <div>© <span id="year"></span> Хижина красоты</div>
 
 <div class="footer-links">
+<a href="index.html">Главная</a>
 <a href="privacy.html">Политика конфиденциальности</a>
-<a href="social.html">Мы в соцсетях</a>
 </div>
 
 </div>
@@ -216,23 +271,6 @@ h1{font-size:28px}
 
 <script>
 document.getElementById('year').textContent=new Date().getFullYear()
-</script>
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"BeautySalon",
-"name":"Хижина красоты",
-"url":"https://hizhina.com",
-"sameAs":[
-"https://t.me/TheHizhina",
-"https://instagram.com/thehizhina",
-"https://tiktok.com/@thehizhina",
-"https://youtube.com/@thehizhina",
-"https://vk.com/thehizhina",
-"https://x.com/thehizhina"
-]
-}
 </script>
 
 </body>
