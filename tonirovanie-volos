@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>Тонирование волос в Новосаратовке | Хижина красоты</title>
+  <meta name="description" content="Тонирование волос в Новосаратовке — Хижина красоты. Обновление оттенка, нейтрализация нежелательных тонов и аккуратная поддержка цвета." />
+  <meta name="keywords" content="Тонирование волос, тонирование блонда, нейтрализация желтизны, обновление оттенка, Хижина красоты" />
+  <link rel="canonical" href="https://hizhina.com/tonirovanie-volos.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Тонирование волос в Новосаратовке | Хижина красоты" />
+  <meta property="og:description" content="Обновление оттенка и нейтрализация нежелательных тонов в камерной студии Хижина красоты." />
+  <meta property="og:url" content="https://hizhina.com/tonirovanie-volos.html" />
+  <meta property="og:image" content="https://hizhina.com/hizh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Тонирование волос в Новосаратовке | Хижина красоты" />
+  <meta name="twitter:description" content="Обновление оттенка и нейтрализация нежелательных тонов в камерной студии Хижина красоты." />
+  <meta name="twitter:image" content="https://hizhina.com/hizh.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preload" as="image" href="logo_hizhina.webp" />
+  <link rel="preload" as="image" href="hizh.png" />
+  <style>
+    :root{--bg:#0b0b0f;--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.72);--max:1100px;--goldA:rgba(246,230,182,.92);--goldB:rgba(202,164,90,.62);--goldC:rgba(138,106,47,.75);}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;overflow-x:hidden;}
+    .bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),linear-gradient(#07070b,#050509);}
+    .bg::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");opacity:.18;pointer-events:none;mix-blend-mode:overlay;}
+    .container{width:min(var(--max),100% - 32px);margin:0 auto;}
+    .skip-link{position:absolute;left:-999px;top:10px;background:#fff;color:#000;padding:10px 12px;border-radius:10px;z-index:9999}.skip-link:focus{left:12px}
+    header{position:relative;z-index:20;background:linear-gradient(to bottom, rgba(6,6,9,.55), rgba(6,6,9,.18), transparent);backdrop-filter:saturate(1.05) blur(6px);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;}
+    .brand img{height:74px;width:auto;display:block;filter:drop-shadow(0 0 14px rgba(255,210,120,.40));}
+    .page{padding:28px 0 64px;}
+    .hero-card,.section-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:22px;}
+    .hero-card{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center;}
+    .eyebrow{display:inline-block;margin-bottom:10px;padding:8px 12px;border-radius:999px;border:1px solid rgba(214,178,106,.30);background:rgba(214,178,106,.05);color:rgba(255,255,255,.82);font-size:13px;letter-spacing:.2px;}
+    h1,h2,h3{margin:0 0 12px} h1{font-size:36px;line-height:1.08} h2{font-size:24px;line-height:1.15} h3{font-size:18px;line-height:1.2}
+    p{margin:10px 0;color:var(--muted);line-height:1.65;font-size:16px} strong{color:rgba(255,255,255,.92);}
+    .lead{font-size:17px;color:rgba(255,255,255,.80);}
+    .hero-visual{display:flex;justify-content:center;align-items:center;min-height:260px;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:radial-gradient(600px 240px at 30% 30%, rgba(202,164,90,.12), transparent 55%),radial-gradient(520px 220px at 80% 25%, rgba(28,79,132,.12), transparent 55%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.12));overflow:hidden;}
+    .hero-visual img{width:min(540px,100%);height:auto;display:block;object-fit:contain;}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
+    .btn,.ghost-btn{appearance:none;text-decoration:none;color:var(--text);border-radius:999px;padding:14px 22px;display:inline-flex;align-items:center;justify-content:center;min-width:220px;font-weight:700;letter-spacing:.2px;}
+    .btn{position:relative;border:1px solid rgba(214,178,106,.55);background:rgba(0,0,0,.18);}
+    .btn::before{content:"";position:absolute;inset:-1px;border-radius:999px;padding:1px;background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.9;}
+    .ghost-btn{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+    .service-box,.faq-box,.note-box{border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.16);padding:18px;}
+    .checklist{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;}
+    .section{margin-top:18px;}
+    .crumbs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;color:rgba(255,255,255,.58);font-size:14px;}
+    .crumbs a{color:rgba(255,255,255,.68);text-decoration:none}
+    footer{padding:18px 0 30px;color:rgba(255,255,255,.55);font-size:13px;}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,.62);text-decoration:none}
+    @media (max-width:900px){.hero-card,.grid-2{grid-template-columns:1fr;}h1{font-size:30px;}}
+    @media (max-width:720px){.brand img{height:62px;}h1{font-size:28px;}h2{font-size:22px;}}
+    @media (max-width:420px){.container{width:min(var(--max),100% - 24px)}.btn,.ghost-btn{min-width:100%}.hero-card,.section-card{padding:18px;}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="bg" aria-hidden="true"></div>
+  <header><div class="container header-inner"><div class="brand"><a href="index.html"><img src="logo_hizhina.webp" alt="Хижина красоты" /></a></div></div></header>
+  <main id="main" class="page"><div class="container">
+    <nav class="crumbs"><a href="index.html">Главная</a><span>•</span><span>Тонирование волос</span></nav>
+    <section class="hero-card">
+      <div>
+        <span class="eyebrow">Хижина красоты • тонирование</span>
+        <h1>Тонирование волос</h1>
+        <p class="lead">Тонирование помогает обновить оттенок, убрать нежелательные тона и сделать цвет более чистым, спокойным и завершённым. Это одна из самых деликатных и полезных процедур между окрашиваниями.</p>
+        <p>Если вам нужно <strong>тонирование волос в Новосаратовке</strong>, поддержание блонда или мягкая нейтрализация желтизны, эта страница поможет понять, как строится такая работа.</p>
+        <div class="cta-row"><a class="btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a><a class="ghost-btn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Онлайн-запись в Dikidi</a></div>
+      </div>
+      <div class="hero-visual"><img src="hizh.png" alt="Хижина красоты — тонирование волос" /></div>
+    </section>
+    <section class="section section-card">
+      <h2>Когда подходит тонирование</h2>
+      <div class="grid-2">
+        <div class="service-box"><h3>После блонда</h3><p>Помогает настроить оттенок, убрать лишнюю теплоту и сделать цвет более чистым и дорогим по ощущению.</p></div>
+        <div class="service-box"><h3>Между окрашиваниями</h3><p>Позволяет освежить длину без полноценного окрашивания и вернуть цвету аккуратный вид.</p></div>
+        <div class="service-box"><h3>Для нейтрализации желтизны</h3><p>Если оттенок начал уходить в нежелательную теплоту, тонирование помогает мягко скорректировать ситуацию.</p></div>
+        <div class="service-box"><h3>Для блеска и глубины</h3><p>Иногда задача не в смене цвета, а в том, чтобы волосы выглядели ровнее, чище и красивее отражали свет.</p></div>
+      </div>
+    </section>
+    <section class="section section-card">
+      <h2>Как проходит работа</h2>
+      <p>Перед процедурой оцениваются текущий оттенок, состояние длины и желаемый результат. Это помогает подобрать правильное направление: сделать цвет холоднее, мягче, глубже или просто свежее по общему впечатлению.</p>
+      <div class="grid-2">
+        <div class="note-box"><h3>Что даёт тонирование</h3><ul class="checklist"><li>более чистый оттенок;</li><li>меньше нежелательной теплоты;</li><li>визуально более аккуратную длину;</li><li>спокойный блеск по волосам.</li></ul></div>
+        <div class="note-box"><h3>Когда особенно полезно</h3><ul class="checklist"><li>после осветления;</li><li>между окрашиваниями;</li><li>если цвет стал тусклым;</li><li>если хочется мягкого обновления без большой процедуры.</li></ul></div>
+      </div>
+    </section>
+    <section class="section section-card">
+      <h2>Почему выбирают «Хижину красоты»</h2>
+      <p>Камерный формат студии позволяет спокойно и точно работать с оттенком. Тонирование кажется простой процедурой, но именно в деталях часто рождается тот самый чистый и дорогой результат.</p>
+    </section>
+    <section class="section section-card">
+      <h2>Частые вопросы</h2>
+      <div class="grid-2">
+        <div class="faq-box"><h3>Тонирование портит волосы?</h3><p>Как правило, это мягкая процедура, особенно по сравнению с осветлением. Она чаще помогает сделать длину визуально более ухоженной.</p></div>
+        <div class="faq-box"><h3>Можно ли только тонирование без окрашивания?</h3><p>Да, конечно. Это частый формат, если нужно освежить цвет или убрать нежелательный подтон.</p></div>
+        <div class="faq-box"><h3>Надолго ли хватает эффекта?</h3><p>Это зависит от ухода дома, частоты мытья и исходной базы, но в любом случае тонирование заметно освежает общий вид цвета.</p></div>
+        <div class="faq-box"><h3>Подходит ли оно для блондинок?</h3><p>Да, особенно. Для блонда тонирование часто становится ключевым инструментом поддержания красивого оттенка.</p></div>
+      </div>
+    </section>
+    <section class="section section-card">
+      <h2>Запись на тонирование</h2>
+      <p>Записаться можно через Telegram, Dikidi или по телефону. Если вы не уверены, подойдёт ли вам только тонирование или нужна другая процедура, можно сначала написать и кратко описать задачу.</p>
+      <div class="cta-row"><a class="btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Написать в Telegram</a><a class="ghost-btn" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a></div>
+    </section>
+  </div></main>
+  <footer><div class="container footer-inner"><small>© <span id="year"></span> Хижина красоты</small></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","serviceType":"Тонирование волос","name":"Тонирование волос в Новосаратовке","description":"Обновление оттенка, нейтрализация нежелательных тонов и аккуратная поддержка цвета.","areaServed":"Новосаратовка, Санкт-Петербург, Ленинградская область","provider":{"@type":"BeautySalon","name":"Хижина красоты","url":"https://hizhina.com/","telephone":"+79111115528"}}
+  </script>
+</body>
+</html>
