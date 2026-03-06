@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>Выход из чёрного в Новосаратовке | Хижина красоты</title>
+  <meta name="description" content="Выход из чёрного в Новосаратовке — Хижина красоты. Поэтапное осветление, коррекция фона и бережная работа с качеством волос." />
+  <meta name="keywords" content="Выход из чёрного, выход из темного, осветление темных волос, коррекция цвета, Хижина красоты" />
+  <link rel="canonical" href="https://hizhina.com/vyhod-iz-chernogo.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Выход из чёрного в Новосаратовке | Хижина красоты" />
+  <meta property="og:description" content="Поэтапное осветление и аккуратная работа с длиной в камерной студии Хижина красоты." />
+  <meta property="og:url" content="https://hizhina.com/vyhod-iz-chernogo.html" />
+  <meta property="og:image" content="https://hizhina.com/hizh.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Выход из чёрного в Новосаратовке | Хижина красоты" />
+  <meta name="twitter:description" content="Поэтапное осветление и аккуратная работа с длиной в камерной студии Хижина красоты." />
+  <meta name="twitter:image" content="https://hizhina.com/hizh.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="preload" as="image" href="logo_hizhina.webp" />
+  <link rel="preload" as="image" href="hizh.png" />
+  <style>
+    :root{--bg:#0b0b0f;--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.72);--max:1100px;--goldA:rgba(246,230,182,.92);--goldB:rgba(202,164,90,.62);--goldC:rgba(138,106,47,.75);}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;overflow-x:hidden;}
+    .bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),linear-gradient(#07070b,#050509);}
+    .bg::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");opacity:.18;pointer-events:none;mix-blend-mode:overlay;}
+    .container{width:min(var(--max),100% - 32px);margin:0 auto;}
+    .skip-link{position:absolute;left:-999px;top:10px;background:#fff;color:#000;padding:10px 12px;border-radius:10px;z-index:9999}.skip-link:focus{left:12px}
+    header{position:relative;z-index:20;background:linear-gradient(to bottom, rgba(6,6,9,.55), rgba(6,6,9,.18), transparent);backdrop-filter:saturate(1.05) blur(6px);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;}
+    .brand img{height:74px;width:auto;display:block;filter:drop-shadow(0 0 14px rgba(255,210,120,.40));}
+    .social{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;white-space:nowrap;}
+    .icon-btn{width:42px;height:42px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);transition:transform .15s ease,border-color .15s ease,background .15s ease;-webkit-tap-highlight-color:transparent;}
+    .icon-btn:hover{transform:translateY(-1px);border-color:rgba(214,178,106,.45);background:rgba(214,178,106,.05);}
+    .icon-btn svg{width:19px;height:19px;fill:rgba(255,255,255,.86);}
+    .page{padding:28px 0 64px;}
+    .hero-card,.section-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:22px;}
+    .hero-card{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:center;}
+    .eyebrow{display:inline-block;margin-bottom:10px;padding:8px 12px;border-radius:999px;border:1px solid rgba(214,178,106,.30);background:rgba(214,178,106,.05);color:rgba(255,255,255,.82);font-size:13px;letter-spacing:.2px;}
+    h1,h2,h3{margin:0 0 12px} h1{font-size:36px;line-height:1.08} h2{font-size:24px;line-height:1.15} h3{font-size:18px;line-height:1.2}
+    p{margin:10px 0;color:var(--muted);line-height:1.65;font-size:16px} strong{color:rgba(255,255,255,.92);}
+    .lead{font-size:17px;color:rgba(255,255,255,.80);}
+    .hero-visual{display:flex;justify-content:center;align-items:center;min-height:260px;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:radial-gradient(600px 240px at 30% 30%, rgba(202,164,90,.12), transparent 55%),radial-gradient(520px 220px at 80% 25%, rgba(28,79,132,.12), transparent 55%),linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.12));overflow:hidden;}
+    .hero-visual img{width:min(540px,100%);height:auto;display:block;object-fit:contain;}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;}
+    .btn,.ghost-btn{appearance:none;text-decoration:none;color:var(--text);border-radius:999px;padding:14px 22px;display:inline-flex;align-items:center;justify-content:center;min-width:220px;font-weight:700;letter-spacing:.2px;transition:transform .15s ease,border-color .15s ease,background .15s ease;}
+    .btn{position:relative;border:1px solid rgba(214,178,106,.55);background:rgba(0,0,0,.18);}
+    .btn::before{content:"";position:absolute;inset:-1px;border-radius:999px;padding:1px;background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));-webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.9;}
+    .ghost-btn{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);}
+    .btn:hover,.ghost-btn:hover{transform:translateY(-1px);}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px;}
+    .service-box,.faq-box,.note-box{border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.16);padding:18px;}
+    .checklist{margin:0;padding-left:18px;color:var(--muted);line-height:1.65;}
+    .section{margin-top:18px;}
+    .crumbs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;color:rgba(255,255,255,.58);font-size:14px;}
+    .crumbs a{color:rgba(255,255,255,.68);text-decoration:none}.crumbs a:hover{color:rgba(255,255,255,.9)}
+    footer{padding:18px 0 30px;color:rgba(255,255,255,.55);font-size:13px;}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a{color:rgba(255,255,255,.62);text-decoration:none}.footer-links a:hover{color:rgba(255,255,255,.88);}
+    @media (max-width:900px){.hero-card,.grid-2{grid-template-columns:1fr;}h1{font-size:30px;}}
+    @media (max-width:720px){.brand img{height:62px;}.icon-btn{width:40px;height:40px;}h1{font-size:28px;}h2{font-size:22px;}}
+    @media (max-width:420px){.container{width:min(var(--max),100% - 24px)}.btn,.ghost-btn{min-width:100%}.hero-card,.section-card{padding:18px;}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div class="bg" aria-hidden="true"></div>
+  <header><div class="container header-inner"><div class="brand"><a href="index.html"><img src="logo_hizhina.webp" alt="Хижина красоты" /></a></div></div></header>
+  <main id="main" class="page"><div class="container">
+    <nav class="crumbs"><a href="index.html">Главная</a><span>•</span><span>Выход из чёрного</span></nav>
+    <section class="hero-card">
+      <div>
+        <span class="eyebrow">Хижина красоты • выход из чёрного</span>
+        <h1>Выход из чёрного</h1>
+        <p class="lead">Выход из чёрного — одна из самых сложных работ в колористике. Здесь особенно важны стратегия, аккуратное осветление и бережное отношение к длине.</p>
+        <p>Если вы ищете <strong>выход из чёрного в Новосаратовке</strong> или хотите понять, возможно ли осветление именно в вашем случае, эта страница поможет сориентироваться в формате такой работы.</p>
+        <div class="cta-row"><a class="btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a><a class="ghost-btn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Онлайн-запись в Dikidi</a></div>
+      </div>
+      <div class="hero-visual"><img src="hizh.png" alt="Хижина красоты — выход из чёрного" /></div>
+    </section>
+    <section class="section section-card">
+      <h2>Что важно понимать заранее</h2>
+      <div class="grid-2">
+        <div class="service-box"><h3>Работа может быть поэтапной</h3><p>Не всегда безопасно и красиво делать сильное осветление за один раз. Иногда лучший результат — это продуманный путь в несколько этапов.</p></div>
+        <div class="service-box"><h3>Исходная база решает многое</h3><p>Важно знать, сколько раз волосы окрашивались, какой пигмент находится внутри и в каком состоянии длина сейчас.</p></div>
+        <div class="service-box"><h3>Нежелательные оттенки — часть процесса</h3><p>При выходе из чёрного могут проявляться тёплые фоны, которые затем корректируются осветлением и тонированием.</p></div>
+        <div class="service-box"><h3>Качество волос всегда в приоритете</h3><p>Главная задача — не просто осветлить, а сделать это так, чтобы длина сохранила достойный вид и не выглядела уставшей.</p></div>
+      </div>
+    </section>
+    <section class="section section-card">
+      <h2>Как строится работа</h2>
+      <p>Перед началом оцениваются история окрашиваний, плотность волос, эластичность длины и реальный желаемый результат. Это помогает выбрать безопасную стратегию: от более мягкой коррекции до полноценного поэтапного выхода в светлый цвет.</p>
+      <div class="grid-2">
+        <div class="note-box"><h3>Что учитывается</h3><ul class="checklist"><li>сколько раз волосы окрашивались в тёмный;</li><li>был ли бытовой краситель;</li><li>в каком состоянии длина и концы;</li><li>насколько светлый результат нужен;</li><li>какой уход потребуется после процедуры.</li></ul></div>
+        <div class="note-box"><h3>К чему идём</h3><ul class="checklist"><li>предсказуемый результат без хаоса в цвете;</li><li>поэтапное движение к более светлому оттенку;</li><li>бережное отношение к качеству длины;</li><li>основа, с которой можно красиво работать дальше.</li></ul></div>
+      </div>
+    </section>
+    <section class="section section-card">
+      <h2>Почему выбирают «Хижину красоты»</h2>
+      <p>Такие работы не терпят спешки. Камерный формат студии позволяет спокойно сосредоточиться на длине, времени выдержки, фоне осветления и промежуточных решениях. Для выхода из чёрного это критически важно.</p>
+    </section>
+    <section class="section section-card">
+      <h2>Частые вопросы</h2>
+      <div class="grid-2">
+        <div class="faq-box"><h3>Можно ли выйти из чёрного за один раз?</h3><p>Иногда это возможно, но далеко не всегда безопасно. Всё зависит от базы и состояния волос.</p></div>
+        <div class="faq-box"><h3>Будет ли рыжий оттенок?</h3><p>Тёплый фон может проявляться, это нормальная часть процесса. Затем он корректируется осветлением и тонированием.</p></div>
+        <div class="faq-box"><h3>Сильно ли страдают волосы?</h3><p>Такая работа требует осторожности, поэтому приоритет всегда остаётся за качеством длины и реальными возможностями волос.</p></div>
+        <div class="faq-box"><h3>Можно ли сначала просто проконсультироваться?</h3><p>Да, можно написать и описать ситуацию. Это поможет понять, какой формат работы подойдёт именно вам.</p></div>
+      </div>
+    </section>
+    <section class="section section-card">
+      <h2>Запись на выход из чёрного</h2>
+      <p>Записаться можно через Telegram, Dikidi или по телефону. Для таких процедур особенно полезно заранее кратко описать историю окрашиваний и желаемый результат.</p>
+      <div class="cta-row"><a class="btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Написать в Telegram</a><a class="ghost-btn" href="tel:+79111115528">Позвонить: +7 (911) 111-55-28</a></div>
+    </section>
+  </div></main>
+  <footer><div class="container footer-inner"><small>© <span id="year"></span> Хижина красоты</small></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","serviceType":"Выход из чёрного","name":"Выход из чёрного в Новосаратовке","description":"Поэтапное осветление, коррекция фона и бережная работа с качеством волос.","areaServed":"Новосаратовка, Санкт-Петербург, Ленинградская область","provider":{"@type":"BeautySalon","name":"Хижина красоты","url":"https://hizhina.com/","telephone":"+79111115528"}}
+  </script>
+</body>
+</html>
