@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0b0b0f" />
 
-  
-  <title>Хижина красоты — салон красоты в Новосаратовке</title>
-  <meta name="description" content="Хижина красоты — салон красоты в Новосаратовке. Стрижка волос и окрашивание волос в Новосаратовке. Запись в Telegram или Dikidi." />
+  <title>Хижина красоты — салон красоты в Новосаратовке | Женские стрижки и окрашивание волос</title>
+  <meta name="description" content="Хижина красоты — камерная студия и салон красоты в Новосаратовке, Санкт-Петербург. Женские стрижки, окрашивание волос, тонирование и уход. Аккуратная работа с цветом и внимательный подход к деталям." />
   <meta name="keywords" content="Салон красоты в Новосаратовке, Парикмахерская в Новосаратовке, Стрижка волос в Новосаратовке, Окрашивание волос в Новосаратовке" />
   <link rel="canonical" href="https://hizhina.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Хижина красоты" />
-  <meta property="og:description" content="Салон красоты в Новосаратовке. Стрижка и окрашивание. Запись онлайн." />
+  <meta property="og:description" content="Камерная студия и салон красоты в Новосаратовке. Женские стрижки, окрашивание волос, тонирование и уход." />
   <meta property="og:url" content="https://hizhina.com/" />
   <meta property="og:image" content="https://hizhina.com/hizh.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Хижина красоты" />
-  <meta name="twitter:description" content="Салон красоты в Новосаратовке. Стрижка и окрашивание. Запись онлайн." />
+  <meta name="twitter:description" content="Камерная студия и салон красоты в Новосаратовке. Женские стрижки, окрашивание волос, тонирование и уход." />
   <meta name="twitter:image" content="https://hizhina.com/hizh.png" />
 
   <!-- PWA / Favicons -->
@@ -40,7 +39,7 @@
       m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
       m[i].l=1*new Date();
       for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107055715', 'ym');
 
     ym(107055715, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
@@ -76,10 +75,9 @@
       background:var(--bg);
       color:var(--text);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      overflow-x:hidden; /* убирает белую полосу справа */
+      overflow-x:hidden;
     }
 
-    /* Фон — без наложений на хижину (z-index -1) */
     .bg{
       position:fixed;
       inset:0;
@@ -116,7 +114,6 @@
     }
     .skip-link:focus{left:12px}
 
-    /* Шапка — тонкая, без “прилипания” и без плашек */
     header{
       position:relative;
       z-index:20;
@@ -131,7 +128,6 @@
       padding:10px 0;
     }
 
-    /* Логотип делаем заметнее: увеличили и добавили glow, но без “кнопки” под ним */
     .brand img{
       height:74px;
       width:auto;
@@ -139,7 +135,6 @@
       filter: drop-shadow(0 0 14px rgba(255,210,120,.40));
     }
 
-    /* Соц-иконки */
     .social{
       display:flex;
       align-items:center;
@@ -166,7 +161,6 @@
     }
     .icon-btn svg{width:19px;height:19px; fill:rgba(255,255,255,.86);}
 
-    /* HERO */
     .hero{
       min-height:calc(100vh - 94px);
       display:flex;
@@ -178,7 +172,6 @@
       text-align:center;
     }
 
-    /* ВАЖНО: никаких filter/mask/shadow на хижине -> НИКАКОГО “ореола” от CSS */
     .hut{
       width:min(1180px, 96vw);
       height:min(70vh, 740px);
@@ -202,7 +195,7 @@
       gap:12px;
       width:100%;
       position:relative;
-      z-index:5; /* чтобы меню не пряталось */
+      z-index:5;
     }
 
     .btn{
@@ -254,7 +247,6 @@
       background:rgba(214,178,106,.05);
     }
 
-    /* SEO блок — строго ниже первого экрана */
     .seo{padding:52px 0 64px;}
     .seo-card{
       background:rgba(255,255,255,.03);
@@ -328,7 +320,7 @@
 
   <main id="main">
     <section class="hero container" aria-label="Главный экран">
-      <img class="hut" src="hizh.png" alt="Хижина" loading="eager" decoding="async" />
+      <img class="hut" src="hizh.png" alt="Хижина красоты — салон красоты в Новосаратовке" loading="eager" decoding="async" />
 
       <div class="cta" aria-label="Запись">
         <button class="btn" id="ctaBtn" type="button" aria-expanded="false" aria-controls="menu">
@@ -346,17 +338,18 @@
     <section class="seo">
       <div class="container">
         <div class="seo-card" aria-label="Описание салона">
-          <h1>Салон красоты в Новосаратовке — «Хижина красоты»</h1>
+          <h1>Хижина красоты — салон красоты в Новосаратовке</h1>
 
           <p>
-            «Хижина красоты» — уютное пространство, где можно сделать <strong>стрижку волос в Новосаратовке</strong>,
+            «Хижина красоты» — камерная студия, где можно сделать <strong>женские стрижки в Новосаратовке</strong>,
             подобрать форму и длину, а также выполнить <strong>окрашивание волос в Новосаратовке</strong>
             с бережным отношением к качеству волос.
           </p>
 
           <p>
-            Если вы ищете <strong>салон красоты в Новосаратовке</strong> с аккуратным результатом и понятным сервисом —
-            вы по адресу. Запись доступна онлайн: Telegram или Dikidi.
+            Если вы ищете <strong>салон красоты в Новосаратовке</strong> или <strong>парикмахерскую в Новосаратовке</strong>
+            с аккуратным результатом и понятным сервисом, «Хижина красоты» подойдёт для стрижки, окрашивания волос,
+            тонирования и ухода. Запись доступна онлайн: Telegram или Dikidi.
           </p>
 
           <div class="seo-grid">
@@ -404,7 +397,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Меню записи: работает на ПК и на мобильном
     (function(){
       const btn = document.getElementById('ctaBtn');
       const menu = document.getElementById('menu');
@@ -440,13 +432,20 @@
     "@type": "BeautySalon",
     "name": "Хижина красоты",
     "url": "https://hizhina.com/",
+    "description": "Камерная студия и салон красоты в Новосаратовке. Женские стрижки, окрашивание волос, тонирование и уход.",
+    "telephone": "+79111115528",
+    "areaServed": "Новосаратовка, Санкт-Петербург, Ленинградская область",
     "sameAs": [
       "https://instagram.com/thehizhina",
       "https://t.me/TheHizhina",
       "https://vk.com/thehizhina"
     ],
-    "areaServed": "Санкт-Петербург, Ленинградская область, Новосаратовка",
-    "telephone": "+79111115528"
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Новосаратовка",
+      "addressRegion": "Санкт-Петербург",
+      "addressCountry": "RU"
+    }
   }
   </script>
 </body>
