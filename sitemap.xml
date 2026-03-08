@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hizhina.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://hizhina.com/contacts.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://hizhina.com/privacy.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+
+<url>
+<loc>https://hizhina.com/</loc>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/about.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/price.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/strizhki.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/okrashivanie.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/okrashivanie-volos.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/blond.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/vyhod-iz-chernogo.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/tonirovanie-volos.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/uhod.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/novosaratovka.html</loc>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://hizhina.com/social.html</loc>
+<priority>0.6</priority>
+</url>
+
 </urlset>
