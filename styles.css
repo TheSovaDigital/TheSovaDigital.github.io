@@ -150,3 +150,130 @@ body{
 width:min(1100px, 100% - 32px);
 margin:0 auto;
 }
+
+
+/* ================= HEADER ================= */
+
+header{
+position:relative;
+z-index:20;
+}
+
+.header-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 0 10px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+min-width:180px;
+}
+
+.brand img{
+height:34px;
+width:auto;
+opacity:.95;
+}
+
+.header-actions{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+/* ================= SOCIAL ================= */
+
+.social{
+display:flex;
+gap:10px;
+}
+
+.icon-btn{
+width:36px;
+height:36px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+cursor:pointer;
+transition:.2s;
+}
+
+.icon-btn:hover{
+background:rgba(255,255,255,.08);
+}
+
+/* ================= MENU BUTTON ================= */
+
+.menu-toggle{
+width:36px;
+height:36px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+cursor:pointer;
+}
+
+/* ================= DRAWER ================= */
+
+.drawer-overlay{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:60;
+}
+
+.drawer-overlay.show{
+opacity:1;
+visibility:visible;
+}
+
+.drawer{
+position:fixed;
+top:0;
+right:-420px;
+width:420px;
+max-width:92vw;
+height:100%;
+background:#0b0c11;
+padding:24px;
+transition:.35s;
+z-index:70;
+}
+
+.drawer.show{
+right:0;
+}
+
+.drawer-nav{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:20px;
+}
+
+.drawer-nav a{
+padding:12px 14px;
+border-radius:12px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+text-decoration:none;
+color:white;
+font-size:14px;
+}
+
+.drawer-nav a:hover{
+background:rgba(255,255,255,.08);
+}
