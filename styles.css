@@ -143,3 +143,10 @@ body{
   }
 
 }
+
+/* ================= CONTAINER ================= */
+
+.container{
+width:min(1100px, 100% - 32px);
+margin:0 auto;
+}
