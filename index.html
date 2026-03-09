@@ -31,7 +31,7 @@
   <link rel="preload" as="image" href="hizh.png" />
 
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles.css?v=20260309c" />
+  <link rel="stylesheet" href="styles.css?v=20260309d" />
 
   <style>
     :root{
@@ -76,15 +76,6 @@
       background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
       opacity:.18;
       mix-blend-mode:overlay;
-    }
-
-    .bg::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        radial-gradient(600px 240px at 50% 50%, rgba(214,178,106,.08), transparent 70%);
-      opacity:.95;
     }
 
     .container{
@@ -149,18 +140,6 @@
       display:flex;
       align-items:center;
       justify-content:center;
-    }
-
-    .hut-wrap::before{
-      content:"";
-      position:absolute;
-      width:min(760px, 70vw);
-      height:min(420px, 36vw);
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(214,178,106,.14) 0%, rgba(214,178,106,.05) 38%, transparent 72%);
-      filter:blur(32px);
-      pointer-events:none;
-      z-index:0;
     }
 
     .hut{
@@ -384,61 +363,51 @@
       box-shadow:0 10px 22px rgba(0,0,0,.16);
     }
 
-    .seo-links{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:12px;
+    .quick-nav{
+      margin-top:20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    .seo-link{
-      display:block;
+    .quick-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:10px 16px;
+      border-radius:999px;
       text-decoration:none;
-      color:rgba(255,255,255,.92);
-      border-radius:16px;
+      color:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
-      padding:14px 16px;
-      transition:transform .15s ease, border-color .15s ease, background .15s ease;
-    }
-
-    .seo-link:hover{
-      transform:translateY(-1px);
-      border-color:rgba(214,178,106,.35);
-      background:rgba(214,178,106,.05);
-    }
-
-    .seo-link b{
-      display:block;
-      margin-bottom:6px;
-      font-size:15px;
-      font-weight:700;
-    }
-
-    .seo-link span{
-      display:block;
-      color:var(--muted);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
       font-size:14px;
-      line-height:1.45;
+      line-height:1;
+      white-space:nowrap;
     }
 
-    @media (max-width:900px){
-      .seo-links{grid-template-columns:1fr 1fr}
+    .quick-link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(214,178,106,.34);
+      background:rgba(214,178,106,.07);
+      box-shadow:0 10px 22px rgba(0,0,0,.14);
     }
 
     @media (max-width:720px){
       .seo-grid{grid-template-columns:1fr}
-      .seo-links{grid-template-columns:1fr}
       .seo h1{font-size:24px}
       .hero{
         min-height:calc(100vh - 84px);
         padding-top:6px;
       }
       .hut{height:min(50vh, 520px)}
-      .booking-actions{
+      .booking-actions,
+      .quick-nav{
         flex-direction:column;
       }
-      .booking-btn{
+      .booking-btn,
+      .quick-link{
         width:100%;
       }
     }
@@ -522,61 +491,13 @@
             </div>
           </div>
 
-          <div class="seo-links" aria-label="Разделы сайта">
-            <a class="seo-link" href="about.html">
-              <b>Обо мне</b>
-              <span>О мастере, подходе к работе и атмосфере студии.</span>
-            </a>
-
-            <a class="seo-link" href="price.html">
-              <b>Прайс</b>
-              <span>Стоимость услуг и ориентиры по основным процедурам.</span>
-            </a>
-
-            <a class="seo-link" href="okrashivanie.html">
-              <b>Окрашивание</b>
-              <span>Однотон, сложные техники, коррекция цвета и тонирование.</span>
-            </a>
-
-            <a class="seo-link" href="strizhki.html">
-              <b>Стрижки</b>
-              <span>Женские стрижки с аккуратной формой и удобной посадкой.</span>
-            </a>
-
-            <a class="seo-link" href="uhod.html">
-              <b>Уход</b>
-              <span>Мягкость, блеск и поддержание качества волос.</span>
-            </a>
-
-            <a class="seo-link" href="blond.html">
-              <b>Блонд</b>
-              <span>Осветление, чистые оттенки и бережная работа с длиной.</span>
-            </a>
-
-            <a class="seo-link" href="vyhod-iz-chernogo.html">
-              <b>Выход из чёрного</b>
-              <span>Поэтапная коррекция и аккуратное осветление тёмной базы.</span>
-            </a>
-
-            <a class="seo-link" href="tonirovanie-volos.html">
-              <b>Тонирование</b>
-              <span>Обновление оттенка и нейтрализация нежелательных тонов.</span>
-            </a>
-
-            <a class="seo-link" href="novosaratovka.html">
-              <b>Новосаратовка</b>
-              <span>Локальная страница для поиска салона рядом с домом.</span>
-            </a>
-
-            <a class="seo-link" href="social.html">
-              <b>Соцсети</b>
-              <span>Все площадки Хижины красоты в одном разделе.</span>
-            </a>
-
-            <a class="seo-link" href="contacts.html">
-              <b>Контакты</b>
-              <span>Как добраться, написать и быстро записаться.</span>
-            </a>
+          <div class="quick-nav" aria-label="Быстрые переходы">
+            <a class="quick-link" href="about.html">Обо мне</a>
+            <a class="quick-link" href="price.html">Прайс</a>
+            <a class="quick-link" href="okrashivanie.html">Окрашивание</a>
+            <a class="quick-link" href="strizhki.html">Стрижки</a>
+            <a class="quick-link" href="contacts.html">Контакты</a>
+            <a class="quick-link" href="social.html">Соцсети</a>
           </div>
         </div>
       </div>
