@@ -167,23 +167,13 @@
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+<div class="bg"></div>
+<div id="site-header"></div>
 
-  <header>
-    <div class="container header-inner">
-      <div class="brand" aria-label="Хижина красоты">
-        <a href="index.html" aria-label="На главную страницу">
-          <img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" />
-        </a>
-      </div>
 
-      <div class="actions" aria-label="Быстрые действия">
-        <a class="pill" href="index.html">На главную</a>
-        <a class="pill" href="contacts.html">Контакты</a>
-      </div>
-    </div>
-  </header>
-
+<main id="main">
+  
   <main class="container">
     <section class="card" aria-label="Политика конфиденциальности">
       <h1>Политика конфиденциальности</h1>
@@ -261,19 +251,8 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <small>© <span id="year"></span> Хижина красоты</small>
-      <div class="footer-links">
-        <a href="index.html">Главная</a>
-        <a href="contacts.html">Контакты</a>
-        <a href="privacy.html">Политика конфиденциальности</a>
-        <a href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer">Telegram</a>
-        <a href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer">VK</a>
-      </div>
-    </div>
-  </footer>
+<div id="site-footer"></div>
+<script src="script.js"></script>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
