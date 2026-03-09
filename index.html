@@ -38,15 +38,11 @@
       --bg:#0b0b0f;
       --text:rgba(255,255,255,.92);
       --muted:rgba(255,255,255,.72);
-      --muted-soft:rgba(255,255,255,.58);
       --max:1100px;
       --goldA:rgba(246,230,182,.92);
       --goldB:rgba(202,164,90,.62);
       --goldC:rgba(138,106,47,.75);
-      --stroke:rgba(255,255,255,.10);
-      --panel:rgba(255,255,255,.035);
       --shadow:0 24px 80px rgba(0,0,0,.42);
-      --radius:24px;
     }
 
     *{box-sizing:border-box}
@@ -115,8 +111,8 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      padding:26px 0 30px;
-      gap:18px;
+      padding:18px 0 30px;
+      gap:14px;
       text-align:center;
       position:relative;
     }
@@ -125,7 +121,7 @@
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:14px;
+      gap:10px;
       max-width:760px;
       margin:0 auto;
       position:relative;
@@ -145,14 +141,6 @@
       font-size:12px;
       letter-spacing:.08em;
       text-transform:uppercase;
-    }
-
-    .hero-title{
-      margin:0;
-      font-size:clamp(30px, 5vw, 58px);
-      line-height:1.02;
-      letter-spacing:.2px;
-      text-wrap:balance;
     }
 
     .hero-text{
@@ -216,25 +204,30 @@
 
     .btn{
       appearance:none;
-      border:1px solid rgba(214,178,106,.55);
-      background:rgba(0,0,0,.2);
+      border:1px solid rgba(214,178,106,.62);
+      background:
+        linear-gradient(180deg, rgba(20,16,10,.78), rgba(8,8,10,.78));
       color:var(--text);
-      font-weight:750;
+      font-weight:800;
       letter-spacing:.2px;
-      padding:14px 26px;
+      padding:15px 30px;
       border-radius:999px;
-      min-width:280px;
+      min-width:300px;
       cursor:pointer;
       -webkit-tap-highlight-color:transparent;
       position:relative;
-      transition:transform .16s ease, background .2s ease, border-color .2s ease;
-      box-shadow:0 10px 30px rgba(0,0,0,.18);
+      transition:transform .16s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
+      box-shadow:
+        0 14px 34px rgba(0,0,0,.28),
+        0 0 26px rgba(214,178,106,.10);
     }
 
     .btn:hover{
       transform:translateY(-1px);
-      background:rgba(214,178,106,.05);
-      border-color:rgba(214,178,106,.7);
+      border-color:rgba(214,178,106,.82);
+      box-shadow:
+        0 16px 38px rgba(0,0,0,.32),
+        0 0 34px rgba(214,178,106,.16);
     }
 
     .btn::before{
@@ -248,7 +241,7 @@
       -webkit-mask-composite:xor;
       mask-composite:exclude;
       pointer-events:none;
-      opacity:.9;
+      opacity:.95;
     }
 
     .menu{
@@ -276,12 +269,6 @@
       transform:translateY(-1px);
       border-color:rgba(214,178,106,.55);
       background:rgba(214,178,106,.05);
-    }
-
-    .hero-note{
-      color:var(--muted-soft);
-      font-size:13px;
-      line-height:1.5;
     }
 
     .hero-scroll{
@@ -423,7 +410,7 @@
       .seo h1{font-size:24px}
       .hero{
         min-height:calc(100vh - 84px);
-        padding-top:16px;
+        padding-top:12px;
       }
       .hero-text{font-size:15px}
       .hut{height:min(50vh, 520px)}
@@ -448,7 +435,7 @@
     <section class="hero container" aria-label="Главный экран">
       <div class="hero-copy">
         <div class="hero-badge">Камерная студия в Новосаратовке</div>
-        <h1 class="hero-title">Женские стрижки, окрашивание и бережный уход за волосами</h1>
+
         <p class="hero-text">
           «Хижина красоты» — уютное пространство, где важны аккуратная работа с цветом, внимание к деталям и спокойная атмосфера без спешки.
         </p>
@@ -466,8 +453,6 @@
           <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
           <a href="tel:+79111115528">Позвонить</a>
         </div>
-
-        <div class="hero-note">Онлайн-запись, связь в Telegram и быстрый контакт по телефону</div>
 
         <a class="hero-scroll" href="#seo">
           <span>↓</span> Подробнее о студии
