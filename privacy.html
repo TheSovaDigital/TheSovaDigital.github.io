@@ -251,8 +251,7 @@
     </section>
   </main>
 
-<div id="site-footer"></div>
-<script src="script.js"></script>
+
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -260,5 +259,8 @@
     const pad = (n)=> String(n).padStart(2,'0');
     document.getElementById('today').textContent = `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
   </script>
+
+  <div id="site-footer"></div>
+<script src="script.js"></script>
 </body>
 </html>
