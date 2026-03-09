@@ -31,7 +31,7 @@
   <link rel="preload" as="image" href="hizh.png" />
 
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles.css?v=20260309d" />
+  <link rel="stylesheet" href="styles.css?v=20260309e" />
 
   <style>
     :root{
@@ -272,11 +272,11 @@
     }
 
     .seo-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      background:linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
       border:1px solid rgba(255,255,255,.10);
       border-radius:22px;
       padding:24px;
-      box-shadow:var(--shadow);
+      box-shadow:none;
       backdrop-filter:blur(8px);
     }
 
@@ -306,6 +306,7 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:14px;
+      align-items:stretch;
     }
 
     .seo-box{
@@ -313,6 +314,7 @@
       border:1px solid rgba(255,255,255,.10);
       background:rgba(0,0,0,.16);
       padding:18px;
+      min-height:100%;
     }
 
     .seo h2{
@@ -363,8 +365,48 @@
       box-shadow:0 10px 22px rgba(0,0,0,.16);
     }
 
+    .main-cards{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:14px;
+    }
+
+    .main-card{
+      display:block;
+      min-height:132px;
+      padding:18px 16px;
+      border-radius:18px;
+      text-decoration:none;
+      color:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      transition:transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
+    }
+
+    .main-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(214,178,106,.34);
+      background:rgba(214,178,106,.05);
+      box-shadow:0 14px 28px rgba(0,0,0,.16);
+    }
+
+    .main-card b{
+      display:block;
+      margin-bottom:8px;
+      font-size:15px;
+      font-weight:700;
+    }
+
+    .main-card span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
     .quick-nav{
-      margin-top:20px;
+      margin-top:16px;
       display:flex;
       flex-wrap:wrap;
       gap:10px;
@@ -394,6 +436,12 @@
       box-shadow:0 10px 22px rgba(0,0,0,.14);
     }
 
+    @media (max-width:980px){
+      .main-cards{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width:720px){
       .seo-grid{grid-template-columns:1fr}
       .seo h1{font-size:24px}
@@ -409,6 +457,9 @@
       .booking-btn,
       .quick-link{
         width:100%;
+      }
+      .main-cards{
+        grid-template-columns:1fr;
       }
     }
 
@@ -491,11 +542,46 @@
             </div>
           </div>
 
-          <div class="quick-nav" aria-label="Быстрые переходы">
-            <a class="quick-link" href="about.html">Обо мне</a>
+          <div class="main-cards" aria-label="Основные разделы">
+            <a class="main-card" href="about.html">
+              <b>Обо мне</b>
+              <span>О мастере, подходе к работе и атмосфере студии.</span>
+            </a>
+
+            <a class="main-card" href="okrashivanie.html">
+              <b>Окрашивание</b>
+              <span>Однотон, сложные техники, коррекция цвета и тонирование.</span>
+            </a>
+
+            <a class="main-card" href="strizhki.html">
+              <b>Стрижки</b>
+              <span>Женские стрижки с аккуратной формой и удобной посадкой.</span>
+            </a>
+
+            <a class="main-card" href="uhod.html">
+              <b>Уход</b>
+              <span>Мягкость, блеск и поддержание качества волос.</span>
+            </a>
+
+            <a class="main-card" href="blond.html">
+              <b>Блонд</b>
+              <span>Осветление, чистые оттенки и бережная работа с длиной.</span>
+            </a>
+
+            <a class="main-card" href="vyhod-iz-chernogo.html">
+              <b>Выход из чёрного</b>
+              <span>Поэтапная коррекция и аккуратное осветление тёмной базы.</span>
+            </a>
+
+            <a class="main-card" href="tonirovanie-volos.html">
+              <b>Тонирование</b>
+              <span>Обновление оттенка и нейтрализация нежелательных тонов.</span>
+            </a>
+          </div>
+
+          <div class="quick-nav" aria-label="Дополнительные переходы">
             <a class="quick-link" href="price.html">Прайс</a>
-            <a class="quick-link" href="okrashivanie.html">Окрашивание</a>
-            <a class="quick-link" href="strizhki.html">Стрижки</a>
+            <a class="quick-link" href="novosaratovka.html">Новосаратовка</a>
             <a class="quick-link" href="contacts.html">Контакты</a>
             <a class="quick-link" href="social.html">Соцсети</a>
           </div>
