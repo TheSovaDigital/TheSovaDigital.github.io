@@ -104,8 +104,6 @@ header{
   align-items:center;
   justify-content:space-between;
   gap:16px;
-  width:min(var(--max), 100% - 32px);
-  margin:0 auto;
   padding:0;
 }
 
