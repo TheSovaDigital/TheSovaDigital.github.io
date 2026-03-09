@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0f" />
+
+  <title>404 — Страница не найдена | Хижина красоты</title>
+  <meta name="description" content="Страница не найдена. Вернитесь на главную страницу Хижины красоты или перейдите к контактам и записи." />
+  <link rel="canonical" href="https://hizhina.com/404.html" />
+
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <link rel="preload" as="image" href="logo_hizhina.webp" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260302a">
+
+  <style>
+    :root{
+      --bg:#07080b;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.52);
+      --gold1:#f3d48a;
+      --gold2:#b8892d;
+      --gold3:#6b4a12;
+      --stroke: rgba(255,255,255,.10);
+      --stroke2: rgba(255,255,255,.16);
+      --shadow: 0 24px 80px rgba(0,0,0,.58);
+      --radius: 26px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans",sans-serif;
+      overflow-x:hidden;
+    }
+
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .bg::before{
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background:
+        radial-gradient(700px 600px at 18% 16%, rgba(186,140,40,.28), transparent 60%),
+        radial-gradient(900px 700px at 84% 22%, rgba(40,110,170,.22), transparent 60%),
+        radial-gradient(1200px 900px at 50% 84%, rgba(0,0,0,.68), transparent 60%);
+      filter: blur(16px);
+      opacity:.95;
+    }
+
+    .container{
+      width:min(1100px, calc(100% - 36px));
+      margin:0 auto;
+    }
+
+    .error-wrap{
+      min-height: calc(100vh - 120px);
+      display:grid;
+      place-items:center;
+      padding: 24px 0 40px;
+    }
+
+    .error-card{
+      width:min(860px, 100%);
+      padding: 38px 32px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      position:relative;
+      overflow:hidden;
+      text-align:center;
+    }
+
+    .error-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(420px 180px at 18% 20%, rgba(243,212,138,.14), transparent 60%),
+        radial-gradient(500px 220px at 82% 10%, rgba(95,150,210,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .error-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .error-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:36px;
+      padding: 8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(243,212,138,.22);
+      background: rgba(243,212,138,.08);
+      color: var(--gold1);
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+    }
+
+    .error-code{
+      margin:0;
+      font-size: clamp(84px, 18vw, 190px);
+      line-height:.9;
+      font-weight:800;
+      letter-spacing:-.04em;
+      color: rgba(255,255,255,.96);
+      text-shadow:
+        0 0 24px rgba(243,212,138,.08),
+        0 10px 40px rgba(0,0,0,.35);
+    }
+
+    .error-title{
+      margin: 14px 0 12px;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height:1.05;
+      letter-spacing:.2px;
+    }
+
+    .error-text{
+      margin: 0 auto;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .error-actions{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:26px;
+    }
+
+    .error-btn{
+      appearance:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding: 12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      letter-spacing:.2px;
+      transition: transform .16s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+      white-space:nowrap;
+    }
+
+    .error-btn-primary{
+      color:#1a1305;
+      background: linear-gradient(180deg, var(--gold1), #d6ad58);
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow:
+        0 12px 30px rgba(184,137,45,.22),
+        inset 0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .error-btn-secondary{
+      color: rgba(255,255,255,.9);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .error-btn:hover{
+      transform: translateY(-1px);
+    }
+
+    .error-btn-primary:hover{
+      box-shadow:
+        0 16px 36px rgba(184,137,45,.28),
+        inset 0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .error-btn-secondary:hover{
+      border-color: rgba(243,212,138,.30);
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
+    }
+
+    .error-note{
+      margin-top:18px;
+      font-size:13px;
+      line-height:1.5;
+      color: var(--muted2);
+    }
+
+    .spark{
+      position:absolute;
+      border-radius:999px;
+      filter: blur(2px);
+      opacity:.65;
+      pointer-events:none;
+    }
+
+    .spark-1{
+      width:10px; height:10px;
+      top:18%;
+      left:14%;
+      background: rgba(243,212,138,.45);
+      box-shadow: 0 0 18px rgba(243,212,138,.30);
+      animation: floatA 6s ease-in-out infinite;
+    }
+
+    .spark-2{
+      width:8px; height:8px;
+      top:28%;
+      right:18%;
+      background: rgba(170,210,255,.35);
+      box-shadow: 0 0 18px rgba(170,210,255,.22);
+      animation: floatB 7s ease-in-out infinite;
+    }
+
+    .spark-3{
+      width:6px; height:6px;
+      bottom:22%;
+      left:22%;
+      background: rgba(243,212,138,.35);
+      box-shadow: 0 0 14px rgba(243,212,138,.22);
+      animation: floatC 8s ease-in-out infinite;
+    }
+
+    @keyframes floatA{
+      0%,100%{ transform: translateY(0) translateX(0); opacity:.55; }
+      50%{ transform: translateY(-10px) translateX(6px); opacity:.9; }
+    }
+
+    @keyframes floatB{
+      0%,100%{ transform: translateY(0) translateX(0); opacity:.4; }
+      50%{ transform: translateY(8px) translateX(-6px); opacity:.8; }
+    }
+
+    @keyframes floatC{
+      0%,100%{ transform: translateY(0) translateX(0); opacity:.45; }
+      50%{ transform: translateY(-8px) translateX(8px); opacity:.75; }
+    }
+
+    @media (max-width: 860px){
+      .error-wrap{
+        min-height: calc(100vh - 90px);
+      }
+
+      .error-card{
+        padding: 28px 18px;
+        border-radius: 22px;
+      }
+
+      .error-text{
+        font-size:15px;
+      }
+    }
+
+    @media (max-width: 420px){
+      .container{
+        width:min(1100px, calc(100% - 20px));
+      }
+
+      .error-actions{
+        flex-direction:column;
+      }
+
+      .error-btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div id="site-header"></div>
+
+  <main class="container">
+    <section class="error-wrap" aria-label="Страница не найдена">
+      <div class="error-card">
+        <span class="spark spark-1" aria-hidden="true"></span>
+        <span class="spark spark-2" aria-hidden="true"></span>
+        <span class="spark spark-3" aria-hidden="true"></span>
+
+        <div class="error-inner">
+          <div class="error-badge">Ошибка навигации</div>
+          <h1 class="error-code">404</h1>
+          <h2 class="error-title">Похоже, эта страница затерялась в тумане</h2>
+          <p class="error-text">
+            Такой страницы нет или ссылка устарела. Но сама Хижина на месте — можно вернуться на главную,
+            перейти в контакты или сразу открыть запись.
+          </p>
+
+          <div class="error-actions">
+            <a class="error-btn error-btn-primary" href="/">На главную</a>
+            <a class="error-btn error-btn-secondary" href="/contacts.html">Контакты</a>
+            <a class="error-btn error-btn-secondary" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Записаться</a>
+          </div>
+
+          <p class="error-note">
+            Если ошибка повторяется, просто откройте главное меню или напишите в Telegram.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
