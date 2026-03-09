@@ -17,7 +17,6 @@
 
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="stylesheet" href="styles.css">
- 
   <link rel="stylesheet" href="styles.css?v=20260302a">
 
   <style>
@@ -47,7 +46,6 @@
       overflow-x:hidden;
     }
 
-    /* фон как на главной: мягкий luxury */
     .bg{position:fixed; inset:0; z-index:-1; pointer-events:none;}
     .bg::before{
       content:"";
@@ -59,24 +57,24 @@
       filter: blur(14px);
       opacity: .95;
     }
-   
 
     .container{
       width:min(1100px, calc(100% - 36px));
       margin:0 auto;
     }
 
-    /* шапка аккуратная и не жирная */
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       padding:18px 0 10px;
     }
+
     .brand{
       display:flex; align-items:center; gap:12px;
       min-width: 180px;
     }
+
     .brand img{
       height:80px;
       width:auto;
@@ -101,16 +99,21 @@
       transition: transform .15s ease, border-color .2s ease, background .2s ease;
       white-space:nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06); }
+
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.06);
+    }
+
     .btn:active{ transform: translateY(0); }
 
-    /* карточка страницы */
     .panel{
       margin: 10px auto 26px;
       padding: 28px;
       border-radius: var(--radius);
       background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.10); 
+      border: 1px solid rgba(255,255,255,.10);
       backdrop-filter: blur(10px);
     }
 
@@ -119,6 +122,7 @@
       font-size: clamp(34px, 4vw, 48px);
       letter-spacing: .2px;
     }
+
     .lead{
       margin:0 0 18px;
       color: var(--muted);
@@ -133,6 +137,7 @@
       gap: 16px;
       margin-top: 16px;
     }
+
     .card{
       border-radius: 18px;
       background: rgba(0,0,0,.22);
@@ -140,22 +145,28 @@
       padding: 18px;
       min-height: 170px;
     }
+
     .card h2{
       margin:0 0 12px;
       font-size: 18px;
       color: rgba(255,255,255,.92);
       letter-spacing:.2px;
     }
+
     .list{
       margin:0;
       padding-left: 18px;
       color: var(--muted);
       line-height:1.6;
     }
+
     .list b{ color: rgba(255,255,255,.92); }
 
-    
-    .actionList{ display:grid; gap: 12px; margin-top: 8px; }
+    .actionList{
+      display:grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
 
     .actionBtn{
       display:flex;
@@ -172,6 +183,7 @@
       overflow:hidden;
       transition: transform .16s ease, border-color .22s ease, background .22s ease;
     }
+
     .actionBtn::before{
       content:"";
       position:absolute; inset:-1px;
@@ -179,26 +191,45 @@
       opacity:.85;
       pointer-events:none;
     }
+
     .actionBtn:hover{
       transform: translateY(-1px);
       border-color: rgba(243,212,138,.35);
       background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
     }
+
     .actionBtn:active{ transform: translateY(0); }
 
     .iconWrap{
-      width:40px; height:40px;
-      display:grid; place-items:center;
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
       border-radius: 12px;
       background: rgba(0,0,0,.35);
       border: 1px solid rgba(243,212,138,.28);
       flex: 0 0 auto;
       box-shadow: inset 0 0 0 1px rgba(0,0,0,.25);
     }
-    .iconWrap svg{ width:22px; height:22px; fill: rgba(243,212,138,.95); }
 
-    .actionText{ display:flex; flex-direction:column; gap: 2px; min-width: 0; }
-    .actionTitle{ font-weight: 750; letter-spacing:.2px; }
+    .iconWrap svg{
+      width:22px;
+      height:22px;
+      fill: rgba(243,212,138,.95);
+    }
+
+    .actionText{
+      display:flex;
+      flex-direction:column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .actionTitle{
+      font-weight: 750;
+      letter-spacing:.2px;
+    }
+
     .actionSub{
       color: rgba(255,255,255,.62);
       font-size: 13px;
@@ -206,6 +237,7 @@
       text-overflow:ellipsis;
       white-space:nowrap;
     }
+
     .chev{
       margin-left:auto;
       color: rgba(243,212,138,.9);
@@ -224,11 +256,140 @@
       line-height:1.5;
     }
 
+    .inlineActions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .miniBtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      text-decoration:none;
+      color: rgba(255,255,255,.92);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      transition: transform .16s ease, border-color .22s ease, background .22s ease;
+    }
+
+    .miniBtn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(243,212,138,.35);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+    }
+
+    .mapGallery{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
+      align-items:stretch;
+      margin-top: 4px;
+    }
+
+    .mapBox,
+    .galleryBox{
+      border-radius: 18px;
+      overflow:hidden;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.10);
+      min-height: 420px;
+      position:relative;
+    }
+
+    .mapBox iframe{
+      width:100%;
+      height:100%;
+      min-height:420px;
+      border:0;
+      display:block;
+    }
+
+    .galleryBox{
+      display:flex;
+      flex-direction:column;
+    }
+
+    .galleryStage{
+      position:relative;
+      flex:1 1 auto;
+      min-height:420px;
+      background: rgba(0,0,0,.2);
+    }
+
+    .gallerySlide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition: opacity .7s ease;
+      pointer-events:none;
+    }
+
+    .gallerySlide.is-active{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .gallerySlide img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .galleryBadge{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      z-index:2;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:.2px;
+      color: rgba(255,255,255,.92);
+      background: rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .galleryDots{
+      position:absolute;
+      right:14px;
+      bottom:14px;
+      z-index:2;
+      display:flex;
+      gap:7px;
+      padding:8px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.42);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .galleryDot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background: rgba(255,255,255,.28);
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .galleryDot.is-active{
+      background: rgba(243,212,138,.95);
+      transform: scale(1.15);
+    }
+
     footer{
       padding: 18px 0 34px;
       color: rgba(255,255,255,.50);
       font-size: 12px;
     }
+
     .footRow{
       display:flex;
       align-items:center;
@@ -236,15 +397,30 @@
       gap: 12px;
       flex-wrap:wrap;
     }
-    .footLinks{ display:flex; gap: 14px; flex-wrap:wrap; }
+
+    .footLinks{
+      display:flex;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+
     .footLinks a{
       color: rgba(255,255,255,.60);
       text-decoration:none;
       border-bottom: 1px solid transparent;
     }
-    .footLinks a:hover{ color: rgba(255,255,255,.86); border-bottom-color: rgba(243,212,138,.35); }
 
-    /* адаптив */
+    .footLinks a:hover{
+      color: rgba(255,255,255,.86);
+      border-bottom-color: rgba(243,212,138,.35);
+    }
+
+    @media (max-width: 980px){
+      .mapGallery{
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 860px){
       .grid{ grid-template-columns: 1fr; }
       .brand{ min-width: 0; }
@@ -252,26 +428,34 @@
       .nav-actions{ justify-content:flex-end; }
       .panel{ padding: 20px; }
       .brand img{ height: 32px; }
+
+      .mapBox,
+      .galleryBox,
+      .galleryStage,
+      .mapBox iframe{
+        min-height: 320px;
+      }
     }
+
     @media (max-width: 420px){
       .btn{ padding: 9px 12px; font-size: 13px; }
       .actionBtn{ padding: 13px 14px; }
       .iconWrap{ width: 38px; height: 38px; }
+      .inlineActions{ flex-direction:column; }
+      .miniBtn{ width:100%; }
     }
   </style>
-
-
 </head>
 
 <body>
   <div class="bg"></div>
-<div id="site-header"></div>
+  <div id="site-header"></div>
+
   <div class="bg" aria-hidden="true"></div>
   <div class="bg" aria-hidden="true">
-  <div class="bg__grain"></div>
-  <div class="bg__vignette"></div>
-</div>
-  
+    <div class="bg__grain"></div>
+    <div class="bg__vignette"></div>
+  </div>
 
   <main class="container">
     <section class="panel" aria-label="Контакты">
@@ -287,7 +471,6 @@
           <div class="actionList">
             <a class="actionBtn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
               <span class="iconWrap" aria-hidden="true">
-                <!-- Telegram -->
                 <svg viewBox="0 0 24 24"><path d="M9.6 15.5 9.3 19c.4 0 .6-.2.8-.4l1.9-1.8 4 3c.7.4 1.2.2 1.4-.7l2.6-12c.3-1.1-.4-1.6-1.2-1.3L3.4 9.9c-1 .4-1 1.1-.2 1.4l4 1.3 9.2-5.8c.4-.3.9-.1.5.2"/></svg>
               </span>
               <span class="actionText">
@@ -299,7 +482,6 @@
 
             <a class="actionBtn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer" aria-label="Открыть онлайн-запись Dikidi">
               <span class="iconWrap" aria-hidden="true">
-                <!-- Calendar/check -->
                 <svg viewBox="0 0 24 24"><path d="M7 2h2v2h6V2h2v2h3v18H4V4h3V2zm13 8H6v10h14V10zM6 8h14V6H6v2zm4.3 9.3 4.9-4.9 1.4 1.4-6.3 6.3-3.2-3.2 1.4-1.4 1.8 1.8z"/></svg>
               </span>
               <span class="actionText">
@@ -311,7 +493,6 @@
 
             <a class="actionBtn" href="tel:+79111115528" aria-label="Позвонить +7 (911) 111-55-28">
               <span class="iconWrap" aria-hidden="true">
-                <!-- Phone -->
                 <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.8 21 3 12.2 3 1c0-.6.4-1 1-1h3.1c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></svg>
               </span>
               <span class="actionText">
@@ -331,6 +512,19 @@
             <li><b>Время работы:</b> ежедневно 10:00–22:00</li>
             <li><b>Адрес:</b> Ленинградская область, Всеволожский район, деревня Новосаратовка, 212А</li>
           </ul>
+
+          <div class="inlineActions">
+            <a
+              class="miniBtn"
+              href="https://yandex.ru/maps/?z=12&ol=biz&oid=173524253716"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть маршрут в Яндекс Картах"
+            >
+              Открыть маршрут
+            </a>
+          </div>
+
           <p class="note">Ориентир: рядом с ЖК «Город Первых», «Город Звёзд» и «Южная Нева» — удобно добираться.</p>
         </div>
 
@@ -344,16 +538,73 @@
             Запись — через Telegram или онлайн в Dikidi: так мы заранее согласуем время и услугу, чтобы всё прошло спокойно и точно.
           </p>
         </div>
+
+        <div class="card wide">
+          <h2>Карта и фото салона</h2>
+
+          <div class="mapGallery">
+            <div class="mapBox">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=173524253716"
+                width="560"
+                height="400"
+                frameborder="0"
+                loading="lazy"
+                allowfullscreen
+                title="Яндекс Карта — Хижина красоты"
+              ></iframe>
+            </div>
+
+            <div class="galleryBox">
+              <div class="galleryStage" id="salonGallery">
+                <div class="gallerySlide is-active">
+                  <img src="images/salon/1.jpg" alt="Интерьер салона Хижина красоты 1" loading="eager">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/2.jpg" alt="Интерьер салона Хижина красоты 2" loading="lazy">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/3.jpg" alt="Интерьер салона Хижина красоты 3" loading="lazy">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/4.jpg" alt="Интерьер салона Хижина красоты 4" loading="lazy">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/5.jpg" alt="Интерьер салона Хижина красоты 5" loading="lazy">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/6.jpg" alt="Интерьер салона Хижина красоты 6" loading="lazy">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/7.jpg" alt="Интерьер салона Хижина красоты 7" loading="lazy">
+                </div>
+                <div class="gallerySlide">
+                  <img src="images/salon/8.jpg" alt="Интерьер салона Хижина красоты 8" loading="lazy">
+                </div>
+
+                <div class="galleryBadge">Фото салона</div>
+
+                <div class="galleryDots" aria-hidden="true">
+                  <span class="galleryDot is-active"></span>
+                  <span class="galleryDot"></span>
+                  <span class="galleryDot"></span>
+                  <span class="galleryDot"></span>
+                  <span class="galleryDot"></span>
+                  <span class="galleryDot"></span>
+                  <span class="galleryDot"></span>
+                  <span class="galleryDot"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="note" style="margin-top:14px">
+            Фото салона автоматически переключаются каждые 2 секунды.
+          </p>
+        </div>
       </div>
     </section>
   </main>
-
-
-
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 
   <script type="application/ld+json">
   {
@@ -373,8 +624,36 @@
   }
   </script>
 
-<div id="site-footer"></div>
-<script src="script.js"></script>
-  
+  <div id="site-footer"></div>
+  <script src="script.js"></script>
+
+  <script>
+    (function () {
+      const gallery = document.getElementById('salonGallery');
+      if (!gallery) return;
+
+      const slides = gallery.querySelectorAll('.gallerySlide');
+      const dots = gallery.querySelectorAll('.galleryDot');
+
+      if (!slides.length) return;
+
+      let index = 0;
+
+      function showSlide(nextIndex) {
+        slides[index].classList.remove('is-active');
+        if (dots[index]) dots[index].classList.remove('is-active');
+
+        index = nextIndex;
+
+        slides[index].classList.add('is-active');
+        if (dots[index]) dots[index].classList.add('is-active');
+      }
+
+      setInterval(() => {
+        const nextIndex = (index + 1) % slides.length;
+        showSlide(nextIndex);
+      }, 2000);
+    })();
+  </script>
 </body>
 </html>
