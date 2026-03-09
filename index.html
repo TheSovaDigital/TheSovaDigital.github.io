@@ -30,287 +30,578 @@
   <link rel="preload" as="image" href="logo_hizhina.webp" />
   <link rel="preload" as="image" href="hizh.png" />
 
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260309b" />
+
   <style>
-    :root{--bg:#0b0b0f;--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.72);--max:1100px;--goldA:rgba(246,230,182,.92);--goldB:rgba(202,164,90,.62);--goldC:rgba(138,106,47,.75)}
-    *{box-sizing:border-box} html,body{height:100%}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;overflow-x:hidden}
-    body.menu-open{overflow:hidden}
-    .bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),linear-gradient(#07070b, #050509)}
-    .bg::after{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");opacity:.18;pointer-events:none;mix-blend-mode:overlay}
-    .container{width:min(var(--max), 100% - 32px); margin:0 auto}
-    .skip-link{position:absolute;left:-999px;top:10px;background:#fff;color:#000;padding:10px 12px;border-radius:10px;z-index:9999}
+    :root{
+      --bg:#0b0b0f;
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.72);
+      --muted-soft:rgba(255,255,255,.58);
+      --max:1100px;
+      --goldA:rgba(246,230,182,.92);
+      --goldB:rgba(202,164,90,.62);
+      --goldC:rgba(138,106,47,.75);
+      --stroke:rgba(255,255,255,.10);
+      --panel:rgba(255,255,255,.035);
+      --shadow:0 24px 80px rgba(0,0,0,.42);
+      --radius:24px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow-x:hidden;
+    }
+
+    .bg{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      overflow:hidden;
+      background:
+        radial-gradient(1200px 700px at 25% 20%, rgba(171,120,44,.22), transparent 60%),
+        radial-gradient(900px 600px at 78% 28%, rgba(28,79,132,.18), transparent 62%),
+        radial-gradient(900px 650px at 55% 85%, rgba(0,0,0,.55), transparent 60%),
+        linear-gradient(#07070b, #050509);
+    }
+
+    .bg::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      opacity:.18;
+      mix-blend-mode:overlay;
+    }
+
+    .bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(600px 240px at 50% 50%, rgba(214,178,106,.08), transparent 70%);
+      opacity:.95;
+    }
+
+    .container{
+      width:min(var(--max), 100% - 32px);
+      margin:0 auto;
+    }
+
+    .skip-link{
+      position:absolute;
+      left:-999px;
+      top:10px;
+      background:#fff;
+      color:#000;
+      padding:10px 12px;
+      border-radius:10px;
+      z-index:9999;
+    }
+
     .skip-link:focus{left:12px}
-    header{position:relative;z-index:20;background:linear-gradient(to bottom, rgba(6,6,9,.55), rgba(6,6,9,.18), transparent);backdrop-filter:saturate(1.05) blur(6px)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
-    .brand img{height:74px;width:auto;display:block;filter: drop-shadow(0 0 14px rgba(255,210,120,.40))}
-    .header-actions{display:flex;align-items:center;gap:10px}
-    .social{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;white-space:nowrap}
-    .icon-btn,.menu-toggle{width:42px;height:42px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);transition:transform .15s ease, border-color .15s ease, background .15s ease;-webkit-tap-highlight-color:transparent}
-    .icon-btn:hover,.menu-toggle:hover{transform:translateY(-1px);border-color:rgba(214,178,106,.45);background:rgba(214,178,106,.05)}
-    .icon-btn svg{width:19px;height:19px;fill:rgba(255,255,255,.86)}
-    .menu-toggle{position:relative;appearance:none;cursor:pointer;padding:0;flex:0 0 auto}
-    .menu-toggle span{position:absolute;width:18px;height:2px;border-radius:999px;background:rgba(255,255,255,.9);transition:transform .25s ease, opacity .2s ease, top .25s ease}
-    .menu-toggle span:nth-child(1){top:14px}.menu-toggle span:nth-child(2){top:20px}.menu-toggle span:nth-child(3){top:26px}
-    .menu-toggle.active span:nth-child(1){top:20px; transform:rotate(45deg)}
-    .menu-toggle.active span:nth-child(2){opacity:0}
-    .menu-toggle.active span:nth-child(3){top:20px; transform:rotate(-45deg)}
-    .drawer-overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);backdrop-filter:none;opacity:0;visibility:hidden;transition:opacity .24s ease, visibility .24s ease;z-index:70}
-    .drawer-overlay.show{opacity:1;visibility:visible}
-    .drawer{position:fixed;top:0;right:0;width:min(420px,92vw);height:100dvh;padding:18px 18px 24px;background:linear-gradient(180deg, rgba(12,12,17,.98), rgba(8,8,12,.98));border-left:1px solid rgba(255,255,255,.08);transform:translateX(110%);transition:transform .28s ease, opacity .28s ease, visibility .28s ease;z-index:80;display:flex;flex-direction:column;gap:18px;opacity:0;visibility:hidden;pointer-events:none}
-    .drawer.show{transform:translateX(0);opacity:1;visibility:visible;pointer-events:auto}
-    .drawer-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:6px}
-    .drawer-title{font-size:13px;letter-spacing:.3px;color:rgba(255,255,255,.62);text-transform:uppercase}
-    .drawer-close{width:40px;height:40px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);color:rgba(255,255,255,.88);font-size:20px;cursor:pointer}
-    .drawer-nav{display:flex;flex-direction:column;gap:8px;overflow:auto;padding-right:4px}
-    .drawer-nav a{text-decoration:none;color:rgba(255,255,255,.92);padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:transform .15s ease, border-color .15s ease, background .15s ease;display:block;box-sizing:border-box}
-    .drawer-nav a:hover{border-color:rgba(214,178,106,.32);background:rgba(214,178,106,.05)}
-    .drawer-cta{margin-top:auto;display:flex;flex-direction:column;gap:10px}
-    .drawer-cta a{text-decoration:none;color:var(--text);text-align:center;padding:14px 18px;border-radius:999px;border:1px solid rgba(214,178,106,.55);background:rgba(0,0,0,.18);position:relative;font-weight:700}
-    .drawer-cta a::before{content:"";position:absolute;inset:-1px;border-radius:999px;padding:1px;background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite: xor;mask-composite: exclude;pointer-events:none;opacity:.9}
-    .hero{min-height:calc(100vh - 94px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 0 10px;gap:18px;text-align:center}
-    .hut{width:min(1180px, 96vw);height:min(70vh, 740px);object-fit:contain;display:block;pointer-events:none;filter:none !important;box-shadow:none !important;animation: float 6.5s ease-in-out infinite;background:transparent !important}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    .cta{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;position:relative;z-index:5}
-    .btn{appearance:none;border:1px solid rgba(214,178,106,.55);background:rgba(0,0,0,.18);color:var(--text);font-weight:750;letter-spacing:.2px;padding:14px 26px;border-radius:999px;min-width:280px;cursor:pointer;-webkit-tap-highlight-color:transparent;position:relative}
-    .btn::before{content:"";position:absolute;inset:-1px;border-radius:999px;padding:1px;background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);-webkit-mask-composite: xor;mask-composite: exclude;pointer-events:none;opacity:.9}
-    .menu{display:none;flex-direction:column;gap:10px;width:min(420px, 92vw)}
+
+    .hero{
+      min-height:calc(100vh - 96px);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:26px 0 30px;
+      gap:18px;
+      text-align:center;
+      position:relative;
+    }
+
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
+      max-width:760px;
+      margin:0 auto;
+      position:relative;
+      z-index:3;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:34px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(214,178,106,.22);
+      background:rgba(214,178,106,.07);
+      color:rgba(255,233,190,.88);
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .hero-title{
+      margin:0;
+      font-size:clamp(30px, 5vw, 58px);
+      line-height:1.02;
+      letter-spacing:.2px;
+      text-wrap:balance;
+    }
+
+    .hero-text{
+      margin:0;
+      max-width:690px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.65;
+      text-wrap:balance;
+    }
+
+    .hut-wrap{
+      position:relative;
+      width:min(1180px, 96vw);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .hut-wrap::before{
+      content:"";
+      position:absolute;
+      width:min(760px, 70vw);
+      height:min(420px, 36vw);
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(214,178,106,.14) 0%, rgba(214,178,106,.05) 38%, transparent 72%);
+      filter:blur(32px);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .hut{
+      width:min(1180px, 96vw);
+      height:min(68vh, 720px);
+      object-fit:contain;
+      display:block;
+      pointer-events:none;
+      filter:none !important;
+      box-shadow:none !important;
+      background:transparent !important;
+      position:relative;
+      z-index:1;
+      animation:float 6.5s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+
+    .cta{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      width:100%;
+      position:relative;
+      z-index:5;
+      margin-top:-6px;
+    }
+
+    .btn{
+      appearance:none;
+      border:1px solid rgba(214,178,106,.55);
+      background:rgba(0,0,0,.2);
+      color:var(--text);
+      font-weight:750;
+      letter-spacing:.2px;
+      padding:14px 26px;
+      border-radius:999px;
+      min-width:280px;
+      cursor:pointer;
+      -webkit-tap-highlight-color:transparent;
+      position:relative;
+      transition:transform .16s ease, background .2s ease, border-color .2s ease;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(214,178,106,.05);
+      border-color:rgba(214,178,106,.7);
+    }
+
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      border-radius:999px;
+      padding:1px;
+      background:linear-gradient(135deg,var(--goldA),var(--goldB),var(--goldC));
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .menu{
+      display:none;
+      flex-direction:column;
+      gap:10px;
+      width:min(420px, 92vw);
+      padding-top:2px;
+    }
+
     .menu.show{display:flex}
-    .menu a{text-decoration:none;color:rgba(255,255,255,.92);text-align:center;padding:12px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)}
-    .menu a:hover{border-color:rgba(214,178,106,.55);background:rgba(214,178,106,.05)}
-    .seo{padding:52px 0 64px}
-    .seo-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:22px;padding:22px}
-    .seo h1{margin:0 0 12px; font-size:28px; line-height:1.15}
-    .seo p{margin:10px 0; color:var(--muted); line-height:1.6; font-size:16px}
-    .seo strong{color:rgba(255,255,255,.92)}
-    .seo-grid{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .seo-box{border-radius:18px;border:1px solid rgba(255,255,255,.10);background:rgba(0,0,0,.16);padding:16px}
-    .seo h2{margin:0 0 10px; font-size:18px}
-    .seo ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.55}
-    .seo a{color:rgba(255,255,255,.88)}
-    .seo-links{margin-top:18px;display:grid;grid-template-columns:repeat(3, 1fr);gap:12px}
-    .seo-link{display:block;text-decoration:none;color:rgba(255,255,255,.92);border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);padding:14px 16px;transition:transform .15s ease, border-color .15s ease, background .15s ease}
-    .seo-link:hover{transform:translateY(-1px);border-color:rgba(214,178,106,.35);background:rgba(214,178,106,.05)}
-    .seo-link b{display:block;margin-bottom:6px;font-size:15px;font-weight:700}
-    .seo-link span{display:block;color:var(--muted);font-size:14px;line-height:1.45}
-    footer{padding:18px 0 30px; color:rgba(255,255,255,.55); font-size:13px}
-    .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
-    .footer-links{display:flex; gap:14px; flex-wrap:wrap}
-    .footer-links a{color:rgba(255,255,255,.62); text-decoration:none}
-    .footer-links a:hover{color:rgba(255,255,255,.88)}
-    @media (max-width:900px){.seo-links{grid-template-columns:1fr 1fr}}
-    @media (max-width:720px){.brand img{height:62px}.icon-btn,.menu-toggle{width:40px;height:40px}.seo-grid{grid-template-columns:1fr}.seo-links{grid-template-columns:1fr}.seo h1{font-size:24px}.social{display:none}}
-    @media (max-width:420px){.container{width:min(var(--max), 100% - 24px)}.btn{min-width:240px}}
 
-.footer-social{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-}
+    .menu a{
+      text-decoration:none;
+      color:rgba(255,255,255,.92);
+      text-align:center;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.03);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
 
-.footer-social-btn{
-width:42px;
-height:42px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:10px;
-background:rgba(255,255,255,.04);
-border:1px solid rgba(255,255,255,.12);
-transition:.2s;
-}
+    .menu a:hover{
+      transform:translateY(-1px);
+      border-color:rgba(214,178,106,.55);
+      background:rgba(214,178,106,.05);
+    }
 
-.footer-social-btn svg{
-width:18px;
-height:18px;
-fill:rgba(255,255,255,.85);
-}
+    .hero-note{
+      color:var(--muted-soft);
+      font-size:13px;
+      line-height:1.5;
+    }
 
-.footer-social-btn:hover{
-transform:translateY(-1px);
-border-color:rgba(214,178,106,.5);
-background:rgba(214,178,106,.08);
-}
+    .hero-scroll{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:6px;
+      text-decoration:none;
+      color:rgba(255,255,255,.62);
+      font-size:13px;
+      transition:color .16s ease, transform .16s ease;
+    }
 
-.footer-social-btn:hover svg{
-fill:#fff;
-}
+    .hero-scroll:hover{
+      color:rgba(255,255,255,.88);
+      transform:translateY(-1px);
+    }
 
+    .hero-scroll span{
+      display:inline-flex;
+      width:24px;
+      height:24px;
+      align-items:center;
+      justify-content:center;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+    }
+
+    .seo{
+      padding:34px 0 64px;
+    }
+
+    .seo-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.025));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
+    }
+
+    .seo h1{
+      margin:0 0 12px;
+      font-size:30px;
+      line-height:1.15;
+    }
+
+    .seo-intro{
+      max-width:900px;
+    }
+
+    .seo p{
+      margin:10px 0;
+      color:var(--muted);
+      line-height:1.65;
+      font-size:16px;
+    }
+
+    .seo strong{
+      color:rgba(255,255,255,.92);
+    }
+
+    .seo-grid{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .seo-box{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+      padding:18px;
+    }
+
+    .seo h2{
+      margin:0 0 10px;
+      font-size:18px;
+    }
+
+    .seo ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .seo a{
+      color:rgba(255,255,255,.88);
+    }
+
+    .seo-links{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+    }
+
+    .seo-link{
+      display:block;
+      text-decoration:none;
+      color:rgba(255,255,255,.92);
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      padding:14px 16px;
+      transition:transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+
+    .seo-link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(214,178,106,.35);
+      background:rgba(214,178,106,.05);
+    }
+
+    .seo-link b{
+      display:block;
+      margin-bottom:6px;
+      font-size:15px;
+      font-weight:700;
+    }
+
+    .seo-link span{
+      display:block;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    @media (max-width:900px){
+      .seo-links{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width:720px){
+      .seo-grid{grid-template-columns:1fr}
+      .seo-links{grid-template-columns:1fr}
+      .seo h1{font-size:24px}
+      .hero{
+        min-height:calc(100vh - 84px);
+        padding-top:16px;
+      }
+      .hero-text{font-size:15px}
+      .hut{height:min(50vh, 520px)}
+    }
+
+    @media (max-width:420px){
+      .container{width:min(var(--max), 100% - 24px)}
+      .btn{min-width:240px}
+      .hero-badge{font-size:11px;padding:7px 12px}
+      .seo-card{padding:18px}
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
+
   <div class="bg" aria-hidden="true"></div>
-  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
-  <aside class="drawer" id="siteDrawer" aria-hidden="true" aria-label="Навигация по сайту">
-    <div class="drawer-top"><div class="drawer-title">Навигация</div><button class="drawer-close" id="drawerClose" type="button" aria-label="Закрыть меню">×</button></div>
-    <nav class="drawer-nav">
-      <a href="index.html">Главная</a>
-      <a href="okrashivanie.html">Окрашивание</a>
-      <a href="strizhki.html">Стрижки</a>
-      <a href="uhod.html">Уход</a>
-      <a href="blond.html">Блонд</a>
-      <a href="vyhod-iz-chernogo.html">Выход из чёрного</a>
-      <a href="tonirovanie-volos.html">Тонирование</a>
-      <a href="novosaratovka.html">Новосаратовка</a>
-      <a href="social.html">Мы в соцсетях</a>
-      <a href="contacts.html">Контакты</a>
-    </nav>
-    <div class="drawer-cta"><a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Записаться</a></div>
-  </aside>
-  <header>
-    <div class="container header-inner">
-      <div class="brand"><img src="logo_hizhina.webp" alt="Хижина красоты" loading="eager" decoding="async" /></div>
-      <div class="header-actions">
-        <nav class="social" aria-label="Социальные сети">
-          <a class="icon-btn" href="https://instagram.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.6 6.7a.9.9 0 1 1-.9-.9.9.9 0 0 1 .9.9z"/></svg></a>
-          <a class="icon-btn" href="https://t.me/TheHizhina" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M21.8 4.6 2.9 11.9c-1 .4-1 1.8.1 2.1l4.7 1.5 1.8 5.7c.3 1 1.7 1.1 2.2.2l2.7-4.1 4.9 3.6c.8.6 1.9.1 2.1-.9l3-15.3c.2-1.1-.9-2-1.9-1.6zM9.5 14.8l8.9-8.3c.2-.2.5.1.3.3l-7.4 9.5-.3 3.1c0 .3-.4.4-.6.1l-1.2-2.4-2.5-.8c-.3-.1-.3-.5 0-.6l3.8-1z"/></svg></a>
-          <a class="icon-btn" href="https://vk.com/thehizhina" target="_blank" rel="noopener noreferrer" aria-label="VK"><svg viewBox="0 0 24 24"><path d="M3.5 7.2h3.3c.2 0 .4.1.5.3.4.8 1.6 3.2 2.7 4.7.4.6.7.8 1 .8.2 0 .3-.2.3-.8V7.7c0-.3.2-.5.5-.5H15c.3 0 .5.2.5.5v2.9c0 .3.1.4.3.4.2 0 .5-.2.9-.6 1.2-1.3 2.1-3.2 2.5-3.9.1-.2.3-.3.5-.3h3.2c.4 0 .6.4.4.7-.5 1.2-1.9 3.5-3.1 4.9-.5.6-.7.8-.7 1.1 0 .3.1.5.5.9 1.2 1.2 2.7 2.8 3.5 4.2.2.4 0 .8-.4.8h-3.6c-.2 0-.4-.1-.5-.3-.6-.8-1.4-1.9-2.5-3-.5-.5-.7-.6-.9-.6-.2 0-.3.2-.3.6v2.8c0 .3-.2.5-.5.5h-1.4c-3.2 0-5.7-1.9-7.2-4.1-1.6-2.3-2.6-5.3-2.8-6.1 0-.3.2-.6.5-.6z"/></svg></a>
-        </nav>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="siteDrawer"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
+
+  <div id="site-header"></div>
+
   <main id="main">
     <section class="hero container" aria-label="Главный экран">
-      <img class="hut" src="hizh.png" alt="Хижина красоты — салон красоты в Новосаратовке" loading="eager" decoding="async" />
+      <div class="hero-copy">
+        <div class="hero-badge">Камерная студия в Новосаратовке</div>
+        <h1 class="hero-title">Женские стрижки, окрашивание и бережный уход за волосами</h1>
+        <p class="hero-text">
+          «Хижина красоты» — уютное пространство, где важны аккуратная работа с цветом, внимание к деталям и спокойная атмосфера без спешки.
+        </p>
+      </div>
+
+      <div class="hut-wrap">
+        <img class="hut" src="hizh.png" alt="Хижина красоты — салон красоты в Новосаратовке" loading="eager" decoding="async" />
+      </div>
+
       <div class="cta" aria-label="Запись">
         <button class="btn" id="ctaBtn" type="button" aria-expanded="false" aria-controls="menu">Записаться ▾</button>
+
         <div id="menu" class="menu" aria-label="Способы записи">
           <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
           <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
           <a href="tel:+79111115528">Позвонить</a>
         </div>
+
+        <div class="hero-note">Онлайн-запись, связь в Telegram и быстрый контакт по телефону</div>
+
+        <a class="hero-scroll" href="#seo">
+          <span>↓</span> Подробнее о студии
+        </a>
       </div>
     </section>
-    <section class="seo"><div class="container"><div class="seo-card" aria-label="Описание салона">
-      <h1>Хижина красоты — салон красоты в Новосаратовке</h1>
-      <p>«Хижина красоты» — камерная студия, где можно сделать <strong>женские стрижки в Новосаратовке</strong>, подобрать форму и длину, а также выполнить <strong>окрашивание волос в Новосаратовке</strong> с бережным отношением к качеству волос.</p>
-      <p>Если вы ищете <strong>салон красоты в Новосаратовке</strong> или <strong>парикмахерскую в Новосаратовке</strong> с аккуратным результатом и понятным сервисом, «Хижина красоты» подойдёт для стрижки, окрашивания волос, тонирования и ухода. Запись доступна онлайн: Telegram или Dikidi.</p>
-      <div class="seo-grid">
-        <div class="seo-box"><h2>Услуги</h2><ul><li>Стрижки</li><li>Окрашивание: однотон, сложные техники, тонирование</li><li>Уходовые процедуры для волос</li><li>Подбор оттенка и рекомендации по домашнему уходу</li></ul></div>
-        <div class="seo-box"><h2>Как записаться</h2><ul><li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li><li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li><li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li></ul><p style="margin-top:10px; color:rgba(255,255,255,.62);">Ответим, подберём время и поможем выбрать услугу.</p></div>
+
+    <section class="seo" id="seo">
+      <div class="container">
+        <div class="seo-card" aria-label="Описание салона">
+          <div class="seo-intro">
+            <h1>Хижина красоты — салон красоты в Новосаратовке</h1>
+
+            <p>
+              «Хижина красоты» — камерная студия, где можно сделать <strong>женские стрижки в Новосаратовке</strong>, подобрать форму и длину, а также выполнить <strong>окрашивание волос в Новосаратовке</strong> с бережным отношением к качеству волос.
+            </p>
+
+            <p>
+              Если вы ищете <strong>салон красоты в Новосаратовке</strong> или <strong>парикмахерскую в Новосаратовке</strong> с аккуратным результатом и понятным сервисом, «Хижина красоты» подойдёт для стрижки, окрашивания волос, тонирования и ухода. Запись доступна онлайн: Telegram или Dikidi.
+            </p>
+          </div>
+
+          <div class="seo-grid">
+            <div class="seo-box">
+              <h2>Услуги</h2>
+              <ul>
+                <li>Женские стрижки</li>
+                <li>Окрашивание: однотон, сложные техники, коррекция цвета и тонирование</li>
+                <li>Уходовые процедуры для волос</li>
+                <li>Подбор оттенка и рекомендации по домашнему уходу</li>
+              </ul>
+            </div>
+
+            <div class="seo-box">
+              <h2>Как записаться</h2>
+              <ul>
+                <li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li>
+                <li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li>
+                <li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li>
+              </ul>
+              <p style="margin-top:10px;color:rgba(255,255,255,.62);">
+                Ответим, подберём время и поможем выбрать услугу.
+              </p>
+            </div>
+          </div>
+
+          <div class="seo-links" aria-label="Разделы сайта">
+            <a class="seo-link" href="about.html">
+              <b>Обо мне</b>
+              <span>О мастере, подходе к работе и атмосфере студии.</span>
+            </a>
+
+            <a class="seo-link" href="price.html">
+              <b>Прайс</b>
+              <span>Стоимость услуг и ориентиры по основным процедурам.</span>
+            </a>
+
+            <a class="seo-link" href="okrashivanie.html">
+              <b>Окрашивание</b>
+              <span>Однотон, сложные техники, коррекция цвета и тонирование.</span>
+            </a>
+
+            <a class="seo-link" href="strizhki.html">
+              <b>Стрижки</b>
+              <span>Женские стрижки с аккуратной формой и удобной посадкой.</span>
+            </a>
+
+            <a class="seo-link" href="uhod.html">
+              <b>Уход</b>
+              <span>Мягкость, блеск и поддержание качества волос.</span>
+            </a>
+
+            <a class="seo-link" href="blond.html">
+              <b>Блонд</b>
+              <span>Осветление, чистые оттенки и бережная работа с длиной.</span>
+            </a>
+
+            <a class="seo-link" href="vyhod-iz-chernogo.html">
+              <b>Выход из чёрного</b>
+              <span>Поэтапная коррекция и аккуратное осветление тёмной базы.</span>
+            </a>
+
+            <a class="seo-link" href="tonirovanie-volos.html">
+              <b>Тонирование</b>
+              <span>Обновление оттенка и нейтрализация нежелательных тонов.</span>
+            </a>
+
+            <a class="seo-link" href="novosaratovka.html">
+              <b>Новосаратовка</b>
+              <span>Локальная страница для поиска салона рядом с домом.</span>
+            </a>
+
+            <a class="seo-link" href="social.html">
+              <b>Соцсети</b>
+              <span>Все площадки Хижины красоты в одном разделе.</span>
+            </a>
+
+            <a class="seo-link" href="contacts.html">
+              <b>Контакты</b>
+              <span>Как добраться, написать и быстро записаться.</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="seo-links" aria-label="Разделы сайта">
-        <a class="seo-link" href="okrashivanie.html"><b>Окрашивание</b><span>Однотон, сложные техники, коррекция цвета и тонирование.</span></a>
-        <a class="seo-link" href="strizhki.html"><b>Стрижки</b><span>Женские стрижки с аккуратной формой и удобной посадкой.</span></a>
-        <a class="seo-link" href="uhod.html"><b>Уход</b><span>Мягкость, блеск и поддержание качества волос.</span></a>
-        <a class="seo-link" href="blond.html"><b>Блонд</b><span>Осветление, чистые оттенки и бережная работа с длиной.</span></a>
-        <a class="seo-link" href="vyhod-iz-chernogo.html"><b>Выход из чёрного</b><span>Поэтапная коррекция и аккуратное осветление тёмной базы.</span></a>
-        <a class="seo-link" href="tonirovanie-volos.html"><b>Тонирование</b><span>Обновление оттенка и нейтрализация нежелательных тонов.</span></a>
-        <a class="seo-link" href="novosaratovka.html"><b>Новосаратовка</b><span>Локальная страница для поиска салона рядом с домом.</span></a>
-        <a class="seo-link" href="social.html"><b>Соцсети</b><span>Все площадки Хижины красоты в одном разделе.</span></a>
-        <a class="seo-link" href="contacts.html"><b>Контакты</b><span>Как добраться, написать и быстро записаться.</span></a>
-      </div>
-    </div></div></section>
+    </section>
   </main>
 
-  
-<footer>
-  <div class="container footer-inner">
+  <div id="site-footer"></div>
 
-    <small>© <span id="year"></span> Хижина красоты</small>
+  <script src="script.js"></script>
 
-   <div class="footer-social">
-
-<a class="footer-social-btn" href="https://t.me/TheHizhina" target="_blank" aria-label="Telegram">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M21.8 4.6L2.9 11.9c-1 .4-1 1.8.1 2.1l4.7 1.5 1.8 5.7c.3 1 1.7 1.1 2.2.2l2.7-4.1 4.9 3.6c.8.6 1.9.1 2.1-.9l3-15.3c.2-1.1-.9-2-1.9-1.6z"/>
-</svg>
-</a>
-
-<a class="footer-social-btn" href="https://instagram.com/thehizhina" target="_blank" aria-label="Instagram">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm6.5-.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
-</svg>
-</a>
-
-<a class="footer-social-btn" href="https://tiktok.com/@thehizhina" target="_blank" aria-label="TikTok">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M16 3c.6 2.3 2.3 4 4.6 4.5v3c-1.6 0-3-.5-4.6-1.4v6.2a5.6 5.6 0 1 1-5.6-5.6c.3 0 .7 0 1 .1v3c-.3-.1-.7-.2-1-.2a2.6 2.6 0 1 0 2.6 2.6V3H16z"/>
-</svg>
-</a>
-
-<a class="footer-social-btn" href="https://youtube.com/@thehizhina" target="_blank" aria-label="YouTube">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M23 7s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C16.8 3.5 12 3.5 12 3.5s-4.8 0-8.1.2c-.4.1-1.3.1-2.1 1C1.2 5.4 1 7 1 7S.8 8.9.8 10.7v1.6C.8 14 .9 16 1 16s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1C6.3 19.5 12 19.5 12 19.5s4.8 0 8.1-.2c.4-.1 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.9.2-3.7v-1.6C23.2 8.9 23 7 23 7zM9.8 14.5V8.8l5.6 2.9-5.6 2.8z"/>
-</svg>
-</a>
-
-<a class="footer-social-btn" href="https://vk.com/thehizhina" target="_blank" aria-label="VK">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M4 7h3c.2 0 .4.1.5.3.4.9 1.6 3.2 2.7 4.7.4.5.7.7 1 .7.2 0 .3-.2.3-.8V7.5c0-.3.2-.5.5-.5H15c.3 0 .5.2.5.5v3c0 .3.1.4.3.4.2 0 .5-.2.9-.6 1.2-1.3 2.1-3.2 2.5-3.9.1-.2.3-.3.5-.3h3c.4 0 .6.4.4.7-.5 1.2-1.9 3.5-3.1 4.9-.5.6-.7.8-.7 1.1 0 .3.1.5.5.9 1.2 1.2 2.7 2.8 3.5 4.2.2.4 0 .8-.4.8h-3.3c-.2 0-.4-.1-.5-.3-.6-.8-1.4-1.9-2.5-3-.5-.5-.7-.6-.9-.6-.2 0-.3.2-.3.6v2.8c0 .3-.2.5-.5.5h-1.2c-3.2 0-5.7-1.9-7.2-4.1-1.6-2.3-2.6-5.3-2.8-6.1 0-.3.2-.6.5-.6z"/>
-</svg>
-</a>
-
-<a class="footer-social-btn" href="https://x.com/thehizhina" target="_blank" aria-label="X">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M3 3h3.6l5.3 7.5L18 3h3l-7.5 9.4L21 21h-3.6l-5.8-8.1L5.6 21H2.6l7.9-9.9L3 3z"/>
-</svg>
-</a>
-
-</div>
-
-    <div class="footer-links">
-      <a href="privacy.html">Политика конфиденциальности</a>
-    </div>
-
-  </div>
-</footer>
-  
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    (function(){
-      const btn=document.getElementById('ctaBtn'), menu=document.getElementById('menu');
-      function closeMenu(){menu.classList.remove('show');btn.setAttribute('aria-expanded','false')}
-      function toggleMenu(){const open=menu.classList.toggle('show');btn.setAttribute('aria-expanded',open?'true':'false')}
-      btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleMenu()},{passive:false});
-      document.addEventListener('click',e=>{if(!menu.contains(e.target)&&e.target!==btn)closeMenu()});
-      document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
-    })();
-    (function(){
-      const body=document.body, toggle=document.getElementById('menuToggle'), closeBtn=document.getElementById('drawerClose'), drawer=document.getElementById('siteDrawer'), overlay=document.getElementById('drawerOverlay');
-      let lastFocused=null;
-      function openDrawer(){lastFocused=document.activeElement;body.classList.add('menu-open');toggle.classList.add('active');toggle.setAttribute('aria-expanded','true');drawer.classList.add('show');overlay.classList.add('show');drawer.setAttribute('aria-hidden','false');overlay.setAttribute('aria-hidden','false');const firstFocusable=drawer.querySelector('a, button'); if(firstFocusable) firstFocusable.focus()}
-      function closeDrawer(){body.classList.remove('menu-open');toggle.classList.remove('active');toggle.setAttribute('aria-expanded','false');drawer.classList.remove('show');overlay.classList.remove('show');drawer.setAttribute('aria-hidden','true');overlay.setAttribute('aria-hidden','true');if(lastFocused)lastFocused.focus()}
-      toggle.addEventListener('click',()=>drawer.classList.contains('show')?closeDrawer():openDrawer());
-      closeBtn.addEventListener('click',closeDrawer);
-      overlay.addEventListener('click',closeDrawer);
-      drawer.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeDrawer));
-      document.addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer.classList.contains('show'))closeDrawer()});
-    })();
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Хижина красоты",
+    "image": "https://hizhina.com/hizh.png",
+    "url": "https://hizhina.com/",
+    "telephone": "+79111115528",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Новосаратовка",
+      "addressRegion": "Ленинградская область",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://instagram.com/thehizhina",
+      "https://t.me/TheHizhina",
+      "https://vk.com/thehizhina",
+      "https://youtube.com/@thehizhina",
+      "https://tiktok.com/@thehizhina",
+      "https://x.com/thehizhina"
+    ]
+  }
   </script>
- <script type="application/ld+json">
-
-{
- "@context": "https://schema.org",
- "@type": "BeautySalon",
-
- "name": "Хижина красоты",
-
- "image": "https://hizhina.com/hizh.png",
-
- "url": "https://hizhina.com/",
-
- "telephone": "+79111115528",
-
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "Новосаратовка",
-   "addressRegion": "Ленинградская область",
-   "addressCountry": "RU"
- },
-
- "sameAs": [
-   "https://instagram.com/thehizhina",
-   "https://t.me/TheHizhina",
-   "https://vk.com/thehizhina",
-   "https://youtube.com/@thehizhina",
-   "https://tiktok.com/@thehizhina",
-   "https://x.com/thehizhina"
- ]
-
-}
-
-</script>
 </body>
 </html>
