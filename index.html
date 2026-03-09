@@ -31,7 +31,7 @@
   <link rel="preload" as="image" href="hizh.png" />
 
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles.css?v=20260309b" />
+  <link rel="stylesheet" href="styles.css?v=20260309c" />
 
   <style>
     :root{
@@ -111,8 +111,8 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      padding:18px 0 30px;
-      gap:14px;
+      padding:8px 0 26px;
+      gap:10px;
       text-align:center;
       position:relative;
     }
@@ -141,15 +141,6 @@
       font-size:12px;
       letter-spacing:.08em;
       text-transform:uppercase;
-    }
-
-    .hero-text{
-      margin:0;
-      max-width:690px;
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.65;
-      text-wrap:balance;
     }
 
     .hut-wrap{
@@ -199,14 +190,13 @@
       width:100%;
       position:relative;
       z-index:5;
-      margin-top:-6px;
+      margin-top:-10px;
     }
 
     .btn{
       appearance:none;
       border:1px solid rgba(214,178,106,.62);
-      background:
-        linear-gradient(180deg, rgba(20,16,10,.78), rgba(8,8,10,.78));
+      background:linear-gradient(180deg, rgba(20,16,10,.78), rgba(8,8,10,.78));
       color:var(--text);
       font-weight:800;
       letter-spacing:.2px;
@@ -347,19 +337,51 @@
     }
 
     .seo h2{
-      margin:0 0 10px;
+      margin:0 0 12px;
       font-size:18px;
     }
 
     .seo ul{
       margin:0;
-      padding-left:18px;
+      padding-left:0;
+      list-style:none;
       color:var(--muted);
       line-height:1.6;
     }
 
     .seo a{
       color:rgba(255,255,255,.88);
+    }
+
+    .booking-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .booking-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:40px;
+      padding:10px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      color:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.12);
+      transition:transform .15s ease, border-color .15s ease, background .15s ease, box-shadow .15s ease;
+      font-size:14px;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .booking-btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(214,178,106,.36);
+      background:rgba(214,178,106,.07);
+      box-shadow:0 10px 22px rgba(0,0,0,.16);
     }
 
     .seo-links{
@@ -410,10 +432,15 @@
       .seo h1{font-size:24px}
       .hero{
         min-height:calc(100vh - 84px);
-        padding-top:12px;
+        padding-top:6px;
       }
-      .hero-text{font-size:15px}
       .hut{height:min(50vh, 520px)}
+      .booking-actions{
+        flex-direction:column;
+      }
+      .booking-btn{
+        width:100%;
+      }
     }
 
     @media (max-width:420px){
@@ -435,10 +462,6 @@
     <section class="hero container" aria-label="Главный экран">
       <div class="hero-copy">
         <div class="hero-badge">Камерная студия в Новосаратовке</div>
-
-        <p class="hero-text">
-          «Хижина красоты» — уютное пространство, где важны аккуратная работа с цветом, внимание к деталям и спокойная атмосфера без спешки.
-        </p>
       </div>
 
       <div class="hut-wrap">
@@ -488,12 +511,12 @@
 
             <div class="seo-box">
               <h2>Как записаться</h2>
-              <ul>
-                <li>Telegram: <a href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">написать</a></li>
-                <li>Dikidi: <a href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">онлайн-запись</a></li>
-                <li>Телефон: <a href="tel:+79111115528">+7 (911) 111-55-28</a></li>
-              </ul>
-              <p style="margin-top:10px;color:rgba(255,255,255,.62);">
+              <div class="booking-actions">
+                <a class="booking-btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Telegram</a>
+                <a class="booking-btn" href="https://dikidi.ru/1913894" target="_blank" rel="noopener noreferrer">Dikidi</a>
+                <a class="booking-btn" href="tel:+79111115528">+7 (911) 111-55-28</a>
+              </div>
+              <p style="margin-top:12px;color:rgba(255,255,255,.62);">
                 Ответим, подберём время и поможем выбрать услугу.
               </p>
             </div>
