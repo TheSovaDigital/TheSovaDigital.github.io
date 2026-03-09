@@ -3,44 +3,254 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0b0b0f" />
 
-<title>Мастер колорист — Хижина красоты</title>
-
-<meta name="description" content="Мастер колорист в Новосаратовке. Окрашивание волос, блонд, сложные техники и уход за волосами." />
-<meta name="keywords" content="колорист Новосаратовка, мастер по окрашиванию волос, парикмахер Новосаратовка, окрашивание волос спб" />
-
+<title>Обо мне — Хижина красоты</title>
+<meta name="description" content="О мастере Хижины красоты. Окрашивание волос, блонд, сложные техники, бережная работа с качеством волос и индивидуальный подход." />
 <link rel="canonical" href="https://hizhina.com/about.html" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Обо мне — Хижина красоты" />
+<meta property="og:description" content="Мастер Хижины красоты: окрашивание, блонд, сложные техники и бережная работа с волосами." />
+<meta property="og:url" content="https://hizhina.com/about.html" />
+<meta property="og:image" content="https://hizhina.com/about-master.jpg" />
+
 <link rel="stylesheet" href="styles.css" />
 
 <style>
 .page{
-padding:60px 0;
+  padding:60px 0 40px;
 }
 
-.page-card{
-background:rgba(255,255,255,.03);
-border:1px solid rgba(255,255,255,.10);
-border-radius:22px;
-padding:32px;
+.about-shell{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:26px;
+  align-items:stretch;
 }
 
-.page h1{
-margin:0 0 20px;
-font-size:32px;
+.about-card,
+.about-photo-card,
+.about-note{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:24px;
 }
 
-.page p{
-color:rgba(255,255,255,.75);
-line-height:1.7;
-font-size:16px;
-margin:14px 0;
+.about-card{
+  padding:30px;
 }
 
-.page strong{
-color:white;
+.about-topline{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(214,178,106,.24);
+  background:rgba(214,178,106,.05);
+  color:rgba(255,255,255,.78);
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.about-card h1{
+  margin:0 0 18px;
+  font-size:46px;
+  line-height:1.05;
+  letter-spacing:-.02em;
+}
+
+.about-intro{
+  font-size:20px;
+  line-height:1.55;
+  color:rgba(255,255,255,.9);
+  margin:0 0 18px;
+}
+
+.about-card p{
+  margin:14px 0;
+  color:rgba(255,255,255,.74);
+  line-height:1.75;
+  font-size:17px;
+}
+
+.about-card strong{
+  color:#fff;
+}
+
+.about-points{
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.about-point{
+  padding:16px 16px 15px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.02);
+}
+
+.about-point b{
+  display:block;
+  font-size:16px;
+  margin-bottom:8px;
+  color:#fff;
+}
+
+.about-point span{
+  color:rgba(255,255,255,.66);
+  line-height:1.55;
+  font-size:14px;
+}
+
+.about-photo-col{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.about-photo-card{
+  padding:14px;
+  overflow:hidden;
+}
+
+.about-photo-frame{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.03);
+  min-height:100%;
+}
+
+.about-photo-frame img{
+  width:100%;
+  height:100%;
+  min-height:640px;
+  object-fit:cover;
+  display:block;
+}
+
+.about-photo-badge{
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(7,8,11,.72);
+  border:1px solid rgba(255,255,255,.10);
+  color:rgba(255,255,255,.9);
+  font-size:14px;
+  backdrop-filter:blur(8px);
+}
+
+.about-note{
+  padding:20px 22px;
+}
+
+.about-note h2{
+  margin:0 0 10px;
+  font-size:24px;
+}
+
+.about-note p{
+  margin:0;
+  color:rgba(255,255,255,.7);
+  line-height:1.65;
+}
+
+.about-links{
+  margin-top:24px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.about-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  padding:14px 20px;
+  border-radius:999px;
+  color:#fff;
+  border:1px solid rgba(214,178,106,.55);
+  background:rgba(0,0,0,.18);
+  font-weight:700;
+  position:relative;
+}
+
+.about-btn::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:999px;
+  padding:1px;
+  background:linear-gradient(135deg, rgba(246,230,182,.92), rgba(202,164,90,.62), rgba(138,106,47,.75));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+  opacity:.9;
+}
+
+.about-btn.secondary{
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+}
+
+.about-btn.secondary::before{
+  display:none;
+}
+
+@media (max-width: 980px){
+  .about-shell{
+    grid-template-columns:1fr;
+  }
+
+  .about-photo-frame img{
+    min-height:520px;
+  }
+}
+
+@media (max-width: 720px){
+  .page{
+    padding:42px 0 28px;
+  }
+
+  .about-card,
+  .about-photo-card,
+  .about-note{
+    border-radius:20px;
+  }
+
+  .about-card{
+    padding:22px;
+  }
+
+  .about-card h1{
+    font-size:38px;
+  }
+
+  .about-intro{
+    font-size:18px;
+  }
+
+  .about-card p{
+    font-size:16px;
+  }
+
+  .about-points{
+    grid-template-columns:1fr;
+  }
+
+  .about-photo-frame img{
+    min-height:420px;
+  }
 }
 </style>
-
 </head>
 
 <body>
@@ -49,50 +259,93 @@ color:white;
 
 <main class="page">
   <div class="container">
-    <div class="page-card">
+    <section class="about-shell">
 
-      <h1>Обо мне</h1>
+      <div class="about-card">
+        <div class="about-topline">Хижина красоты • мастер</div>
 
-      <p>
-        Я мастер по окрашиванию и стрижкам, работающий с женскими волосами и сложными цветами.
-        Моя задача — создать результат, который будет выглядеть естественно, дорого и сохранять качество волос.
-      </p>
+        <h1>Обо мне</h1>
 
-      <p>
-        Основное направление моей работы — <strong>окрашивание волос</strong>, блонд, сложные техники осветления и выход из нежелательных оттенков.
-        Я внимательно подхожу к диагностике волос, структуре и истории предыдущих окрашиваний.
-      </p>
+        <p class="about-intro">
+          Я мастер по окрашиванию и стрижкам, который работает с женскими волосами
+          бережно, внимательно и с упором на красивый, чистый результат.
+        </p>
 
-      <p>
-        Каждая работа начинается с анализа: состояние волос, плотность, натуральный пигмент и желаемый результат.
-        Это позволяет подобрать правильную технику и сохранить здоровье волос.
-      </p>
+        <p>
+          Основное направление моей работы — <strong>окрашивание волос</strong>,
+          блонд, сложные техники осветления, тонирование и выход из нежелательных оттенков.
+          Для меня важно не просто сделать цвет, а создать результат, который выглядит
+          дорого, естественно и подходит именно вам.
+        </p>
 
-      <p>
-        В работе я придерживаюсь принципа аккуратного и осознанного окрашивания —
-        когда цвет выглядит мягко, натурально и гармонично.
-      </p>
+        <p>
+          Каждая работа начинается с анализа: состояние волос, плотность, длина,
+          история предыдущих окрашиваний, оттенок базы и желаемый итог.
+          Это помогает подобрать правильную стратегию и сохранить качество волос.
+        </p>
 
-      <p>
-        Моя цель — чтобы волосы выглядели ухоженными не только сразу после процедуры,
-        но и спустя время.
-      </p>
+        <p>
+          Я придерживаюсь принципа аккуратного и осознанного окрашивания —
+          когда важен не только эффект сразу после процедуры, но и то,
+          как волосы будут выглядеть через время.
+        </p>
 
-      <p>
-        Работаю в камерной студии <strong>«Хижина красоты»</strong> — спокойном пространстве,
-        где можно сосредоточиться на результате и качестве работы.
-      </p>
+        <p>
+          Работаю в камерной студии <strong>«Хижина красоты»</strong> —
+          в спокойном пространстве, где можно сосредоточиться на результате,
+          деталях и комфорте.
+        </p>
 
-      <p>
-        Красота — это дисциплина деталей.
-      </p>
+        <div class="about-points">
+          <div class="about-point">
+            <b>Бережный подход</b>
+            <span>Подбираю технику не только под желаемый цвет, но и под состояние волос.</span>
+          </div>
 
-    </div>
+          <div class="about-point">
+            <b>Чистый результат</b>
+            <span>Люблю оттенки, которые смотрятся гармонично, мягко и дорого.</span>
+          </div>
+
+          <div class="about-point">
+            <b>Работа с длиной</b>
+            <span>Стараюсь сохранить качество волос и сделать результат носибельным.</span>
+          </div>
+
+          <div class="about-point">
+            <b>Спокойная атмосфера</b>
+            <span>Без спешки, лишнего шума и конвейера — с вниманием к деталям.</span>
+          </div>
+        </div>
+
+        <div class="about-links">
+          <a class="about-btn" href="https://t.me/ImAnitka" target="_blank" rel="noopener noreferrer">Записаться в Telegram</a>
+          <a class="about-btn secondary" href="price.html">Посмотреть прайс</a>
+        </div>
+      </div>
+
+      <div class="about-photo-col">
+        <div class="about-photo-card">
+          <div class="about-photo-frame">
+            <img src="about-master.jpg" alt="Мастер Хижины красоты" />
+            <div class="about-photo-badge">Хижина красоты</div>
+          </div>
+        </div>
+
+        <div class="about-note">
+          <h2>Мой подход</h2>
+          <p>
+            Для меня важно, чтобы после визита волосы выглядели не только красиво,
+            но и живо: с блеском, формой и качеством, которое хочется сохранить.
+          </p>
+        </div>
+      </div>
+
+    </section>
   </div>
 </main>
 
 <div id="site-footer"></div>
 <script src="script.js"></script>
-
 </body>
 </html>
