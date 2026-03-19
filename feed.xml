@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<yml_catalog date="2026-03-19 12:00">
+  <shop>
+    <name>Хижина красоты</name>
+    <company>Хижина красоты</company>
+    <url>https://hizhina.com/</url>
+
+    <currencies>
+      <currency id="RUR" rate="1" />
+    </currencies>
+
+    <categories>
+      <category id="1">Исполнитель</category>
+      <category id="15" parentId="1">Красота</category>
+    </categories>
+
+    <sets>
+      <set id="s1">
+        <name>Салон красоты в Новосаратовке</name>
+        <url>https://hizhina.com/price.html</url>
+      </set>
+      <set id="s2">
+        <name>Окрашивание волос в Новосаратовке</name>
+        <url>https://hizhina.com/price.html?service=color</url>
+      </set>
+      <set id="s3">
+        <name>Блонд в Новосаратовке</name>
+        <url>https://hizhina.com/price.html?service=blond</url>
+      </set>
+      <set id="s4">
+        <name>Тонирование волос в Новосаратовке</name>
+        <url>https://hizhina.com/price.html?service=toning</url>
+      </set>
+      <set id="s5">
+        <name>Уход за волосами в Новосаратовке</name>
+        <url>https://hizhina.com/price.html?service=care</url>
+      </set>
+      <set id="s6">
+        <name>Выход из темного в Новосаратовке</name>
+        <url>https://hizhina.com/price.html?service=dark-exit</url>
+      </set>
+    </sets>
+
+    <offers>
+      <offer id="hizhina-haircut">
+        <name>Хижина красоты</name>
+        <url>https://hizhina.com/price.html?service=haircut</url>
+        <price from="true">1800</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>Цена зависит от длины и густоты волос</sales_notes>
+        <categoryId>15</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp</picture>
+        <description>Женская стрижка в Новосаратовке. Аккуратная форма, чистый срез и подбор решения под структуру волос.</description>
+        <adult>false</adult>
+        <expiry>P5Y</expiry>
+        <param name="Рейтинг">5.0</param>
+        <param name="Число отзывов">1</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">1.18</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Работа по адресу">да</param>
+        <param name="Выезд на дом">нет</param>
+        <param name="Выполняется удаленно">нет</param>
+      </offer>
+
+      <offer id="hizhina-color">
+        <name>Хижина красоты</name>
+        <url>https://hizhina.com/price.html?service=color</url>
+        <price from="true">4500</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>Стоимость зависит от длины волос и сложности окрашивания</sales_notes>
+        <categoryId>15</categoryId>
+        <set-ids>s2</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp</picture>
+        <description>Окрашивание волос в Новосаратовке с подбором оттенка, техники и бережным подходом к качеству волос.</description>
+        <adult>false</adult>
+        <expiry>P5Y</expiry>
+        <param name="Рейтинг">5.0</param>
+        <param name="Число отзывов">1</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">1.36</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Работа по адресу">да</param>
+        <param name="Выезд на дом">нет</param>
+        <param name="Выполняется удаленно">нет</param>
+      </offer>
+
+      <offer id="hizhina-blond">
+        <name>Хижина красоты</name>
+        <url>https://hizhina.com/price.html?service=blond</url>
+        <price from="true">6500</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>Итоговая стоимость зависит от базы, длины волос и объема работы</sales_notes>
+        <categoryId>15</categoryId>
+        <set-ids>s3</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp</picture>
+        <description>Блонд в Новосаратовке: чистые оттенки, мягкие переходы и работа с сохранением качества волос.</description>
+        <adult>false</adult>
+        <expiry>P5Y</expiry>
+        <param name="Рейтинг">5.0</param>
+        <param name="Число отзывов">1</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">1.61</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Работа по адресу">да</param>
+        <param name="Выезд на дом">нет</param>
+        <param name="Выполняется удаленно">нет</param>
+      </offer>
+
+      <offer id="hizhina-toning">
+        <name>Хижина красоты</name>
+        <url>https://hizhina.com/price.html?service=toning</url>
+        <price from="true">3000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>Цена зависит от длины волос</sales_notes>
+        <categoryId>15</categoryId>
+        <set-ids>s4</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp</picture>
+        <description>Тонирование волос в Новосаратовке для обновления оттенка, нейтрализации желтизны и красивого блеска.</description>
+        <adult>false</adult>
+        <expiry>P5Y</expiry>
+        <param name="Рейтинг">5.0</param>
+        <param name="Число отзывов">1</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">1.27</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Работа по адресу">да</param>
+        <param name="Выезд на дом">нет</param>
+        <param name="Выполняется удаленно">нет</param>
+      </offer>
+
+      <offer id="hizhina-care">
+        <name>Хижина красоты</name>
+        <url>https://hizhina.com/price.html?service=care</url>
+        <price from="true">1500</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>Уход подбирается индивидуально по состоянию волос</sales_notes>
+        <categoryId>15</categoryId>
+        <set-ids>s5</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp</picture>
+        <description>Уход за волосами в Новосаратовке: питание, гладкость, блеск и поддержание качества после окрашивания.</description>
+        <adult>false</adult>
+        <expiry>P5Y</expiry>
+        <param name="Рейтинг">5.0</param>
+        <param name="Число отзывов">1</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">1.14</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Работа по адресу">да</param>
+        <param name="Выезд на дом">нет</param>
+        <param name="Выполняется удаленно">нет</param>
+      </offer>
+
+      <offer id="hizhina-dark-exit">
+        <name>Хижина красоты</name>
+        <url>https://hizhina.com/price.html?service=dark-exit</url>
+        <price from="true">8000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>Стоимость зависит от длины, плотности и истории окрашиваний</sales_notes>
+        <categoryId>15</categoryId>
+        <set-ids>s6</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp</picture>
+        <description>Выход из темного в Новосаратовке с поэтапной работой, сохранением качества волос и подбором безопасной стратегии.</description>
+        <adult>false</adult>
+        <expiry>P5Y</expiry>
+        <param name="Рейтинг">5.0</param>
+        <param name="Число отзывов">1</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">1.72</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Работа по адресу">да</param>
+        <param name="Выезд на дом">нет</param>
+        <param name="Выполняется удаленно">нет</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
