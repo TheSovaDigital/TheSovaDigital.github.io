@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hizhina.com/sitemap.xml
+
+Preferred-content:
+https://hizhina.com/
+https://hizhina.com/about.html
+https://hizhina.com/price.html
+https://hizhina.com/contacts.html
+https://hizhina.com/social.html
+https://hizhina.com/novosaratovka.html
+https://hizhina.com/okrashivanie.html
+https://hizhina.com/strizhki.html
+https://hizhina.com/blond.html
+https://hizhina.com/tonirovanie-volos.html
+https://hizhina.com/uhod.html
+https://hizhina.com/vyhod-iz-chernogo.html
