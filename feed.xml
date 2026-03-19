@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-03-19 09:30">
+  <shop>
+    <name>Хижина красоты</name>
+    <company>Хижина красоты</company>
+    <url>https://hizhina.com/</url>
+
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+
+    <categories>
+      <category id="1">Исполнитель</category>
+      <category id="15" parentId="1">Красота</category>
+    </categories>
+
+    <sets>
+      <set id="s-price">
+        <name>Услуги салона красоты в Новосаратовке</name>
+        <url>https://hizhina.com/price.html</url>
+      </set>
+    </sets>
+
+    <offers>
+      <offer id="haircut-1">
+        <name>Хижина красоты · женские стрижки</name>
+        <url>https://hizhina.com/price.html?service=haircut</url>
+        <price from="true">1800</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>15</categoryId>
+        <set-ids>s-price</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp?offer=haircut</picture>
+        <description>Женская стрижка в Новосаратовке</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Россия, Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">100</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется по адресу исполнителя">true</param>
+        <param name="Выполняется удаленно">false</param>
+        <param name="Выполняется по адресу заказчика">false</param>
+        <param name="Об исполнителе">Салон красоты в Новосаратовке. Женские стрижки с учетом формы лица, густоты, текстуры волос и желаемой укладки.</param>
+        <param name="Другая услуга исполнителя - 1">Окрашивание волос</param>
+        <param name="Другая услуга исполнителя - 2">Блонд</param>
+        <param name="Другая услуга исполнителя - 3">Тонирование</param>
+        <param name="Другая услуга исполнителя - 4">Уход для волос</param>
+        <param name="Другая услуга исполнителя - 5">Выход из черного</param>
+        <sales_notes>Цена зависит от длины, густоты волос и сложности формы</sales_notes>
+      </offer>
+
+      <offer id="coloring-1">
+        <name>Хижина красоты · окрашивание волос</name>
+        <url>https://hizhina.com/price.html?service=color</url>
+        <price from="true">4500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>15</categoryId>
+        <set-ids>s-price</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp?offer=color</picture>
+        <description>Окрашивание волос в Новосаратовке</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Россия, Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">98</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется по адресу исполнителя">true</param>
+        <param name="Выполняется удаленно">false</param>
+        <param name="Выполняется по адресу заказчика">false</param>
+        <param name="Об исполнителе">Салон красоты в Новосаратовке. Окрашивание волос с подбором техники, оттенка и домашнего ухода под исходную базу и состояние длины.</param>
+        <param name="Другая услуга исполнителя - 1">Женская стрижка</param>
+        <param name="Другая услуга исполнителя - 2">Блонд</param>
+        <param name="Другая услуга исполнителя - 3">Тонирование</param>
+        <param name="Другая услуга исполнителя - 4">Уход для волос</param>
+        <param name="Другая услуга исполнителя - 5">Выход из черного</param>
+        <sales_notes>Итоговая стоимость зависит от длины волос, плотности и сложности работы</sales_notes>
+      </offer>
+
+      <offer id="blond-1">
+        <name>Хижина красоты · блонд</name>
+        <url>https://hizhina.com/price.html?service=blond</url>
+        <price from="true">6500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>15</categoryId>
+        <set-ids>s-price</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp?offer=blond</picture>
+        <description>Блондирование волос в Новосаратовке</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Россия, Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">97</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется по адресу исполнителя">true</param>
+        <param name="Выполняется удаленно">false</param>
+        <param name="Выполняется по адресу заказчика">false</param>
+        <param name="Об исполнителе">Салон красоты в Новосаратовке. Блондирование и осветление с учетом качества волос, фона осветления, сохранения длины и желаемой чистоты оттенка.</param>
+        <param name="Другая услуга исполнителя - 1">Женская стрижка</param>
+        <param name="Другая услуга исполнителя - 2">Окрашивание волос</param>
+        <param name="Другая услуга исполнителя - 3">Тонирование</param>
+        <param name="Другая услуга исполнителя - 4">Уход для волос</param>
+        <param name="Другая услуга исполнителя - 5">Выход из черного</param>
+        <sales_notes>Стоимость рассчитывается после консультации и зависит от базы и количества этапов</sales_notes>
+      </offer>
+
+      <offer id="toning-1">
+        <name>Хижина красоты · тонирование</name>
+        <url>https://hizhina.com/price.html?service=toning</url>
+        <price from="true">3000</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>15</categoryId>
+        <set-ids>s-price</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp?offer=toning</picture>
+        <description>Тонирование волос в Новосаратовке</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Россия, Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">95</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется по адресу исполнителя">true</param>
+        <param name="Выполняется удаленно">false</param>
+        <param name="Выполняется по адресу заказчика">false</param>
+        <param name="Об исполнителе">Салон красоты в Новосаратовке. Тонирование для обновления оттенка, нейтрализации нежелательных нюансов, блеска и более ухоженного вида волос.</param>
+        <param name="Другая услуга исполнителя - 1">Женская стрижка</param>
+        <param name="Другая услуга исполнителя - 2">Окрашивание волос</param>
+        <param name="Другая услуга исполнителя - 3">Блонд</param>
+        <param name="Другая услуга исполнителя - 4">Уход для волос</param>
+        <param name="Другая услуга исполнителя - 5">Выход из черного</param>
+        <sales_notes>Цена зависит от длины волос и расхода материалов</sales_notes>
+      </offer>
+
+      <offer id="care-1">
+        <name>Хижина красоты · уход для волос</name>
+        <url>https://hizhina.com/price.html?service=care</url>
+        <price from="true">1500</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>15</categoryId>
+        <set-ids>s-price</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp?offer=care</picture>
+        <description>Уход за волосами в Новосаратовке</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Россия, Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">93</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется по адресу исполнителя">true</param>
+        <param name="Выполняется удаленно">false</param>
+        <param name="Выполняется по адресу заказчика">false</param>
+        <param name="Об исполнителе">Салон красоты в Новосаратовке. Уходовые процедуры для питания, гладкости, блеска, плотности и восстановления более ухоженного вида волос.</param>
+        <param name="Другая услуга исполнителя - 1">Женская стрижка</param>
+        <param name="Другая услуга исполнителя - 2">Окрашивание волос</param>
+        <param name="Другая услуга исполнителя - 3">Блонд</param>
+        <param name="Другая услуга исполнителя - 4">Тонирование</param>
+        <param name="Другая услуга исполнителя - 5">Выход из черного</param>
+        <sales_notes>Подбирается по состоянию волос, длине и желаемому эффекту</sales_notes>
+      </offer>
+
+      <offer id="blackout-1">
+        <name>Хижина красоты · выход из черного</name>
+        <url>https://hizhina.com/price.html?service=blackout</url>
+        <price from="true">8000</price>
+        <currencyId>RUR</currencyId>
+        <categoryId>15</categoryId>
+        <set-ids>s-price</set-ids>
+        <picture>https://hizhina.com/og-hizhina.webp?offer=blackout</picture>
+        <description>Выход из черного в Новосаратовке</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">12</param>
+        <param name="Регион">Россия, Ленинградская область, Новосаратовка</param>
+        <param name="Конверсия">99</param>
+        <param name="Ссылка на телефон">tel:+79111115528</param>
+        <param name="Ссылка на чат">https://t.me/ImAnitka</param>
+        <param name="Ссылка на создание заказа">https://dikidi.ru/1913894</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется по адресу исполнителя">true</param>
+        <param name="Выполняется удаленно">false</param>
+        <param name="Выполняется по адресу заказчика">false</param>
+        <param name="Об исполнителе">Салон красоты в Новосаратовке. Многоэтапная работа по выходу из темного цвета с учетом истории окрашиваний, состояния волос и желаемого конечного оттенка.</param>
+        <param name="Другая услуга исполнителя - 1">Женская стрижка</param>
+        <param name="Другая услуга исполнителя - 2">Окрашивание волос</param>
+        <param name="Другая услуга исполнителя - 3">Блонд</param>
+        <param name="Другая услуга исполнителя - 4">Тонирование</param>
+        <param name="Другая услуга исполнителя - 5">Уход для волос</param>
+        <sales_notes>Стоимость зависит от длины, плотности волос и количества этапов осветления</sales_notes>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
